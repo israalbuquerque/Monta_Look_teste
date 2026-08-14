@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looks em Alta | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        /* Remove margens fixas quebradas */
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        /* Padrão: celular */
+        .carousel-wrapper {
+            margin: 0 20px;
+
+        }
+
+        /* Para telas maiores (PCs) */
+        @media (min-width: 992px) {
+            .carousel-wrapper {
+                margin: 0 100px;
+            }
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999 !important;
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 10000 !important;
+        }
+
+        @media (max-width: 576px) {
+            .img-mobile-reduzida {
+                height: 65% !important;
+                /* diminui a altura */
+                width: 95% !important;
+                /* deixa ocupar todo o container */
+                object-fit: cover !important;
+                margin-top: 10px;
+
+            }
+        }
+
+
+
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: solid;
+            color: #5f493f;
+            padding: 20px;
+            margin: 0;
+            
+        }
+
+        p {
+            text-align: center;
+            text-decoration: solid;
+            padding: 20px;
+            margin: 0;
+           
+        }
+
+        h5 {
+            text-align: center;
+            
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        /* IMAGENS GRANDES (HERO / FULL WIDTH) */
+.img-grande {
+    width: 100%;
+    max-width: 1340px;
+    height: auto;
+    max-height: 850px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ajuste mobile */
+@media (max-width: 768px) {
+    .img-grande {
+        max-height: 420px; /* altura confortável no celular */
+        padding: 0 10px;
+    }
+}
+
+    </style>
+
+</head>
+
+<body>
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <br>
+
+
+    <br>
+    <h1>Escolher todos os dias como você quer se sentir e ser visto</h1>
+    <br>
+    <br>
+
+    <!--Primeira Imagem-->
+    <div class="col-12 col-lg-12">
+        <div class="col-12 col-lg-12" style="text-align: center;">
+            <img src="imagens/woman-walking-white-blouse-terracotta-pants-minimalist-setting.jpg"
+                alt="Uma pessoa de perfil, com cabelo curto e cacheado, olha para baixo diante de uma parede terracota. Veste camisa branca e calça marrom, em um ambiente simples e harmonioso, com um toque de planta ao lado."
+                class="img-fluid img-grande">
+        </div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+
+    <!--Texto 01-->
+    <section class="container my-5">
+        <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+            <div class="col-12 col-lg-12 ">
+                <div class="card p-3 text-center ">
+                    <h5 class="card-title card-body custom-color">Looks em alta 2026</h5>
+                    <p class="card-text">
+                        As passarelas internacionais e o street style das principais capitais da moda já deram o
+                        veredito: o universo fashion segue nos surpreendendo e se reinventando a cada temporada. As
+                        tendências atuais apostam em uma mistura poderosa entre conforto e sofisticação, onde o casual
+                        ganha novos ares e as peças statement assumem o protagonismo dos looks. Texturas, volumes, cores
+                        marcantes e modelagens modernas se encontram para criar produções versáteis, cheias de
+                        personalidade e informação de moda.
+
+                        Se a ideia é atualizar o guarda-roupa e elevar o nível das suas produções, este é o momento
+                        perfeito para apostar em combinações que unem praticidade e estilo. Dos looks descomplicados do
+                        dia a dia às escolhas mais ousadas para ocasiões especiais, essas peças-chave estão dominando o
+                        cenário fashion e prometem transformar qualquer visual. Prepare-se para se inspirar,
+                        experimentar novas propostas e, claro, arrasar no estilo.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <br>
+    <!--Imagens secundarias-->
+    <main>
+
+        <section class="container my-4">
+            <div class="row g-1">
+
+                <div class="col-12 col-md-3">
+                    <img src="imagens/Captura de tela 2026-01-27 190548.png" class="img-fluid rounded shadow"
+                        alt="A pessoa está encostada em uma parede de tijolos brancos iluminada pela luz do sol. Ela veste um casaco bege longo, aberto sobre uma camiseta branca básica, combinando com calças de veludo cotelê marrom. Uma das mãos está levantada tocando o pescoço, enquanto a outra repousa ao lado do corpo. A cena tem um clima natural e acolhedor, com destaque para as sombras suaves projetadas na parede."
+                        style="height: 500px; width: 100%; object-fit: cover;">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagens/Captura de tela 2026-01-27 193425.png" class="img-fluid rounded shadow"
+                        alt="A pessoa na imagem está vestindo uma blusa branca de tecido leve, com decote transpassado e mangas longas dobradas nos punhos. Ela usa também calça xadrez em preto e branco, criando um visual elegante e moderno. O look é complementado por colares delicados e um anel discreto. O fundo em tom bege reforça a estética clean e sofisticada da composição."
+                        style="height: 500px; width: 100%;">
+                </div>
+
+
+
+                <div class="col-12 col-md-5">
+                    <img src="imagens/Captura de tela 2026-01-27 191057.png" class="img-fluid rounded shadow"
+                        alt="A pessoa está em pé em uma escadaria de pedra clara, vestindo calças marrons de caimento solto e segurando um tecido grande e colorido, com estampa geométrica em tons de amarelo, vermelho, azul e verde. O pano está apoiado sobre os ombros, criando um visual imponente e estiloso. Ela também usa um anel grande dourado e mantém uma postura elegante, destacada pelo cenário arquitetônico minimalista ao fundo."
+                        style="height: 500px; width: 100%;">
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <br>
+        <br>
+
+        <!--Imagem com texto-->
+        <section class="container my-5">
+            <div class="row align-items-center g-4">
+
+                <div class="col-12 col-lg-6">
+                    <img src="imagens/assortment-beige-tone-colored-pants.jpg"
+                        alt="A imagem mostra um suporte de roupa metálico onde várias calças estão penduradas em cabides de madeira. As peças variam em tons terrosos — como bege, caramelo, marrom claro e cáqui — criando uma paleta neutra e harmoniosa. As calças estão organizadas lado a lado, dobradas sobre os cabides, e a iluminação projeta sombras suaves na parede clara ao fundo, dando um aspecto minimalista e elegante à cena."
+                        class="img-fluid img-grande">
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="card p-3">
+                        <h5 class="card-title">Retorno triufal do minimaliso👔</h5>
+                        <p class="card-text">
+                            <br>
+                            O estilo que prioriza a qualidade, o caimento impecável e a discrição segue em destaque como
+                            expressão da elegância contemporânea. Ele propõe uma moda consciente, baseada em escolhas
+                            duradouras e bem pensadas, nas quais cada peça assume um papel essencial dentro do
+                            guarda-roupa. A sofisticação se manifesta de forma sutil, revelada nos detalhes, nas
+                            proporções equilibradas e na excelência dos materiais, sem recorrer a excessos ou elementos
+                            chamativos.
+
+                            Tecidos nobres como linho, lã fria, seda, cashmere e algodão premium ganham protagonismo,
+                            garantindo conforto, caimento perfeito e acabamento refinado. A cartela de cores neutras —
+                            que transita entre bege, off-white, cinza e marinho — reforça a versatilidade e a
+                            atemporalidade das produções, permitindo combinações elegantes e facilmente adaptáveis a
+                            diferentes ocasiões.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <br>
+
+
+
+
+
+
+        <!--Imagem com texto 02-->
+        <section class="container my-5">
+            <div class="row align-items-center g-4">
+
+                <div class="col-12 col-lg-6">
+                    <img src="imagens/close-up-woman-knitting-couch.jpg"
+                        alt="A imagem mostra uma pessoa sentada confortavelmente em um sofá, com as pernas cruzadas, enquanto tricota. Ela usa uma blusa de tricô bordô e uma calça bege, e segura agulhas circulares trabalhando em uma peça de lã bege. Apenas as mãos, o colo e parte do corpo aparecem — o rosto não é mostrado. A cena passa uma sensação de calma, aconchego e atividade manual relaxante."
+                        class="img-fluid img-grande">
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="card p-3">
+                        <h5 class="card-title">A textura do Crochê🧶</h5>
+                        <p class="card-text">
+                            <br>
+                            Do boho chic ao handmade de luxo, as texturas artesanais ganham destaque e reafirmam seu
+                            espaço na moda contemporânea. Técnicas como o crochê e o tricô vazado surgem como
+                            protagonistas, trazendo um toque de leveza, delicadeza e uma nostalgia sofisticada que
+                            remete ao feito à mão, ao tempo dedicado e ao cuidado com cada detalhe.
+
+                            Essas peças carregam um charme único, combinando tradição e modernidade de forma natural.
+                            Elas aparecem com força em vestidos longos fluidos, saias de movimento suave e modelagens
+                            que valorizam a silhueta, além de se estenderem aos acessórios, como bolsas e detalhes
+                            aplicados, que elevam produções simples com personalidade e autenticidade. Versáteis e
+                            cheias de identidade, as texturas artesanais criam looks que transitam com facilidade entre
+                            o casual elegante e o sofisticado, trazendo conforto, estilo e uma estética atemporal ao
+                            guarda-roupa.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <br>
+        <br>
+        <br>
+
+        <h1> Use a moda para mostrar ao mundo quem você é💫</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <!--Segunda Imagem-->
+        <div class="col-12 col-lg-12">
+            <div class="col-12 col-lg-12" style="text-align: center;">
+                <img src="imagens/Captura de tela 2026-01-27 201933.png"
+                    alt="A pessoa na imagem está vestindo uma camisa branca estampada com desenhos coloridos e delicados, como pequenos animais e elementos naturais. Também usa um chapéu vermelho de aba larga, que combina com o fundo igualmente vermelho. A composição cria um visual estiloso, com foco nas roupas e no acessório, em um cenário de cores harmônicas."
+                    class="img-fluid img-grande">
+            </div>
+        </div>
+        </div>
+
+
+
+
+        <br>
+
+
+        <!--Texto 02-->
+        <section class="container my-5">
+            <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+                <div class="col-12 col-lg-12 ">
+                    <div class="card p-3 text-center ">
+                        <h5 class="card-title card-body custom-color">O impacto da cor Borgonha</h5>
+                        <p class="card-text">
+                            Rica, intensa e cheia de personalidade, essa tonalidade profunda que passeia entre o
+                            vermelho-cereja escuro e o vinho se consolida como o novo preto da estação. Versátil e
+                            atemporal, ela carrega uma elegância natural que eleva qualquer produção, adicionando
+                            sofisticação sem esforço.
+
+                            Com um ar luxuoso e envolvente, a cor aparece com força tanto em peças inteiras — como
+                            vestidos, casacos e alfaiataria — quanto em detalhes estratégicos, a exemplo de acessórios,
+                            calçados e acabamentos. Fácil de combinar e perfeita para diferentes momentos do dia, essa
+                            nuance prova que é possível substituir os tons neutros tradicionais por algo mais ousado,
+                            sem perder a classe. Um verdadeiro curinga para quem quer atualizar o visual com modernidade
+                            e requinte.
+
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <br>
+        <br>
+        <!--Imagens Terciarias-->
+        <main>
+
+            <section class="container my-4">
+                <div class="row g-1">
+
+                    <div class="col-12 col-md-3">
+                        <img src="imagens/Captura de tela 2026-01-27 195325.png" class="img-fluid rounded shadow"
+                            alt="A imagem mostra uma pessoa usando um vestido de tecido acetinado em tom de rosa escuro (quase magenta). A peça tem mangas longas e amplas, cintura marcada por uma faixa do mesmo tecido amarrada em laço e um caimento suave que acompanha o corpo. A pessoa está sentada de forma elegante, apoiando-se com um dos braços. O fundo é composto por uma parede com painéis verticais no mesmo tom rosado, criando uma aparência harmoniosa e sofisticada."
+                            style="height: 500px; width: 100%; object-fit: cover;">
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <img src="imagens/Captura de tela 2026-01-27 195609.png" class="img-fluid rounded shadow"
+                            alt="A pessoa está vestindo um suéter vermelho de tricô, com textura canelada e gola alta. O tecido parece grosso e confortável. Ela posa com uma das mãos apoiada na cintura, destacando o caimento estruturado da peça. O fundo é composto por tons suaves de rosa, criando um contraste elegante com o vermelho vibrante do suéter."
+                            style="height: 500px; width: 100%;">
+                    </div>
+
+
+
+                    <div class="col-12 col-md-5">
+                        <img src="imagens/Captura de tela 2026-01-27 195501.png" class="img-fluid rounded shadow"
+                            alt="A pessoa na imagem está vestindo um blazer de veludo vinho, com brilho suave e corte elegante, combinado com uma camisa social branca. Ela segura um chapéu preto com uma das mãos, inclinando-o levemente para frente em um gesto estiloso. O cenário ao fundo mostra uma área externa com paredes de pedra claras e grades metálicas escuras, criando um contraste sofisticado com o look marcante."
+                            style="height: 500px; width: 100%;">
+                    </div>
+
+                </div>
+            </section>
+
+
+
+            <br>
+            <!-- RODAPÉ -->
+            <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</body>
+
+</html>

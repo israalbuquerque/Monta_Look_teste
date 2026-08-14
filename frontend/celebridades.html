@@ -1,0 +1,784 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Celebridades | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        /* Remove margens fixas quebradas */
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        /* Padrão: celular */
+        .carousel-wrapper {
+            margin: 0 20px;
+
+        }
+
+        /* Para telas maiores (PCs) */
+        @media (min-width: 992px) {
+            .carousel-wrapper {
+                margin: 0 100px;
+            }
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999 !important;
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 10000 !important;
+        }
+
+        @media (max-width: 576px) {
+            .img-mobile-reduzida {
+                height: 65% !important;
+                /* diminui a altura */
+                width: 95% !important;
+                /* deixa ocupar todo o container */
+                object-fit: cover !important;
+                margin-top: 10px;
+
+            }
+        }
+
+
+
+        .carousel-vertical .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-vertical .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .carousel-vertical .carousel-item-next,
+        .carousel-vertical .carousel-item-prev,
+        .carousel-vertical .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-vertical .carousel-item-next {
+            transform: translateY(100%);
+        }
+
+        .carousel-vertical .carousel-item-prev {
+            transform: translateY(-100%);
+        }
+
+        .carousel-vertical .carousel-item.active.carousel-item-start {
+            transform: translateY(-100%);
+        }
+
+        .carousel-vertical .carousel-item-next.carousel-item-start {
+            transform: translateY(0);
+        }
+
+        .carousel-vertical .carousel-item-prev.carousel-item-end {
+            transform: translateY(0);
+        }
+
+        .carousel-vertical .carousel-item.active.carousel-item-end {
+            transform: translateY(100%);
+        }
+
+        .btn {
+            background-color: white;
+            color: #6E5F5D;
+            margin-top: 30px;
+        }
+
+        .image-caption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            border-left: 3px solid var(--cor-base);
+            padding-left: 10px;
+        }
+
+        /* Ajuste para o texto não subir na imagem e aparecer inteiro no mobile */
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: auto !important;
+            }
+
+            /* Faz o texto sair de cima da imagem e ir para baixo */
+            .carousel-caption {
+                position: relative !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                background: #6E5F5D !important;
+                /* Mesma cor do seu tema */
+                padding: 15px !important;
+                text-align: left;
+            }
+
+            /* Garante que a imagem tenha um tamanho bom no celular */
+            .carousel-img {
+                height: 350px !important;
+                object-fit: cover;
+            }
+        }
+
+        /* Ajuste para o carrossel vertical não quebrar a rolagem */
+        .carousel-vertical .carousel-inner {
+            height: auto !important;
+            min-height: 400px;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <main>
+
+
+        <!-- carrossel--------- -->
+        <section class="container my-4">
+
+            <div class="col-12 col-lg-12" style="margin-top: 10px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Estilo dos Famosos</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div id="carouselVertical" class="carousel slide carousel-vertical" data-bs-ride="carousel"
+                style="padding-top: 5px;">
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagens/Kim_Kardashian_Beverly_Hils_2015.jpg" class="carousel-img d-block w-100"
+                            alt="Mulher vestindo um conjunto cinza claro, com top de manga longa e saia midi, saindo de um carro preto estacionado em uma rua arborizada. Ao fundo, há outros carros estacionados e árvores verdes, transmitindo um ambiente urbano tranquilo.">
+
+                        <div class="carousel-caption d-block d-md-block">
+                            <h5 style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">Elegância
+                                Urbana em Tons Neutros</h5>
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">O visual
+                                aposta em um conjunto monocromático em tom cinza claro, transmitindo sofisticação com um
+                                toque moderno. A mulher veste um top cropped de manga longa, ajustado ao corpo, que
+                                valoriza a silhueta de forma elegante e minimalista. A saia midi de cintura alta, com
+                                caimento justo e leve franzido, alonga a silhueta e equilibra sensualidade e classe.
+
+                            </p>
+
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">
+                                Autor: Love Lira Fashion <br>
+                                Licença: Public domain<br>
+                                <a href="https://commons.wikimedia.org/wiki/File:Kim_Kardashian_Beverly_Hils_2015.jpg">Link
+                                    para a foto</a> <br>
+                            </p>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <div class="carousel-item ">
+                        <img src="imagens/LIONEL_MESSI_-_BRESH_MIAMI_(Cropped).jpg" class="carousel-img d-block w-100"
+                            alt="Duas pessoas posam em pé em frente a um enorme ursinho de pelúcia rosa, em um ambiente escuro com fundo preto. O ursinho domina a cena pelo tamanho, enquanto as pessoas seguram bebidas e vestem roupas escuras, criando um contraste visual com o objeto rosa iluminado.">
+
+                        <div class="carousel-caption d-block d-md-block">
+                            <h5 style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">Casual Urbano
+                                com Atitude</h5>
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">O homem aposta
+                                em um visual casual e descontraído, perfeito para eventos noturnos ou festivais. Ele
+                                veste uma camiseta preta de manga curta, com estampa central em tom claro que dá
+                                destaque ao look sem perder a vibe urbana. A modelagem é reta, confortável e moderna.
+
+                                A composição segue com calça preta, mantendo a proposta monocromática e equilibrada. Nos
+                                pés, tênis em preto e branco, de estilo esportivo, reforçam o ar street e garantem
+                                praticidade para longos períodos em pé. Como detalhe final, ele segura um copo, o que
+                                complementa o clima informal e social do momento.</p>
+
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">
+                                Autor: Jerebennett1 <br>
+                                Licença: Creative Commons Attribution-Share Alike 4.0<br>
+                                <a
+                                    href="https://commons.wikimedia.org/wiki/File:LIONEL_MESSI_-_BRESH_MIAMI_(Cropped).jpg">Link
+                                    para a foto</a> <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="imagens/ROBERT_PATTINSON_(5692870559).jpg" class="carousel-img d-block w-100"
+                            alt="Homem vestindo terno cinza posa sobre um tapete vermelho em um evento noturno ao ar livre. Ao fundo, há uma plateia atrás de barreiras, com fotógrafos e pessoas observando, cercados por vegetação tropical e iluminação artificial, criando um ambiente de premiação ou evento social.">
+
+                        <div class="carousel-caption d-block" style="border-color: black; border-width: 5px;">
+                            <h5 style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">Clássico
+                                Moderno no Tapete Vermelho</h5>
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">A pessoa
+                                aposta em um terno cinza de alfaiataria impecável, que transmite elegância e sobriedade.
+                                O paletó tem corte ajustado, com caimento preciso nos ombros, criando uma silhueta
+                                moderna e refinada. A composição é complementada por uma camisa branca lisa, que ilumina
+                                o visual e mantém a estética clássica.
+
+                                A gravata em tom escuro adiciona formalidade e equilíbrio ao look, enquanto a calça
+                                segue a mesma linha do paletó, garantindo unidade ao conjunto. Nos pés, sapatos pretos
+                                de couro, discretos e elegantes, finalizam a produção com sofisticação.</p>
+
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">
+                                Autor: Eva Rinaldi <br>
+                                Licença: Creative Commons Attribution-Share Alike 2.0<br>
+                                <a href="https://commons.wikimedia.org/wiki/File:ROBERT_PATTINSON_(5692870585).jpg">Link
+                                    para a foto</a> <br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <img src="imagens/Bruna_Marquezine_para_Dior.jpg" class="carousel-img d-block w-100"
+                            alt="Mulher vestindo um vestido longo vermelho estampado caminha por uma passarela de madeira ao ar livre. Ao fundo, há uma paisagem natural com árvores, rochas e vegetação, além de uma grande instalação artística com letras e esculturas em tons terrosos, criando um cenário de desfile ou apresentação de moda integrada à natureza.">
+
+                        <div class="carousel-caption d-block d-md-block">
+                            <h5 style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">Elegância
+                                Terrosa em Cena Natural</h5>
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">O look traz um
+                                vestido longo em tons de vermelho profundo, com estampa delicada e inspiração boho. A
+                                modelagem fluida valoriza o movimento e cria um contraste sofisticado com o cenário
+                                natural ao redor. O vestido tem mangas longas e detalhes sutis no decote, enquanto o
+                                cinto marca a cintura e adiciona estrutura à silhueta. O conjunto transmite uma
+                                elegância orgânica, equilibrando romantismo e força, em perfeita harmonia com a paleta
+                                terrosa das rochas e da vegetação.</p>
+
+                            <p style="background: rgba(0, 0, 0, 0.6); padding: 10px; border-radius: 8px;">
+                                Autor: Other viewnews <br>
+                                Licença: Creative Commons Attribution-Share Alike 3.0<br>
+                                <a
+                                    href="https://commons.wikimedia.org/wiki/File:Bruna_Marquezine_para_Dior_(cropped).jpg">Link
+                                    para a foto</a> <br>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+        </section>
+
+
+
+        <!-- PRIMEIRO BLOCO DE FOTOS -->
+        <section class="container my-4">
+
+            <div class="col-12 col-lg-12" style="margin-top: 10px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Rituais de Beleza das Famosas</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <iframe width="560" height="650"
+                    src="https://www.youtube.com/embed/OoMCus1txSQ?autoplay=1&mute=1&loop=1&playlist=OoMCus1txSQ"
+                    title="YouTube video player" frameborder="0"
+                    allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="col-12 col-lg-12" style="margin-top: 50px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Você também pode gostar</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-group mt-4">
+
+
+                <div class="card" style="margin-right: 10px;">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/72cjEATQ4NA" title="YouTube video player"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Segredos de Beleza | Vogue Brasil</h5>
+                        <p class="card-text">
+                            Clara Moneke ensina como fazer o baby hair e selar as tranças.
+                        </p>
+                    </div>
+                    <div class="card-footer card-body custom-color" style="color: white; text-align: center;">
+                        <a href="https://www.youtube.com/embed/72cjEATQ4NA"
+                            style="color: white; text-decoration: none;">
+                            <small>Assistir</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-right: 10px;">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/_6nyl1T-3qU" title="YouTube video player"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Segredos de Beleza | Vogue Brasil</h5>
+                        <p class="card-text">
+
+                            Grazi Massafera ensina técnica para ondas naturais no cabelo.
+                        </p>
+                    </div>
+                    <div class="card-footer card-body custom-color" style="color: white; text-align: center;">
+                        <a href="https://www.youtube.com/embed/_6nyl1T-3qU"
+                            style="color: white; text-decoration: none;">
+                            <small>Assistir</small>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/jZgDsM-GQjM?si=xWvVtPegCmkdgz1f"
+                            title="YouTube video player" allowfullscreen>
+                        </iframe>
+
+
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Segredos de Beleza | Vogue Brasil</h5>
+                        <p class="card-text">
+                            Fátima Bernardes mostra truque de batom à prova de câmeras.
+                        </p>
+                    </div>
+                    <div class="card-footer card-body custom-color" style="color: white; text-align: center;">
+                        <a href="https://www.youtube.com/embed/jZgDsM-GQjM?si=xWvVtPegCmkdgz1f"
+                            style="color: white; text-decoration: none;">
+                            <small>Assistir</small>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- SEGUNDO BLOCO DE CARDS -->
+        <section class="container my-5" >
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" style="margin-top: 10px; text-align: center; margin-bottom: 10px;">
+
+                <div class="col-12 col-lg-12" style="margin-top: 10px; text-align: center;">
+                    <div class="card p-3 d-block mx-auto card-body custom-color">
+                        <h5 class="card-title ">Os Segredos Mais Inusitados dos Famosos</h5>
+                        <p class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px; margin-bottom: 10px;">
+                    <div class="card h-100">
+                        <img src="imagens/Suki_Waterhouse_4.png" class="card-img-top img-fluid" style="height: 67%;"
+                            alt="A imagem apresenta um retrato em close-up de uma jovem mulher com traços delicados, posicionada centralmente contra um fundo branco minimalista.">
+                        <div class="card-body custom-color">
+                            <p class="image-caption" style="color: white; text-align: left;">Autor: Xfranksun <br>
+                                Licença: Creative Commons Attribution 4.0 <br>
+                                <a href="https://commons.wikimedia.org/wiki/File:SukiWaterhouse-2.jpg">Link
+                                    para a foto</a> <br>
+
+                            </p>
+
+                            <h5 class="card-title">Suki Waterhouse</h5>
+
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Ver curiosidades
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Suki Waterhouse</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text">"Lavagem de cabelo com Coca-Cola" <br>
+                                                Suki Waterhouse contou que não gosta de como o cabelo fica depois de
+                                                lavar, pois acha que os fios ficam muito finos e sem volume. Segundo
+                                                ela, usar Coca-Cola no cabelo ajuda a deixá-lo mais encorpado e com um
+                                                aspecto bagunçadinho, como se tivesse passado por uma aventura. Apesar
+                                                de ser um método diferente, a atriz afirma que o truque funciona para
+                                                dar mais textura ao cabelo.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px; margin-bottom: 30px;">
+                    <div class="card h-100">
+                        <img src="imagens/David_Beckham_2.jpg" class="card-img-top img-fluid" style="height: 67%;"
+                            alt="A imagem é um retrato em plano médio (do peito para cima) do ex-jogador de futebol David Beckham, posando de forma elegante em um evento formal.">
+                        <div class="card-body custom-color">
+                            <p class="image-caption" style="color: white; text-align: left;">Autor: The Democratic
+                                Alliance <br>
+                                Licença: Creative Commons Attribution-Share Alike 2.0 <br>
+                                <a href="https://commons.wikimedia.org/wiki/File:David_Beckham_2009.jpg">Link
+                                    para a foto</a> <br>
+
+                            </p>
+
+                            <h5 class="card-title">David Beckham</h5>
+
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal3">
+                                Ver curiosidades
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                David Beckham</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text">"Shampoo seco para evitar manchas de suor" <br>
+                                                David Beckham também usa truques simples no dia a dia. Para evitar
+                                                manchas de suor na roupa, especialmente em dias quentes, o stylist do
+                                                jogador aplica shampoo seco na região das costas. O produto ajuda a
+                                                absorver o suor, mantendo a roupa seca e evitando situações
+                                                constrangedoras. Assim, Beckham consegue ficar com a aparência impecável
+                                                mesmo sob calor.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px; margin-bottom: 10px;">
+                    <div class="card h-100">
+                        <img src="imagens/Megan_Fox_2.jpg" class="card-img-top img-fluid" style="height: 67%;"
+                            alt="A imagem é um close-up frontal focado no rosto da atriz Megan Fox, capturada em um ambiente com iluminação dramática e tons frios.">
+                        <div class="card-body custom-color">
+                            <p class="image-caption" style="color: white; text-align: left;">Autor: Erik Drost <br>
+                                Licença: Creative Commons Attribution 2.0 <br>
+                                <a href="https://commons.wikimedia.org/wiki/File:Megan_Fox,_2022_(cropped).jpg">Link
+                                    para a foto</a> <br>
+
+                            </p>
+
+                            <h5 class="card-title">Megan Fox</h5>
+
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal4">
+                                Ver curiosidades
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Megan Fox</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text">"Vinagre de maçã no lugar do café da manhã" <br>
+                                                A atriz é considerada um padrão de beleza tanto por homens quanto por
+                                                mulheres. Um dos segredos de beleza de Megan Fox é que ela não costuma
+                                                tomar café da manhã. Em vez disso, ela bebe uma dose de vinagre de maçã,
+                                                hábito que acredita contribuir para manter sua aparência e bem-estar.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col" style="height: 600px; margin-bottom: 100px;">
+                    <div class="card h-100">
+                        <img src="imagens/Jake_Gyllenhaal_2.jpg" class="card-img-top img-fluid" style="height: 67%; "
+                            alt="A imagem é um retrato em close-up do ator Jake Gyllenhaal, capturado em um ângulo de três quartos, focando em seu rosto e parte superior do traje formal.">
+                        <div class="card-body custom-color">
+                            <p class="image-caption" style="color: white; text-align: left;">Autor: Gordon Correll <br>
+                                Licença: Creative Commons Attribution-Share Alike 2.0 <br>
+                                <a
+                                    href="https://commons.wikimedia.org/wiki/File:Jake_Gyllenhaal_(22373266462)_(cropped_2).jpg">Link
+                                    para a foto</a> <br>
+
+                            </p>
+
+
+                            <h5 class="card-title">Jake Gyllenhaal</h5>
+
+
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" style="background-color: white; color:#6E5F5D"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                                Ver curiosidades
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Jake Gyllenhaal</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text">"Menos banho, mais cuidados" <br>
+                                                Em uma entrevista, Jake Gyllenhaal afirmou que não considera o banho
+                                                algo tão indispensável. Ele acredita que reduzir a frequência dos banhos
+                                                pode ajudar na saúde da pele, já que o próprio corpo possui mecanismos
+                                                naturais de limpeza. Por outro lado, o ator deixa claro que se preocupa
+                                                com a higiene básica, mantendo boas maneiras e cuidando da respiração.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 100px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

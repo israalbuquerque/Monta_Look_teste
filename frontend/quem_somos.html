@@ -1,0 +1,265 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quem Somos | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .editorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6E5F5D;
+            border-bottom: 3px solid #6E5F5D;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+
+
+/* LOGO — mesmo padrão da página de LOGIN */
+.logo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* MOBILE — NÃO alterar o logo */
+@media (max-width: 576px) {
+    img:not(.logo) {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain !important;
+    }
+
+    .avatars img {
+        width: 120px !important;
+        height: 120px !important;
+        object-fit: cover !important;
+    }
+}
+
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+     <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg"
+     alt="Logo MontaLook"
+     class="logo rounded-circle">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <main>
+
+        <!-- BLOCO 1 — Imagem + texto -->
+        <section class="imagem1">
+            <div class="col-12 col-lg-12">
+                <div class="card p-3">
+                    <div class="col-12 col-lg-12" style="text-align: center;">
+                        <img src="imagens/young-people-having-fun.jpg"
+                            alt="Um homem de cabelos longos e uma mulher com cabelo afro posam em frente a um prédio de tijolos vermelhos. O homem aponta para algo fora de cena, enquanto a mulher segura um disco de vinil preto. Ambos vestem roupas de estilo retrô."
+                            style="height: 800px;" width="1150px">
+                    </div>
+                </div>
+            </div>
+            <br> <br>
+
+            <header class="text-center mb-5">
+                <h3 class="editorial-title">Sobre a ideia</h3>
+                <p class="lead" style="font-family: 'Playfair Display', serif;">A moda e a beleza são muito mais do que
+                    tendências passageiras;
+                    elas representam formas de expressão pessoal e cultural.
+                    Através das roupas, acessórios e cuidados estéticos, cada indivíduo comunica sua identidade,
+                    valores e até seu estado de espírito.
+                    Em um mundo cada vez mais conectado, a moda se reinventa constantemente,
+                    misturando estilos clássicos com inovações tecnológicas e influências globais.</p>
+            </header>
+
+        </section>
+
+        </section>
+
+
+
+        <!-- TERCEIRO CONTEÚDO FOTO + TEXTO -->
+        <section class="container my-5">
+            <div class="col-12 col-lg-12">
+                <div class="card p-3">
+                    <div class="col-12 col-lg-12">
+                        <img src="imagens/imagem.png"
+                            alt="Nuvem de palavras sobre moda e cultura brasileira. Termos em destaque incluem: Maquiagem, Monta Look, Moda, Acessórios, Autenticidade e Cultura Brasileira."
+                            style="height: 900px;" width="100%">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
+        <header class="text-center mb-5">
+            <h3 class="editorial-title" style="font-family: 'Playfair Display', serif; color: #6E5F5D;">Equipe
+                Montalooks</h3>
+            <section class="teams">
+
+                <div class="avatars">
+                    <img src="imagens/Image.jpg"
+                        alt="Jovem mulher de cabelos pretos e longos tirando uma selfie no espelho. Ela veste uma camiseta azul-marinho, calça preta e segura um celular roxo."
+                        style="border-radius: 50%; height: 170px; width: 170px; ">
+                    <img src="imagens/Image (2).jpg"
+                        alt="Selfie no espelho de um homem jovem com físico atlético, vestindo regata preta, calça cinza e acessórios prateados. Ele carrega uma bolsa transversal preta e está em um ambiente de vestiário."
+                        style="border-radius: 50%; height: 170px; width: 170px;">
+                    <img src="imagens/Image (1).jpg"
+                        alt="Retrato circular de uma mulher negra com cabelos escuros e cacheados, usando uma tiara de cristais e segurando um buquê de rosas vermelhas e brancas."
+                        style="border-radius: 50%; height: 170px; width: 170px;">
+                    <img src="imagens/Gemini_Generated_Image_asksgkasksgkasks.png"
+                        alt="Retrato de uma mulher jovem de cabelos longos e castanhos, vestindo uma blusa preta de gola alta e saia verde acetinada. Ela posa em um estúdio com fundos coloridos e uma estante de revistas ao fundo."
+                        style="border-radius: 50%; height: 170px; width: 170px;">
+                </div>
+            </section>
+            <br><br>
+            <p class="lead" style="font-family: 'Playfair Display', serif;">Vista-se para expressar quem você é, não
+                para agradar quem você não é.
+                A verdadeira moda começa quando a autoestima é sua melhor tendência.</p>
+        </header>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

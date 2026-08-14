@@ -1,0 +1,430 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moda Brasileira | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        body {
+            background-color: #fdfdfd;
+        
+            color: #333;
+        }
+
+        .custom-color-bg {
+            background-color: #6E5F5D !important;
+        }
+
+        .text-white {
+            color: white !important;
+        }
+
+        /* Tipografia Editorial Expandida */
+        .editorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6E5F5D;
+            border-bottom: 3px solid #6E5F5D;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .dropcap {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 85px;
+            line-height: 70px;
+            padding-top: 4px;
+            padding-right: 15px;
+            color: #6E5F5D;
+        }
+
+        .magazine-column {
+            column-count: 1;
+            column-gap: 40px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        @media (min-width: 992px) {
+            .magazine-column {
+                column-count: 2;
+            }
+        }
+
+        /* Estilização dos Cards Regionais */
+        .card-region {
+            border: none;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .card-region:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-region img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .fact-card {
+            border-left: 5px solid #6E5F5D;
+            background: #f9f6f4;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+        .btn-montalook {
+            background-color: #6E5F5D;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 15px 40px;
+            font-family: 'Playfair Display', serif;
+            transition: 0.3s;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                       <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container my-5">
+
+        <header class="text-center mb-5">
+            <h1 class="editorial-title">Moda Brasileira: Do Caos à Identidade</h1>
+            <p class="lead">Uma jornada pelas texturas, cores e histórias que vestem o nosso povo.</p>
+        </header>
+
+        <section class="mb-5">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="h3 mb-4" style="color: #6E5F5D;">A Cronologia dos Estilos Regionais</h2>
+                    <div class="magazine-column">
+                        <span class="dropcap">A</span>
+                        <p>A moda brasileira não nasceu nas passarelas, mas nas necessidades de sobrevivência e
+                            adaptação ao clima tropical. No <strong>Nordeste</strong>, o ciclo do couro no século XVIII
+                            moldou o guarda-roupa dos vaqueiros com o gibão e o chapéu de couro, peças funcionais que
+                            protegiam contra a caatinga e que hoje inspiram grifes de luxo. A influência europeia trouxe
+                            a renda, que nas mãos das mulheres rendeiras do Ceará e Alagoas, transformou-se em arte
+                            imaterial: a Renda Renascença.</p>
+                        <p>Ao descermos para o <strong>Sul</strong>, encontramos a herança dos imigrantes alemães e
+                            italianos misturada à indumentária gaúcha. A bombacha, o lenço e o poncho surgiram da vida
+                            no campo, focando na durabilidade. No <strong>Sudeste</strong>, a Belle Époque carioca
+                            tentou copiar Paris, mas o calor exigiu tecidos mais leves, dando origem à elegância
+                            despojada que define o Rio de Janeiro até hoje. Já o <strong>Norte</strong> traz a leveza
+                            das fibras da floresta, como o tucum, criando uma estética que funde a natureza bruta com a
+                            sofisticação artesanal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-center mb-4" style="color: #6E5F5D; font-family: 'Playfair Display';">Identidade Visual das
+                Regiões</h3>
+            <div class="row g-4 mb-5">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-region h-100">
+                        <img src="imagens/Fibras e Fluidez.png" class="card-img-top"
+                            alt="Modelo em uma floresta usando um vestido longo estilo túnica com blocos de cores em terracota, azul e bege. O vestido possui detalhes bordados étnicos na cintura e na vertical, e ela segura uma bolsa de palha artesanal.">
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color: #6E5F5D;">Norte: Fibras e Fluidez</h5>
+                            <p class="card-text small"><strong>Por que usam:</strong> O calor equatorial e a umidade
+                                exigem tecidos que "respirem". A origem vem da tecelagem indígena, usando fibras como o
+                                Tururi e o Buriti. Looks modernos da região valorizam a sustentabilidade e o tingimento
+                                orgânico com sementes da floresta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 ">
+                    <div class="card card-region h-100">
+                        <img src="imagens/Rendas e Resistência.png" class="card-img-top"
+                            alt="Modelo em pé em uma paisagem árida, vestindo um conjunto de couro marrom com corset e ombreiras, sobreposto por uma saia longa e blusa de renda branca floral. Ela usa chapéu de couro, botas com detalhes em renda e diversos colares artesanais.">
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color: #6E5F5D;">Nordeste: Rendas e Resistência</h5>
+                            <p class="card-text small"><strong>Por que usam:</strong> Uma mistura da proteção térmica do
+                                couro do sertão com o frescor das rendas litorâneas. A origem remete aos colonizadores
+                                portugueses (rendas) e à pecuária (couro), criando looks que aguentam o sol forte
+                                mantendo a elegância artesanal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-region h-100">
+                        <img src="imagens/O Estilo Pantaneiro.png" class="card-img-top"
+                            alt="Um casal de modelos vestindo trajes country modernos em um campo ao pôr do sol. A mulher usa camisa jeans, chapéu claro, cinturão com fivela grande e botas bordadas. O homem veste camisa azul, colete de couro preto, chapéu escuro e calça jeans.">
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color: #6E5F5D;">Centro-Oeste: O Estilo Pantaneiro</h5>
+                            <p class="card-text small"><strong>Por que usam:</strong> Marcada pela cultura agro, utiliza
+                                chapéus de abas largas para proteção solar e jeans robustos. A origem está na lida com o
+                                gado e na vida rural, fundindo-se hoje com acessórios de luxo que remetem à força da
+                                terra e do Cerrado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-region h-100">
+                        <img src="imagens/Urbano e Bossa.png" class="card-img-top"
+                            alt="Mulher negra vestindo um poncho estampado com padrões geométricos em vermelho e azul sobre um vestido marrom, cinto de couro, boina cinza e botas de montaria marrons. Ela está em uma praça com neve.">
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color: #6E5F5D;">Sudeste: Urbano e Bossa</h5>
+                            <p class="card-text small"><strong>Por que usam:</strong> Influenciada pelo ritmo das
+                                metrópoles. No Rio, o look é solar e leve (linho); em SP, é estruturado e cosmopolita. A
+                                origem vem da industrialização e do desejo de adaptar tendências globais ao clima
+                                tropical das grandes cidades.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-region h-100">
+                        <img src="imagens/Lã e Tradição Europeia.png
+                        " class="card-img-top" alt="Moda Sul">
+                        <div class="card-body">
+                            <h5 class="fw-bold" style="color: #6E5F5D;">Sul: Lã e Tradição Europeia</h5>
+                            <p class="card-text small"><strong>Por que usam:</strong> É a região onde o inverno dita a
+                                moda. Ponchos, botas de cano alto e lã batida são essenciais. A origem é a imigração
+                                europeia e a cultura dos pampas, focando no isolamento térmico e na durabilidade das
+                                peças de inverno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5 py-5" style="background-color: #f4f1ee; border-radius: 20px; padding: 30px;">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4">
+                    <img src="imagens/Turbante colorido.jpg" class="img-fluid rounded shadow mb-3"
+                        alt="Retrato em close de um homem de meia-idade com turbante volumoso e colorido em tons de vermelho, laranja e verde. Ele olha diretamente para a câmera com uma expressão serena sobre um fundo natural desfocado.">
+                    <img src="imagens/Acessórios  de  búzios.jpg" class="img-fluid rounded shadow"
+                        alt="Três mulheres com diferentes tons de pele posam juntas em um close editorial. Elas vestem roupas em tons de marrom e bege, usando acessórios marcantes feitos de materiais naturais como palha e búzios.">
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="h3" style="color: #6E5F5D;">Herança Africana: Símbolos e Resistência</h2>
+                    <p>A contribuição africana é o pilar da vivacidade da moda nacional. O uso do <strong>Turbante
+                            (Oja)</strong> não é apenas um adorno, mas um símbolo de hierarquia e espiritualidade que
+                        atravessou o Atlântico. Os <strong>Búzios</strong>, que já foram moeda, hoje adornam colares e
+                        brincos, evocando proteção e conexão com a ancestralidade.</p>
+                    <p>Os tecidos trazidos e recriados aqui, como o pano da costa, utilizam listras e padrões que narram
+                        histórias de linhagens. O volume das saias das baianas, com seus bordados em <em>Richelieu</em>,
+                        é uma fusão da moda barroca com a estética iorubá, criando um ícone visual que representa o
+                        Brasil em qualquer lugar do mundo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h2 class="h3 mb-4 text-center" style="color: #6E5F5D;">Ancestralidade Indígena: A Moda da Terra</h2>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="fact-card">
+                        <h5>1. O Poder do Vermelho e Preto</h5>
+                        <p>O urucum e o jenipapo não são apenas tintas; são a primeira camada de "roupa" do corpo
+                            indígena. O vermelho simboliza vida e guerra, enquanto o preto simboliza o cotidiano e a
+                            proteção.</p>
+                    </div>
+                    <div class="fact-card">
+                        <h5>2. Grafismos como Linguagem</h5>
+                        <p>Os padrões de espinha de peixe ou casco de jabuti são códigos que indicam clã e estado civil.
+                            Grifes brasileiras agora buscam licenciamento ético para usar esses desenhos.</p>
+                    </div>
+                    <div class="fact-card">
+                        <h5>3. Penaria e Textura</h5>
+                        <p>A arte plumária é o "Haute Couture" indígena. Penas de araras e tucanos são estruturadas em
+                            cocares que ditam o volume e a silhueta da autoridade.</p>
+                    </div>
+                    <div class="fact-card">
+                        <h5>4. Tecelagem de Fibras Brutas</h5>
+                        <p>A palha de Buriti é transformada em fios tão finos quanto seda, criando bolsas e redes que
+                            duram décadas, sendo a base da moda sustentável.</p>
+                    </div>
+                    <div class="fact-card">
+                        <h5>5. Cosmopolitismo Indígena</h5>
+                        <p>Hoje, designers indígenas como os do povo Pataxó misturam jeans com pintura corporal,
+                            provando que a tradição é viva e se adapta aos novos tempos.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imagens/Ancestralidade Indígena.jpg" class="img-fluid rounded shadow"
+                        style="height: 100%; object-fit: cover;"
+                        alt="Três modelos negros vestindo trajes de alta costura com influências ancestrais e étnicas. Ao centro, uma mulher sentada com um imponente cocar de penas vermelhas e vestido bordado. Nas laterais, dois homens com vestimentas coordenadas em tons de vermelho, preto e azul, todos com adereços de cabeça elaborados.">
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+
+    </main>
+
+    </main>
+
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function gerarSugestao() {
+            const tema = document.getElementById('tema').value;
+            const ocasiao = document.getElementById('ocasiao').value;
+            const paleta = document.getElementById('paleta').value;
+            const resultado = document.getElementById('resultadoSugestao');
+
+            let titulo = "";
+            let texto = "";
+            let dica = "";
+
+            if (tema === 'regional') {
+                titulo = "Estética Colonial Contemporânea";
+                texto = `Sugerimos uma saia midi de renda renascença na cor ${paleta === 'vibrantes' ? 'terracota' : 'off-white'}, combinada com um cinto largo de couro legítimo e uma camisa de linho.`;
+                dica = "Dica: Use acessórios em prata envelhecida para completar o ar histórico.";
+            } else if (tema === 'afro') {
+                titulo = "Herança Africana Urbana";
+                texto = `Aposte em uma pantacourt de estampa geométrica ${paleta === 'terrosos' ? 'em tons de ocre' : 'vibrante'}, turbante de amarração lateral e acessórios com búzios ou madeira.`;
+                dica = "Dica: Esta combinação transmite poder e presença em qualquer ambiente.";
+            } else {
+                titulo = "Ancestralidade Indígena Chic";
+                texto = `Use um vestido envelope com grafismos pretos sobre fundo ${paleta === 'neutros' ? 'cru' : 'urucum (vermelho)'}. Nos pés, sandálias de fibra natural de buriti.`;
+                dica = "Dica: O foco aqui é a sustentabilidade e a conexão com a terra.";
+            }
+
+            document.getElementById('resTitulo').innerText = titulo;
+            document.getElementById('resTexto').innerText = texto;
+            document.getElementById('resDica').innerText = dica;
+            resultado.style.display = 'block';
+            resultado.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

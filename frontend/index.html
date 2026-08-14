@@ -1,0 +1,720 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Início | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        /* Remove margens fixas quebradas */
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        /* Padrão: celular */
+        .carousel-wrapper {
+            margin: 0 20px;
+
+        }
+
+        /* Para telas maiores (PCs) */
+        @media (min-width: 992px) {
+            .carousel-wrapper {
+                margin: 0 100px;
+            }
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999 !important;
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 10000 !important;
+        }
+
+        @media (max-width: 576px) {
+            .img-mobile-reduzida {
+                height: 65% !important;
+                /* diminui a altura */
+                width: 95% !important;
+                /* deixa ocupar todo o container */
+                object-fit: cover !important;
+                margin-top: 10px;
+
+            }
+
+            .card-botao {
+                margin-top: 10px !important;
+            }
+        }
+
+        .image-caption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            border-left: 3px solid var(--cor-base);
+            padding-left: 10px;
+        }
+
+
+        .secao {
+            margin: 12px 0;
+        }
+
+        @media (max-width: 768px) {
+            .secao {
+                margin: 8px 0;
+            }
+        }
+
+        .card-conteudo {
+            gap: 8px;
+            /* controla o espaço ENTRE título, imagem e botão */
+        }
+
+        .card-conteudo img {
+            margin-bottom: 5px;
+        }
+
+        .card-botao {
+            margin-top: 5px;
+        }
+
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            border-color: black;
+            border: 20px
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <main>
+
+
+        <!-- carrossel--------- -->
+
+        <div id="carouselExampleFade" class="carousel slide carousel-fade carousel-wrapper" style="padding-top: 20px;">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div style="aspect-ratio: 16/9; width: 100%; overflow: hidden;">
+                        <video autoplay muted loop playsinline preload="auto"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                            <source src="videos/video_moda_3.mp4" type="video/mp4" alt="O vídeo mostra uma cena de moda com estética minimalista. Em um estúdio de fundo
+                            neutro, uma modelo usa um vestido marrom de alças finas enquanto um modelo, logo atrás,
+                            veste um terno no mesmo tom. Os enquadramentos destacam o caimento e os detalhes das roupas,
+                            e a paleta terrosa transmite elegância e modernidade. O texto “Monta Look” aparece,
+                            indicando uma proposta de inspiração de estilo.">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div style="aspect-ratio: 16/9; width: 100%; overflow: hidden;">
+                        <video autoplay muted loop playsinline preload="auto"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+
+                            <source src="videos/video_maquiagem_3.mp4" type="video/mp4"
+                                alt="O vídeo apresenta um close no rosto de uma modelo, com foco em maquiagem sofisticada e acabamento impecável. A pele aparece bem iluminada, com efeito glow, realçando a textura natural e os contornos do rosto. Os olhos têm maquiagem suave, em tons neutros e brilhantes, com cílios definidos, enquanto os lábios nude têm aspecto hidratado. Um tecido claro e translúcido enquadra o rosto, criando uma sensação delicada e elegante. A iluminação é suave e uniforme, reforçando o caráter editorial e profissional do vídeo.">
+                        </video>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div style="aspect-ratio: 16/9; width: 100%; overflow: hidden;">
+                        <video autoplay muted loop playsinline preload="auto"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+
+                            <source src="videos/video_planos_3.mp4" type="video/mp4"
+                                alt="O vídeo mostra uma sequência de planos detalhados e bem enquadrados, com estética limpa e contemporânea. Os enquadramentos alternam entre planos fechados e médios, destacando formas, movimentos e texturas. A iluminação é suave, criando um visual equilibrado e elegante, com foco na composição e na harmonia visual.">
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+
+
+
+        </div>
+
+
+        <section class="container my-5">
+            <div class="row g-4" style="margin-top: 0px;">
+
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center card-conteudo">
+                    <h4
+                        style="color: white; text-align: center; background-color: #6E5F5D; width: 95%; padding: 5px 0;">
+                        Famosos</h4>
+                    <img src="imagens/anitta_6.jpg" class="img-mobile-reduzida"
+                        style="height: 500px; width: 95%; object-fit: cover;" alt="Anitta">
+
+                    <div class="d-flex align-items-center justify-content-center" style="height: 60px; width: 95%;">
+                        <p class="image-caption text-center m-0" style="font-size: 0.8rem;">
+                            Autor: Agência Brasília / Licença: CC /
+                            <a href="https://commons.wikimedia.org/wiki/File:Anitta_festa_de_59%C2%BA_de_Bras%C3%ADlia.jpg"
+                                style="color: #6E5F5D; text-decoration: underline;">Link</a>
+                        </p>
+                    </div>
+
+                    <button class="card-botao"
+                        style="border-radius: 10px; height: 50px; width: 200px; color: white; background-color: #6E5F5D; box-shadow: inset 0 0 0 2px white; border: none;">
+                        <a href='/celebridades' style='color: white; display: block; width: 100%; height: 100%; line-height: 45px; text-decoration: none;'>Saiba
+                            Mais</a>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center card-conteudo">
+                    <h4
+                        style="color: white; text-align: center; background-color: #6E5F5D; width: 95%; padding: 5px 0;">
+                        Maquiagem</h4>
+                    <img src="imagens/noite_2.png" class="img-mobile-reduzida"
+                        style="height: 500px; width: 95%; object-fit: cover;" alt="Maquiagem">
+
+                    <div style="height: 60px;"></div>
+
+                    <button class="card-botao"
+                        style="border-radius: 10px; height: 50px; width: 200px; color: white; background-color: #6E5F5D; box-shadow: inset 0 0 0 2px white; border: none;">
+                        <a href='/maquiagem' style='color: white; display: block; width: 100%; height: 100%; line-height: 45px; text-decoration: none;'>Saiba
+                            Mais</a>
+                    </button>
+                </div>
+
+                <div class="col-12 col-md-4 d-flex flex-column align-items-center card-conteudo">
+                    <h4
+                        style="color: white; text-align: center; background-color: #6E5F5D; width: 95%; padding: 5px 0;">
+                        Tendências de Cores</h4>
+                    <img src="imagens/moda_cores.jpg" class="img-mobile-reduzida"
+                        style="height: 500px; width: 95%; object-fit: cover;" alt="Tendências">
+
+                    <div style="height: 60px;"></div>
+
+                    <button class="card-botao"
+                        style="border-radius: 10px; height: 50px; width: 200px; color: white; background-color: #6E5F5D; box-shadow: inset 0 0 0 2px white; border: none;">
+                        <a href='/cores1' style='color: white; display: block; width: 100%; height: 100%; line-height: 45px; text-decoration: none;'>Saiba
+                            Mais</a>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SEGUNDO BLOCO DE CARDS -->
+        <section class="container my-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" style="margin-top: 10px;">
+
+                <a href='/looks' style='text-decoration: none;'>
+
+                    <div class="card h-100">
+                        <img src="imagens/pessoas-sorridentes-de-tiro-completo-carregando-sacolas.jpg"
+                            alt="A imagem mostra duas pessoas caminhando em frente a uma vitrine de roupas, sorrindo e conversando. Elas vestem looks casuais em tons terrosos, com suéteres confortáveis, calças jeans e tênis. Cada uma carrega sacolas de compras, sugerindo um momento descontraído de compras na cidade. O clima é leve, urbano e espontâneo."
+                            class="card-img-top img-fluid" style="height: 70%;">
+                        <div class="card-body custom-color">
+                            <h5 class="card-title">Tendências de Moda</h5>
+                            <p class="card-text">Da passarela ao seu guarda-roupa: veja as tendências do momento.</p>
+                        </div>
+                    </div>
+
+                </a>
+
+
+                <a href='/brecho1' style='text-decoration: none;'>
+                    <div class="col">
+                        <div class="card h-100 ">
+                            <div class="card-body custom-color">
+                                <h5 class="card-title">Brechó</h5>
+                                <p class="card-text">Peças únicas, cheias de estilo e com história.</p>
+                            </div>
+                            <img src="imagens/exibicao-de-corrente-de-ouro-brilhante-e-elegante.jpg"
+                                class="card-img-top img-fluid" style="height: 70%;"
+                                alt="A imagem apresenta uma composição minimalista de joias em um estúdio. Colares e anéis dourados estão dispostos sobre blocos geométricos brancos de diferentes alturas. A iluminação suave cria sombras elegantes, destacando o brilho do metal. O conjunto transmite uma estética clean, sofisticada e contemporânea, com foco no design das peças.">
+                        </div>
+                    </div>
+                </a>
+
+                <a href='/corpos' style='text-decoration: none;'>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="imagens/corpos_diversos_4.jpg" class="card-img-top img-fluid" style="height: 70%;"
+                                alt="A imagem mostra quatro mulheres lado a lado, em estúdio, usando lingerie em tons neutros. Elas sorriem e posam de forma confiante, destacando diversidade de corpos e tons de pele em uma estética natural e acolhedora.">
+                            <div class="card-body custom-color">
+                                <h5 class="card-title">Diversidade de Corpos</h5>
+                                <p class="card-text">Diversidade de corpos: porque não existe um padrão único.</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <a href='/idades' style='text-decoration: none;'>
+                    <div class="col">
+                        <div class="card h-100 ">
+                            <div class="card-body custom-color">
+                                <h5 class="card-title">Estilo Sem Idade</h5>
+                                <p class="card-text">Seu estilo acompanha quem você é, em qualquer fase da vida.</p>
+                            </div>
+                            <img src="imagens/casal-idoso.jpg" class="card-img-top img-fluid" style="height: 70%;"
+                                alt="A imagem mostra um casal de idosos encostados costas com costas, com os olhos fechados, transmitindo calma e conexão. Ambos vestem roupas claras, e o fundo amarelo vibrante cria contraste com os cabelos grisalhos. A cena passa uma sensação de afeto, tranquilidade e cumplicidade.">
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Conteudo -->
+        <section class="container my-5">
+            <div class="row align-items-center g-4">
+
+
+
+                <div class="col-12 col-lg-12 ">
+                    <div class="card p-3 text-center ">
+                        <h5 class="card-title card-body custom-color">Conteúdos explorando a moda.</h5>
+                        <p class="card-text">
+                            A moda vai muito além das roupas — ela é expressão, atitude e descoberta. Aqui, você
+                            encontra conteúdos pensados para inspirar seu estilo, acompanhar tendências e explorar novas
+                            possibilidades dentro do seu próprio guarda-roupa.
+
+                            Nossa proposta é tornar a moda mais acessível, criativa e divertida, oferecendo dicas,
+                            referências e insights que ajudam você a se vestir com personalidade e confiança todos os
+                            dias.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BLOCO 1 — Imagem + texto -->
+        <section class="container my-5">
+            <!-- BLOCO 1 — Imagem + texto -->
+            <section class="container my-5">
+                <div class="row g-4 align-items-start">
+
+                    <div class="col-12 col-lg-6">
+                        <img src="imagens/arara.jpg" class="img-fluid rounded shadow"
+                            style="height: 500px; width:100%; object-fit:cover;"
+                            alt="A imagem mostra o interior de uma loja de roupas com estilo moderno e aconchegante. As peças estão organizadas em um cabideiro branco, com camisetas e casacos em tons neutros e terrosos. Ao fundo, há uma parede de tijolos brancos, prateleiras de madeira com acessórios e plantas, criando um ambiente urbano, minimalista e bem iluminado.">
+                    </div>
+
+                    <div class="col-12 col-lg-6 offset-desktop">
+                        <div class="card p-3 ">
+                            <h5 class="card-title text-center card-body custom-color">Sobre Nós</h5>
+                            <p class="card-text ">
+                                Bem-vindos à sua nova curadoria de estilo.
+
+                                Somos seu novo ponto de encontro digital para tudo o que envolve o universo da moda.
+                                Mais do que tendências passageiras, proporcionamos uma experiência única que inspira
+                                você a explorar, experimentar e, acima de tudo, amar seu estilo pessoal.
+
+                                Aqui, acreditamos que a moda é uma linguagem poderosa. Por isso, celebramos a
+                                diversidade em todas as suas formas, abraçamos a rica herança da cultura fashion e
+                                valorizamos a individualidade de cada trajetória. Nossa missão é conectar você com o que
+                                há de mais atual, sem nunca perder de vista a sua essência.
+
+                                Chegou a hora de ter um look que fale sobre você. Transforme sua forma de vestir,
+                                manifeste sua identidade e descubra que a melhor tendência é ser você mesma.
+
+                                Além das passarelas, construímos aqui uma comunidade onde a troca de experiências
+                                fortalece o seu olhar sobre o mundo. Acreditamos que o consumo consciente e a
+                                sofisticação caminham juntos, transformando suas escolhas em um legado de autenticidade.
+                                Queremos que cada conteúdo seja um passo em direção à sua versão mais confiante, livre
+                                de rótulos e amarras. Explore nossas editorias, conecte-se com novas ideias e sinta-se
+                                em casa para redefinir o significado de estilo. Afinal, a moda ganha vida de verdade nos
+                                detalhes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+
+
+
+
+
+
+
+
+
+        </section>
+
+        <section class="container my-5">
+            <div class="row align-items-center g-4" style="margin-top: 0px;">
+
+                <section class="container my-5">
+
+                    <div class="row align-items-center g-4" style="margin-top: 0px;">
+
+
+
+                        <div class="col-12 col-lg-12">
+                            <div class="card p-3 d-block mx-auto card-body custom-color">
+                                <h5 class="card-title text-center">Já conhece a nossa IA?</h5>
+
+                            </div>
+                        </div>
+                        <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+
+                        </div>
+
+                        <div class="col-12 col-lg-12">
+                            <div class="card p-3">
+                                <div class="col-12 col-lg-12">
+                                    <video autoplay muted loop playsinline preload="auto"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+
+                                        <source src="videos/Projeto de Vídeo 1.mp4" type="video/mp4"
+                                            alt="O vídeo mostra uma gravação de tela de um site chamado “MontaLook”, na seção Consultoria MontaLook. A página apresenta um formulário interativo, com perguntas sobre estilo, ocasião e o que a pessoa deseja transmitir, usando botões e opções selecionáveis. O layout é limpo e profissional, com fundo claro, tipografia elegante e navegação simples. O vídeo destaca a experiência de uso da consultoria online para personalização de looks.">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+                        <div class="col-12 col-lg-12" style="margin-top: 10px;">
+                            <div class="card p-3">
+                                <h5 class="card-title text-center card-body custom-color">Cansado de olhar para o
+                                    guarda-roupa e não saber o que vestir?</h5>
+                                <p class="card-text">
+                                    É só preencher nosso Formulário de Estilo detalhado e nós te entregamos um
+                                    verdadeiro “mapa” para criar looks incríveis, com recomendações de combinações sob
+                                    medida para você. Além disso, mantemos você por dentro das tendências e novidades
+                                    com artigos, fotos e vídeos inspiradores.
+
+                                    O Monta Look é o lugar onde moda, cultura e personalização se encontram! ✨
+                                    Pronta(o) para transformar seu guarda-roupa em uma verdadeira declaração de quem
+                                    você é?
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-12 col-lg-12" style="margin-top: 0px; text-align: center;">
+                    <div class="card p-3 d-block mx-auto card-body custom-color">
+                        <h5 class="card-title ">Planos da MontaLook</h5>
+                        <p class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Valores -->
+                <section class="container my-3 ">
+                    <div class="row g-12" style="margin-top: 10px;">
+
+                        <div class="col-12 col-md-4" style=" margin-bottom: 10px; ">
+                            <div class="card h-100 card-body">
+
+                                <img src="imagens/cabide (2).png" class="card-img-top img-fluid mx-auto d-block"
+                                    style="height: 30%; width: 30%; border-radius: 30%;"
+                                    alt="A imagem mostra um cabide de roupas estilizado, em tom laranja, com gancho e barra em cinza, sobre um fundo preto. O design é simples, moderno e minimalista.">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center " style="margin-bottom: 100px;">Plano
+                                        Essencial
+                                    </h5>
+
+                                    <p class="card-text text-center" style="margin-bottom: 50px;">Para quem quer começar
+                                        a explorar seu estilo.
+                                    </p>
+
+                                    <p class="card-text text-center"> Looks em alta semanalmente <br><br>
+
+
+
+                                        Cancelamento a qualquer momento <br><br>
+
+
+
+                                        Armazenamento de looks por 15 dias</p>
+                                </div>
+
+                                <button class="d-block mx-auto card-body custom-color"
+                                    style="width: 200px; height: 70px; border-radius: 100px;"><a href='/planos' style='color: white;'> Saiba Mais</a></button>
+
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4" style=" margin-bottom: 10px;">
+                            <div class="card h-100 card-body ">
+
+                                <img src="imagens/sacola-de-compras.png" class="card-img-top img-fluid mx-auto d-block"
+                                    style="height: 30%; width: 30%; border-radius: 30%;"
+                                    alt="A imagem mostra uma sacola de compras estilizada, em tom amarelo, com alças marrons, sobre um fundo preto. O ícone tem design simples, moderno e minimalista.">
+                                <div class="card-body">
+
+                                    <h5 class="card-title text-center" style="margin-bottom: 100px;">Plano
+                                        Estilo Plus
+                                    </h5>
+
+                                    <p class="card-text text-center" style="margin-bottom: 50px;">Mais personalização e
+                                        combinações exclusivas.
+
+                                    </p>
+
+                                    <p class="card-text text-center"> Tudo do plano essencial
+                                        <br><br>
+
+
+
+                                        Upload de itens para sugestão personalizada
+                                        <br><br>
+
+
+
+                                        Armazenamento de looks por 30 dias
+                                    </p>
+                                </div>
+                                <button class="d-block mx-auto card-body custom-color"
+                                    style="width: 200px; height: 70px; border-radius: 100px;"><a href='/planos' style='color: white;'> Saiba Mais</a></button>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-4" style=" margin-bottom: 10px;">
+                            <div class="card h-100 card-body ">
+
+                                <img src="imagens/sueter.png" class="card-img-top img-fluid mx-auto d-block"
+                                    style="height: 30%; width: 30%; border-radius: 30%;"
+                                    alt="A imagem mostra um ícone de uma camisa de manga curta, em tom marrom, com gola tipo polo e um pequeno detalhe no centro da gola. O estilo é simples e minimalista, com formas arredondadas e fundo preto, típico de ícones usados em aplicativos ou interfaces digitais.">
+                                <div class="card-body">
+
+                                    <h5 class="card-title text-center" style="margin-bottom: 100px;"> Plano
+                                        Premium
+                                        Closet
+
+                                    </h5>
+
+                                    <p class="card-text text-center" style="margin-bottom: 50px;"> O assistente de moda
+                                        completo e personalizado.
+
+
+
+                                    </p>
+
+                                    <p class="card-text text-center"> Recomendações de novas peças e
+                                        acessórios
+
+                                        <br><br>
+
+
+
+                                        Recomendações de novas peças e
+                                        acessórios
+                                        <br><br>
+
+
+
+                                        Armazenamento de looks por 60 dias
+                                    </p>
+                                </div>
+                                <button class="d-block mx-auto card-body custom-color"
+                                    style="width: 200px; height: 70px; border-radius: 100px;">
+                                    <a href='/planos' style='color: white;'> Saiba Mais </a></button>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

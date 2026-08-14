@@ -1,0 +1,580 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unisex | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+
+    <style>
+        /* Remove margens fixas quebradas */
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        /* Padrão: celular */
+        .carousel-wrapper {
+            margin: 0 20px;
+
+        }
+
+        /* Para telas maiores (PCs) */
+        @media (min-width: 992px) {
+            .carousel-wrapper {
+                margin: 0 100px;
+            }
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999 !important;
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 10000 !important;
+        }
+
+        @media (max-width: 576px) {
+            .img-mobile-reduzida {
+                height: 65% !important;
+                /* diminui a altura */
+                width: 95% !important;
+                /* deixa ocupar todo o container */
+                object-fit: cover !important;
+                margin-top: 10px;
+
+            }
+        }
+
+
+
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+
+        h1 {
+            text-align: center;
+            text-decoration: solid;
+            color: #5f493f;
+            padding: 20px;
+            margin: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        p {
+            text-align: center;
+            text-decoration: solid;
+            padding: 20px;
+            margin: 0;
+        
+        }
+
+        h5 {
+            text-align: center;
+        }
+
+        /* Imagens 100% responsivas */
+.img-responsive-custom {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Imagens grandes de destaque */
+.img-hero {
+    width: 100%;
+    max-height: 85vh;
+    object-fit: cover;
+}
+
+/* Imagens que ficam lado a lado com mesmo tamanho */
+.img-equal {
+    width: 100%;
+    height: 500px; /* Força todas a terem a mesma altura no PC */
+    object-fit: cover; /* Corta as sobras sem distorcer a imagem */
+    display: block;
+}
+
+/* Ajuste para Tablet/Mobile para não ficarem gigantes */
+@media (max-width: 991px) {
+    .img-equal {
+        height: 350px !important; 
+    }
+}
+
+
+/* AJUSTE FINO PARA MOBILE – SEM DISTORÇÃO */
+@media (max-width: 576px) {
+
+    /* Todas as imagens de conteúdo */
+    img.img-fluid {
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+    }
+
+    /* Hero images */
+    .img-hero {
+        height: auto !important;
+        max-height: none !important;
+        object-fit: contain !important;
+    }
+
+    /* Imagens em grid que antes tinham tamanho fixo */
+    .img-equal {
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Remove alturas forçadas inline */
+    img[style*="height"] {
+        height: auto !important;
+    }
+}
+
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <h1>Moda unissex é sobre quebrar rótulos e vestir a liberdade</h1>
+    <br>
+    <br>
+    <!--Primeira Imagem-->
+    <div id="carouselExample" class="carousel slide">
+        <div class="container-fluid px-lg-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <img src="imagens/millennial-fashion-couple-white-studio.jpg"
+                alt="Duas pessoas vestidas de preto aparecem lado a lado..."
+                class="img-fluid rounded shadow"
+                style="width: 90%; height: 80vh; object-fit: cover; object-position: center;">
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--Texto 01-->
+    <br>
+    <br>
+    <br>
+    <section class="container my-5">
+        <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+            <div class="col-12 col-lg-12 ">
+                <div class="card p-3 text-center ">
+                    <h5 class="card-title card-body custom-color">A Ascensão do "Utility-Chic" e Texturas Naturais</h5>
+                    <p class="card-text">
+                        A ascensão do utility-chic marca um momento em que a moda encontra a funcionalidade sem abrir
+                        mão da estética. Peças com bolsos utilitários, cortes estruturados e inspiração no workwear
+                        ganham novas leituras sofisticadas, provando que praticidade também pode ser elegante. É um
+                        estilo que dialoga com a vida urbana contemporânea, onde conforto, versatilidade e propósito se
+                        tornam essenciais.
+
+                        Nesse cenário, as texturas naturais assumem um papel central. Tecidos como linho, algodão cru,
+                        lã e sarja reforçam a conexão com o artesanal e o sustentável, trazendo sensações táteis que
+                        enriquecem o visual. Tons terrosos, verdes e neutros complementam essa narrativa, criando uma
+                        moda mais consciente, atemporal e alinhada com o desejo atual de consumir menos, porém melhor.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <br>
+
+    <!--Imagem com texto-->
+    <section class="container my-5">
+        <div class="row align-items-center g-4">
+
+            <div class="col-12 col-lg-6">
+                <img src="imagens/african-american-woman-overalls-beret-posed-outdoor-against-wooden-background.jpg"
+                    alt="A pessoa está posando em frente a uma estrutura de madeira com ripas horizontais. Ela veste um macacão xadrez em tons de cinza, combinando com uma camisa branca de mangas amplas por baixo. Também usa um boina preta e tem tranças longas caindo para a frente. As mãos estão colocadas nos bolsos do macacão, criando uma postura descontraída e estilosa. O cenário ao fundo mistura madeira escura e uma parede de pedra cinza, dando um ar urbano e moderno à composição."
+                    class="img-fluid img-equal rounded shadow">
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card p-3">
+                    <h5 class="card-title">Macacões e Jardineiras Industriais</h5>
+                    <p class="card-text">
+
+                        Peças versáteis, confortáveis e com um toque de rebeldia ganham destaque como elementos-chave do
+                        guarda-roupa contemporâneo. Os modelos confeccionados em sarja ou jeans mais pesados aparecem
+                        com força, trazendo estrutura, durabilidade e um visual marcante. Bolsos funcionais, recortes
+                        estratégicos e caimentos amplos reforçam a proposta utilitária, ao mesmo tempo em que garantem
+                        liberdade de movimento e praticidade para o dia a dia.
+
+                        A paleta de cores passeia pelos neutros clássicos, como cáqui, verde-militar e tons terrosos,
+                        criando uma base atemporal e fácil de combinar. Para quem deseja ousar, surgem também versões em
+                        cores vibrantes, perfeitas para transformar a peça em um verdadeiro statement de estilo. O
+                        resultado é uma estética urbana e moderna, que equilibra conforto, personalidade e atitude, sem
+                        abrir mão da versatilidade.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr>
+    <br>
+
+
+
+
+
+
+    <!--Imagem com texto-->
+    <section class="container my-5">
+        <div class="row align-items-center g-4">
+
+            <div class="col-12 col-lg-6">
+    <img src="imagens/young-couple-dancing-bachata.jpg" 
+         alt="Duas pessoas vestidas de bege lado a lado" 
+         class="img-fluid img-equal rounded shadow">
+</div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card p-3">
+                    <h5 class="card-title">Deconstructed & Reconstructed</h5>
+                    <p class="card-text">
+
+                        Peças customizadas ganham protagonismo, destacando-se pelos recortes criativos, costuras
+                        aparentes e composições em patchwork que reforçam a identidade única de cada item. Essa estética
+                        valoriza o feito à mão, o reaproveitamento e a expressão individual, transformando a roupa em
+                        uma verdadeira extensão da personalidade de quem a veste.
+
+                        Jaquetas jeans com aplicações, bordados ou intervenções artísticas, calças com barras desfeitas,
+                        rasgos estratégicos e acabamentos irregulares, além de camisas construídas a partir da emenda de
+                        diferentes tecidos e texturas, serão especialmente valorizadas. O resultado é um visual
+                        autêntico e cheio de atitude, que mistura referências urbanas, vintage e contemporâneas,
+                        celebrando a criatividade e a liberdade de estilo em produções únicas e cheias de significado.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <hr>
+    <br>
+
+
+
+
+
+
+    <!--Imagem com texto-->
+    <section class="container my-5">
+        <div class="row align-items-center g-4">
+
+            <div class="col-12 col-lg-6">
+    <img src="imagens/androgynous-teen-stylish-clothes.jpg" 
+         alt="A pessoa na imagem está de costas ou parcialmente de lado" 
+         class="img-fluid img-equal rounded shadow">
+</div>
+
+            <div class="col-12 col-lg-6">
+                <div class="card p-3">
+                    <h5 class="card-title">Gender-Fluid</h5>
+                    <p class="card-text">
+
+                        A abolição das barreiras de gênero na moda se torna ainda mais forte e evidente, refletindo um
+                        movimento de liberdade, inclusão e expressão individual. As peças deixam de ser limitadas por
+                        classificações tradicionais e passam a ser exploradas de forma fluida, permitindo combinações
+                        criativas e cheias de personalidade. Saias e vestidos surgem ao lado de tênis robustos e
+                        jaquetas oversized, criando contrastes interessantes entre delicadeza e força, feminilidade e
+                        atitude urbana.
+
+                        Da mesma forma, ternos clássicos são reinterpretados quando usados com tops cropped, regatas ou
+                        peças mais ajustadas, quebrando padrões e trazendo um ar contemporâneo ao visual. Essa fluidez
+                        amplia as possibilidades de styling e reforça a ideia de que a moda é uma ferramenta de
+                        expressão livre, onde o mais importante é o conforto, a identidade e a autenticidade de quem
+                        veste.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+    <br>
+    <h1>A autenticidade é a sua força mais poderosa.🏳️‍🌈</h1>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <!--Primeira Imagem-->
+    <div class="col-12 col-lg-12">
+        <div class="container-fluid px-0">
+    <div class="row g-0">
+        <div class="col-12">
+            <div style="text-align: center;">
+                <img src="imagens/beautiful-young-tattooed-person.jpg"
+                    alt="A pessoa está em pé em um ambiente que parece ser um estúdio ou boutique..."
+                    class="img-fluid rounded shadow" 
+                    style="width: 80%; max-height: 700px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Texto 02-->
+    <section class="container my-5">
+        <div class="row align-items-center g-4" style="margin-top: 10px;">
+
+
+
+            <div class="col-12 col-lg-12 ">
+                <div class="card p-3 text-center ">
+                    <h5 class="card-title card-body custom-color">Acessorios relevantes do Brechó</h5>
+                    <p class="card-text">
+                        Pequenas, práticas e cheias de estilo, essas bolsas se consolidam como acessórios indispensáveis
+                        para quem busca unir funcionalidade e sofisticação. Com design retrô, muitas vezes inspirado em
+                        clássicos atemporais, e confeccionadas em materiais variados como couro, nylon ou tecidos
+                        diferenciados, elas conseguem aliar durabilidade, conforto e estética de forma impecável. Além
+                        de permitir carregar apenas o essencial, essas peças elevam qualquer produção, adicionando um
+                        toque de elegância e leveza ao visual.
+
+                        Extremamente versáteis, transitam com facilidade entre diferentes ocasiões — do dia a dia
+                        corrido a eventos mais sofisticados — e conseguem complementar tanto looks minimalistas quanto
+                        produções mais elaboradas. Pequenas aplicações, ferragens delicadas e acabamentos refinados
+                        tornam cada modelo único, transformando essas bolsas em verdadeiros protagonistas do
+                        guarda-roupa. O resultado é um acessório que não apenas cumpre sua função prática, mas também
+                        traduz personalidade, estilo e atenção aos detalhes, mostrando que moda e utilidade podem
+                        caminhar juntas de forma harmoniosa
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <br>
+    <br>
+
+
+
+
+
+
+    <br>
+    <!--Imagens Terciarias-->
+    <main>
+
+        <section class="container my-4">
+            <div class="row g-1">
+
+                <div class="col-12 col-md-3">
+                    <img src="imagens/spring-wardrobe-switch-high-angle.jpg" class="img-fluid rounded shadow"
+                        alt="A imagem mostra uma cadeira de palhinha com uma blusa creme, óculos verdes, uma bolsinha, uma manta azul e um cinto marrom apoiados nela. No chão, há um par de tênis verdes."
+                        style="height: 500px; width: 100%; object-fit: cover;">
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <img src="imagens/female-s-fashionable-accessories-travelling-bag.jpg"
+                        class="img-fluid rounded shadow"
+                        alt="A imagem mostra uma mala aberta cheia de coisas misturadas. Tem um biquíni listrado, um short jeans, sandálias pretas, um lenço preto, um caderno listrado, óculos de sol e um fone de ouvido grande. Tudo parece pronto para a  viagem."
+                        style="height: 500px; width: 100%;">
+                </div>
+
+
+
+                <div class="col-12 col-md-5">
+                    <img src="imagens/woman-studio-with-many-clothes.jpg" class="img-fluid rounded shadow"
+                        alt="Uma mulher observa roupas em um cabideiro, escolhendo entre peças em tons neutros, diante de um fundo claro e suave."
+                        style="height: 500px; width: 100%;">
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <br>
+
+
+
+        <!-- RODAPÉ -->
+        <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+</body>
+
+</html>

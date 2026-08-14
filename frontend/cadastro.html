@@ -1,0 +1,493 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastro | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#"></a>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container my-5">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-lg-4 offset-desktop">
+                    <div class="card p-4" style="background-color: #6E5F5D;">
+                        <h3 class="card-title"
+                            style="margin-bottom: 0px; margin-top: 100px;color: white; text-align: center; height: 80px;">
+                            Monta Look
+                        </h3>
+                        <h4 class="card-title"
+                            style="margin-bottom: 10px; color: white; text-align: center; height: 150px;">Bem Vindo
+                        </h4>
+                        <p style="color: white; text-align: center; margin-bottom: 50px; height: 125px;">Acesse sua
+                            conta para obter informações completas...</p>
+                        <div class="d-flex gap-3 justify-content-center">
+                            <a class='w-100 d-flex justify-content-center' href='/login' style='text-decoration: none;'>
+                                <button type="button" class="btn btn-primary w-50 py-3 "
+                                    style="background-color:#6E5F5D; color: white; border-color: white; align-items: center; margin-bottom: 100px;">
+                                    Entrar
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-7 offset-desktop">
+                    <div class="card p-4">
+                        <h5 class="card-title" style="margin-bottom: 60px;">Cadastro</h5>
+                        <form id="cadastroCliente">
+    <div class="mb-3">
+        <label for="nome">Nome Completo</label>
+        <input type="text" class="form-control" id="nome" required>
+    </div>
+
+    <div class="mb-3">
+    <label for="cpf" class="form-label">CPF</label>
+    <input type="text" class="form-control" id="cpf" required maxlength="11" minlength="11" placeholder="Somente números">
+</div>
+
+    <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Senha</label>
+        <input type="password" class="form-control" id="senha" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label"> Repita sua Senha</label>
+        <input type="password" class="form-control" id="confirmarSenha" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="">Planos:</label>
+        <select name="planos" id="planos" required>
+            <option value="" hidden>Escolha uma opção</option>
+            <option value="Plano1-Plano Essencial">Plano1-Plano Essencial</option>
+            <option value="Plano2-Plano Estilo Plus">Plano2-Plano Estilo Plus</option>
+            <option value="Plano3-Plano Premium Closet">Plano3-Plano Premium Closet</option>
+        </select>
+
+        <label for="" style="margin-bottom: 80px;">Pagamento:</label>
+        <select name="pagamentos" id="pagamentos" required>
+    <option value="" selected disabled>Escolha uma opção</option>
+    <option value="Cartão Crédito">Cartão Crédito</option>
+    <option value="Cartão Débito">Cartão Débito</option>
+    <option value="Pix">Pix</option>
+</select>
+    </div>
+
+    <!-- ===================================================== -->
+
+<!-- MODAL PAGAMENTO PIX -->
+
+<!-- ===================================================== -->
+
+<div class="modal fade" id="modalPix" tabindex="-1" aria-hidden="true">
+
+<div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+
+        <div class="modal-header"
+            style="background-color: #6E5F5D; color: white;">
+
+            <h5 class="modal-title">
+                Pagamento via PIX
+            </h5>
+
+            <button type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal">
+            </button>
+
+        </div>
+
+        <div class="modal-body text-center">
+
+            <h5>Escaneie o QR Code</h5>
+
+            <!--
+                COLOQUE AQUI A IMAGEM DO SEU QR CODE
+
+                Exemplo:
+                imagens/qrcode-pix.png
+            -->
+
+            <img
+                src="imagens/qrcode-pix.png"
+                alt="QR Code PIX"
+                style="width: 220px; height: 220px;"
+                class="img-fluid mb-3">
+
+            <p>
+                Ou copie a chave PIX:
+            </p>
+
+            <div class="input-group mb-3">
+
+                <input
+                    type="text"
+                    id="chavePix"
+                    class="form-control"
+                    value="SUA-CHAVE-PIX-AQUI"
+                    readonly>
+
+                <button
+                    type="button"
+                    class="btn"
+                    style="background-color:#6E5F5D; color:white;"
+                    id="btnCopiarPix">
+
+                    Copiar
+
+                </button>
+
+            </div>
+
+            <div id="mensagemPix"
+                class="text-success">
+            </div>
+
+            <hr>
+
+            <p class="text-muted">
+                Após realizar o pagamento, aguarde a confirmação.
+            </p>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn"
+                style="background-color:#6E5F5D; color:white;"
+                data-bs-dismiss="modal">
+
+                Fechar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+
+<!-- MODAL PAGAMENTO CARTÃO -->
+
+<!-- ===================================================== -->
+
+<div class="modal fade" id="modalCartao" tabindex="-1" aria-hidden="true">
+
+<div class="modal-dialog modal-dialog-centered">
+
+    <div class="modal-content">
+
+        <div class="modal-header"
+            style="background-color: #6E5F5D; color: white;">
+
+            <h5 class="modal-title">
+                Pagamento com Cartão
+            </h5>
+
+            <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal">
+            </button>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Tipo de cartão
+                </label>
+
+                <select
+                    id="tipoCartao"
+                    class="form-select"
+                    required>
+
+                    <option value="">
+                        Escolha
+                    </option>
+
+                    <option value="credito">
+                        Cartão de Crédito
+                    </option>
+
+                    <option value="debito">
+                        Cartão de Débito
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Nome no cartão
+                </label>
+
+                <input
+                    type="text"
+                    id="nomeCartao"
+                    class="form-control"
+                    placeholder="Nome impresso no cartão">
+
+            </div>
+
+
+            <div class="mb-3">
+
+                <label class="form-label">
+                    Número do cartão
+                </label>
+
+                <input
+                    type="text"
+                    id="numeroCartao"
+                    class="form-control"
+                    placeholder="0000 0000 0000 0000"
+                    maxlength="19">
+
+            </div>
+
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Validade
+                    </label>
+
+                    <input
+                        type="text"
+                        id="validadeCartao"
+                        class="form-control"
+                        placeholder="MM/AA"
+                        maxlength="5">
+
+                </div>
+
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+                        CVV
+                    </label>
+
+                    <input
+                        type="password"
+                        id="cvvCartao"
+                        class="form-control"
+                        placeholder="CVV"
+                        maxlength="4">
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="mensagemCartao"
+                class="text-danger text-center">
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal">
+
+                Cancelar
+
+            </button>
+
+            <button
+                type="button"
+                id="btnFinalizarCartao"
+                class="btn"
+                style="background-color:#6E5F5D; color:white;">
+
+                Continuar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-primary w-50" style="background-color: #6E5F5D; color: white; border-color: black;">Enviar</button>
+        <button type="reset" class="btn btn-secondary w-50" style="background-color: #6E5F5D; color: white; border-color: black;">Limpar</button>
+    </div>
+</form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="confirmacaoModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #6E5F5D; color: white;">
+                    <h5 class="modal-title">Confirmar Dados</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="corpoModal">
+                    </div>
+                <div class="modal-footer" id="rodapeModal">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" id="btnEnviarFinal" class="btn text-white" style="background-color: #6E5F5D;">Confirmar e Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="cadastro.js"></script>
+
+</body>
+</html>

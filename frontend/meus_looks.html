@@ -1,0 +1,1072 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Meus Looks | MontaLook</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="imagens/logo_3.1.jpeg">
+
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .titulo-pagina {
+            color: #6E5F5D;
+            font-weight: bold;
+        }
+
+        .card-look {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            height: 100%;
+        }
+
+        .card-look img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .btn-montalook {
+            background-color: #6E5F5D;
+            color: white;
+            border: none;
+        }
+
+        .btn-montalook:hover {
+            background-color: #574b49;
+            color: white;
+        }
+
+        .btn-remover {
+            background-color: #6E5F5D;
+            color: white;
+            border: none;
+        }
+
+        .btn-remover:hover {
+            background-color: #4f4442;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- LOGO -->
+<!-- ===================================================== -->
+
+<div class="d-flex justify-content-center my-3">
+
+    <img
+        src="imagens/logo_3.1.jpeg"
+        alt="Logo MontaLook"
+        class="rounded-circle"
+        style="width: 150px; height: 150px;">
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- MENU -->
+<!-- ===================================================== -->
+
+<nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: #6E5F5D;">
+
+    <div class="container">
+
+        <a class="navbar-brand text-white" href="index.html">
+            MontaLook
+        </a>
+
+
+        <!-- BOTÃO MOBILE -->
+
+        <button
+            class="navbar-toggler ms-auto"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Abrir menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+
+            <ul
+                class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link text-white"
+                        href="index.html">
+
+                        Início
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link text-white"
+                        href="/quem_somos">
+
+                        Quem somos
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link text-white"
+                        href="/planos">
+
+                        Planos
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTEÚDOS -->
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle text-white"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown">
+
+                        Conteúdos
+
+                    </a>
+
+
+                    <ul
+                        class="dropdown-menu dropdown-menu-dark text-center"
+                        style="background-color: #6E5F5D;">
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/celebridades">
+
+                                Celebridades
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/maquiagem">
+
+                                Maquiagem
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/cores1">
+
+                                Cores
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/looks">
+
+                                Looks em alta
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/corpos">
+
+                                Corpos diversos
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/unisex">
+
+                                Unissex
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/idades">
+
+                                Idades
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/brecho1">
+
+                                Brechó
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/modabrasileira1">
+
+                                Moda brasileira
+
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="/formulario">
+
+                                Formulário Inteligente
+
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                </li>
+
+
+            </ul>
+
+
+            <!-- ================================================= -->
+            <!-- ÍCONES -->
+            <!-- ================================================= -->
+
+            <ul
+                class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="/login">
+
+                        <img
+                            src="imagens/icons8-usuário-de-gênero-neutro-50.png"
+                            style="width: 30px; height: 30px;"
+                            alt="Login">
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="/cadastro">
+
+                        <img
+                            src="imagens/icons8-cadastro-50.png"
+                            style="width: 30px; height: 30px;"
+                            alt="Cadastro">
+
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ===================================================== -->
+<!-- CONTEÚDO -->
+<!-- ===================================================== -->
+
+<main class="container my-5">
+
+
+    <!-- TÍTULO -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="titulo-pagina">
+            Meus Looks Salvos
+        </h1>
+
+        <p class="text-muted">
+
+            Aqui estão os looks que você salvou
+            no seu guarda-roupa virtual.
+
+        </p>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MENSAGEM -->
+    <!-- ================================================= -->
+
+    <div
+        id="mensagem"
+        class="text-center mb-4">
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LOADING -->
+    <!-- ================================================= -->
+
+    <div
+        id="carregando"
+        class="text-center">
+
+        <div
+            class="spinner-border"
+            style="color: #6E5F5D;"
+            role="status">
+
+        </div>
+
+        <p class="mt-2">
+            Carregando seus looks...
+        </p>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- CONTAINER DOS LOOKS -->
+    <!-- ================================================= -->
+
+    <div
+        id="containerLooks"
+        class="row g-4">
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- BOTÃO VOLTAR -->
+    <!-- ================================================= -->
+
+    <div class="text-center mt-5">
+
+        <a
+            href="formulario.html"
+            class="btn btn-montalook px-4">
+
+            Voltar para o Formulário Inteligente
+
+        </a>
+
+    </div>
+
+
+</main>
+
+
+<!-- ===================================================== -->
+<!-- RODAPÉ -->
+<!-- ===================================================== -->
+
+<footer
+    style="background-color: #6E5F5D; color: white;"
+    class="text-center p-4 mt-5">
+
+
+    <section class="container my-4">
+
+        <div class="row g-1">
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    MontaLook
+                </h5>
+
+                <p class="small">
+
+                    A moda que respeita sua história
+                    e valoriza suas raízes.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Fale Conosco
+                </h5>
+
+                <p class="small">
+                    montalooks@gmail.com
+                </p>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <h5>
+                    Siga a Identidade
+                </h5>
+
+                <p class="small">
+
+                    <a
+                        href="https://www.instagram.com/monta_look/">
+
+                        Instagram
+
+                    </a>
+
+                    /
+
+                    <a
+                        href="https://www.tiktok.com/@monta__look">
+
+                        TikTok
+
+                    </a>
+
+                    /
+
+                    <a
+                        href="https://x.com/Monta_Look">
+
+                        X
+
+                    </a>
+
+                    <br>
+
+                    @monta_look / @monta__look
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</footer>
+
+
+<!-- ===================================================== -->
+<!-- BOOTSTRAP -->
+<!-- ===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT DOS LOOKS -->
+<!-- ===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    carregarLooks
+);
+
+
+/* ===================================================== */
+/* CARREGAR LOOKS */
+/* ===================================================== */
+
+async function carregarLooks() {
+
+    const container =
+        document.getElementById("containerLooks");
+
+    const mensagem =
+        document.getElementById("mensagem");
+
+    const carregando =
+        document.getElementById("carregando");
+
+
+    /* ================================================= */
+    /* PEGA O USUÁRIO LOGADO */
+    /* ================================================= */
+
+    const idUsuario =
+        localStorage.getItem("id_usuario");
+
+
+    console.log(
+        "ID do usuário logado:",
+        idUsuario
+    );
+
+
+    /* ================================================= */
+    /* VERIFICA LOGIN */
+    /* ================================================= */
+
+    if (!idUsuario) {
+
+        carregando.style.display = "none";
+
+        mensagem.innerHTML = `
+
+            <div class="alert alert-warning">
+
+                Você precisa estar logado
+                para visualizar seus looks.
+
+            </div>
+
+            <a
+                href="login.html"
+                class="btn btn-montalook">
+
+                Fazer login
+
+            </a>
+
+        `;
+
+        return;
+
+    }
+
+
+    try {
+
+
+        /* ================================================= */
+        /* REQUISIÇÃO AO BACKEND */
+        /* ================================================= */
+
+        const resposta = await fetch(
+
+            `http://localhost:3001/looks/historico/${idUsuario}`
+
+        );
+
+
+        console.log(
+            "Status da requisição:",
+            resposta.status
+        );
+
+
+        /* ================================================= */
+        /* TRANSFORMA RESPOSTA EM JSON */
+        /* ================================================= */
+
+        const dados =
+            await resposta.json();
+
+
+        console.log(
+            "Dados recebidos:",
+            dados
+        );
+
+
+        /* ================================================= */
+        /* REMOVE LOADING */
+        /* ================================================= */
+
+        carregando.style.display =
+            "none";
+
+
+        /* ================================================= */
+        /* VERIFICA ERRO */
+        /* ================================================= */
+
+        if (!resposta.ok) {
+
+            mensagem.innerHTML = `
+
+                <div class="alert alert-danger">
+
+                    ${dados.error ||
+                    "Erro ao carregar seus looks."}
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* ================================================= */
+        /* VERIFICA SE NÃO POSSUI LOOKS */
+        /* ================================================= */
+
+        if (!Array.isArray(dados) ||
+            dados.length === 0) {
+
+
+            mensagem.innerHTML = `
+
+                <div class="alert alert-info">
+
+                    <h5>
+                        Você ainda não possui looks salvos.
+                    </h5>
+
+                    <p class="mb-0">
+
+                        Acesse o Formulário Inteligente
+                        para gerar e salvar seus looks.
+
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* ================================================= */
+        /* LIMPA CONTAINER */
+        /* ================================================= */
+
+        container.innerHTML = "";
+
+
+        /* ================================================= */
+        /* PERCORRE OS LOOKS */
+        /* ================================================= */
+
+        dados.forEach(
+            function(look) {
+
+
+                /* ========================================= */
+                /* CRIA COLUNA */
+                /* ========================================= */
+
+                const coluna =
+                    document.createElement("div");
+
+
+                coluna.className =
+                    "col-12 col-md-6 col-lg-4";
+
+
+                /* ========================================= */
+                /* CAMINHO DA IMAGEM */
+                /* ========================================= */
+
+                const caminhoImagem =
+                    `http://localhost:3001${look.caminho_imagem}`;
+
+
+                /* ========================================= */
+                /* CRIA CARD */
+                /* ========================================= */
+
+                coluna.innerHTML = `
+
+                    <div class="card-look">
+
+
+                        <img
+                            src="${caminhoImagem}"
+                            alt="${
+                                look.descricao_imagem ||
+                                "Look salvo"
+                            }"
+                            onerror="this.src='imagens/logo_3.1.jpeg'"
+                        >
+
+
+                        <div class="p-4">
+
+
+                            <h5
+                                style="color: #6E5F5D;">
+
+                                ${
+                                    look.descricao_imagem ||
+                                    "Look salvo"
+                                }
+
+                            </h5>
+
+
+                            <hr>
+
+
+                            <p class="text-muted mb-2">
+
+                                <strong>
+                                    Salvo em:
+                                </strong>
+
+                                ${formatarData(
+                                    look.data_salvo
+                                )}
+
+                            </p>
+
+
+                            <p class="text-muted">
+
+                                <strong>
+                                    Expira em:
+                                </strong>
+
+                                ${formatarData(
+                                    look.data_expira
+                                )}
+
+                            </p>
+
+
+                            <button
+                                type="button"
+                                class="btn btn-remover w-100"
+                                onclick="removerLook(
+                                    ${look.id_look_salvo}
+                                )">
+
+                                Remover look
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+                `;
+
+
+                /* ========================================= */
+                /* ADICIONA NA PÁGINA */
+                /* ========================================= */
+
+                container.appendChild(
+                    coluna
+                );
+
+            }
+        );
+
+
+    } catch (erro) {
+
+
+        console.error(
+            "Erro ao carregar os looks:",
+            erro
+        );
+
+
+        carregando.style.display =
+            "none";
+
+
+        mensagem.innerHTML = `
+
+            <div class="alert alert-danger">
+
+                <strong>
+                    Erro ao conectar com o servidor.
+                </strong>
+
+                <br>
+
+                Verifique se o servidor Node.js
+                está funcionando.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ===================================================== */
+/* FORMATAR DATA */
+/* ===================================================== */
+
+function formatarData(data) {
+
+    if (!data) {
+
+        return "Não informado";
+
+    }
+
+
+    const dataFormatada =
+        new Date(data);
+
+
+    return dataFormatada.toLocaleDateString(
+        "pt-BR"
+    );
+
+}
+
+
+/* ===================================================== */
+/* REMOVER LOOK */
+/* ===================================================== */
+
+async function removerLook(
+    idLook
+) {
+
+
+    const idUsuario =
+        localStorage.getItem("id_usuario");
+
+
+    /* ================================================= */
+    /* VERIFICA USUÁRIO */
+    /* ================================================= */
+
+    if (!idUsuario) {
+
+        alert(
+            "Usuário não identificado."
+        );
+
+        return;
+
+    }
+
+
+    /* ================================================= */
+    /* CONFIRMAÇÃO */
+    /* ================================================= */
+
+    const confirmar =
+        confirm(
+            "Deseja realmente remover este look?"
+        );
+
+
+    if (!confirmar) {
+
+        return;
+
+    }
+
+
+    try {
+
+
+        /* ================================================= */
+        /* REQUISIÇÃO DELETE */
+        /* ================================================= */
+
+        const resposta =
+            await fetch(
+
+                `http://localhost:3001/looks/salvar/${idLook}`,
+
+                {
+
+                    method: "DELETE",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            id_usuario:
+                                idUsuario
+
+                        })
+
+                }
+
+            );
+
+
+        /* ================================================= */
+        /* RESPOSTA */
+        /* ================================================= */
+
+        const dados =
+            await resposta.json();
+
+
+        console.log(
+            "Resposta da exclusão:",
+            dados
+        );
+
+
+        /* ================================================= */
+        /* VERIFICA ERRO */
+        /* ================================================= */
+
+        if (!resposta.ok) {
+
+            alert(
+
+                dados.error ||
+                "Não foi possível remover o look."
+
+            );
+
+            return;
+
+        }
+
+
+        /* ================================================= */
+        /* SUCESSO */
+        /* ================================================= */
+
+        alert(
+            "Look removido com sucesso!"
+        );
+
+
+        /* ================================================= */
+        /* RECARREGA OS LOOKS */
+        /* ================================================= */
+
+        carregarLooks();
+
+
+    } catch (erro) {
+
+
+        console.error(
+            "Erro ao remover look:",
+            erro
+        );
+
+
+        alert(
+            "Erro ao conectar com o servidor."
+        );
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>

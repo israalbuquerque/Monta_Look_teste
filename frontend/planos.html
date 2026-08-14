@@ -1,0 +1,386 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planos | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <main>
+
+
+        <!-- Imagem Black--------- -->
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+                <div class="col-12 col-md-12">
+                    <video autoplay muted loop playsinline preload="auto"
+                        style="width: 100%; height: 100%; object-fit: cover;">
+
+                        <source src="videos/generated_video_monta_look.mp4" type="video/mp4" alt="É um vídeo curto de montagem de look. Ele mostra peças de roupa e acessórios sendo combinados de forma visual e simples, com ícones/ilustrações de moda (como cabide, sacola e camiseta) aparecendo em sequência.
+                        A estética é limpa e minimalista, com fundo neutro/escuro e cores suaves, passando a ideia de organização, escolha de roupas e compras de vestuário.
+                        O vídeo comunica o processo de selecionar e montar um outfit, de maneira rápida e didática.">
+                </div>
+
+
+
+            </div>
+        </section>
+
+
+        <!-- PRIMEIRO BLOCO DE FOTOS -->
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+                <div class="col-12 col-lg-12">
+                    <div class="card p-3">
+                        <h5 class="card-title"
+                            style="text-align: center; background-color: #6E5F5D; height: 50px; color: white; padding-top: 10px; padding-bottom: 50px;">
+                            Escolha o
+                            Plano Perfeito para o Seu Estilo
+                        </h5>
+
+
+                        <p class="card-text">
+                            Nossos planos foram criados para facilitar sua vida e transformar a forma como você se
+                            relaciona com seu guarda-roupa. Com o apoio da tecnologia, você passa a enxergar novas
+                            possibilidades, ganha mais segurança nas escolhas e evita a sensação de “não ter o que
+                            vestir”. A experiência é pensada para otimizar seu tempo, estimular sua criatividade e
+                            ajudar você a se vestir de forma mais alinhada com seu estilo, sua rotina e cada momento do
+                            dia. Assim, cada combinação deixa de ser uma dúvida e passa a ser uma escolha prática,
+                            inteligente e cheia de personalidade, refletindo quem você é e como deseja se apresentar em
+                            qualquer ocasião.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Valores -->
+        <section class="container my-3">
+            <div class="row g-4">
+
+                <!-- Plano Essencial -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center p-3">
+
+                        <img src="imagens/cabide (2).png" class="card-img-top mx-auto"
+                            style="height: 100px; width: 100px; border-radius: 50%; background-color: #6E5F5D;"
+                            alt="A imagem mostra um cabide de roupas estilizado, em tom laranja, com gancho e barra em cinza, sobre um fundo preto. O design é simples, moderno e minimalista.">
+
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Plano Essencial</h5>
+                            <h6 class="mb-3">Para quem quer começar a explorar seu estilo.</h6>
+
+                            <p class="card-text mb-4">O usuário fornece informações como ocasião, estilo e impressão que
+                                deseja passar, e a IA cria combinações completas de looks, incluindo roupas, acessórios
+                                e calçados.</p>
+
+                            <ul class="text-start mb-4" style="padding-left: 20px;">
+                                <li>Tudo do Plano Essencial</li>
+                                <li>Upload de 3 peças pessoais para sugestões personalizadas</li>
+                                <li>Combinações completas com acessórios e sapatos</li>
+                                <li>Armazenamento de looks por 15 dias, limitados a 10 looks salvos</li>
+                                <li>Histórico de looks salvos por até 1 mês</li>
+                                <li>7 dias grátis, depois cobrança automática mensal</li>
+                            </ul>
+                            <p>💰 R$ 4,99/mês</p>
+
+                            <button class="d-block mx-auto card-body custom-color"
+                                style="width: 200px; height: 70px; border-radius: 100px;"><a href='/cadastro'>Comprar Plano</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plano Estilo Plus -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center p-3">
+
+                        <img src="imagens/sacola-de-compras.png" class="card-img-top mx-auto"
+                            style="height: 100px; width: 100px; border-radius: 50%; background-color: #6E5F5D;"
+                            alt="A imagem mostra uma sacola de compras estilizada, em tom amarelo, com alças marrons, sobre um fundo preto. O ícone tem design simples, moderno e minimalista.">
+
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Plano Estilo Plus</h5>
+                            <h6 class="mb-3">Mais personalização e combinações exclusivas.</h6>
+
+                            <p class="card-text mb-4">Além das funções do Plano Essencial, o usuário pode enviar uma
+                                foto de até 3 peças-chave (como jaqueta, calça ou sapato) para que a IA monte
+                                combinações completas, incluindo acessórios e calçados.</p>
+
+                            <ul class="text-start mb-4" style="padding-left: 20px;">
+                                <li>Tudo do Plano Essencial</li>
+                                <li>Upload de 3 peças pessoais para sugestões personalizadas</li>
+                                <li>Combinações completas com acessórios e sapatos</li>
+                                <li>Armazenamento limitado a 20 looks salvos</li>
+                                <li>Histórico de looks salvos por até 1 mês</li>
+                                <li>7 dias grátis, depois cobrança automática mensal</li>
+                            </ul>
+
+                            <p>💰 R$ 9,99/mês</p>
+
+                            <button class="card-body custom-color d-block mx-auto"
+                                style="width: 200px; height: 70px; border-radius: 100px;"><a href='/cadastro'>Comprar Plano</a></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plano Premium Closet -->
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 text-center p-3">
+
+                        <img src="imagens/sueter.png" class="card-img-top mx-auto"
+                            style="height: 100px; width: 100px; border-radius: 50%; background-color:#6E5F5D;"
+                            alt="A imagem mostra um ícone de uma camisa de manga curta, em tom marrom, com gola tipo polo e um pequeno detalhe no centro da gola. O estilo é simples e minimalista, com formas arredondadas e fundo preto, típico de ícones usados em aplicativos ou interfaces digitais.">
+
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">Plano Premium Closet</h5>
+                            <h6 class="mb-3">O assistente de moda completo e personalizado.</h6>
+
+                            <p class="card-text mb-4">O usuário pode enviar sua galeria de peças e receber sugestões de
+                                looks com base no que já possui, além de recomendações de novas peças que complementem o
+                                guarda-roupa.</p>
+
+                            <ul class="text-start mb-4" style="padding-left: 20px;">
+                                <li>Upload de 10 peças pessoais para sugestões personalizadas</li>
+                                <li>Sugestões de looks com base no guarda-roupa pessoal</li>
+                                <li>Recomendações de novas peças e acessórios</li>
+                                <li>Armazenamento limitado a 30 looks salvos</li>
+                                <li>Histórico de looks salvos por até 2 meses</li>
+                                <li>7 dias grátis, depois cobrança automática mensal</li>
+                            </ul>
+                            <p>💰 R$ 19,99/mês</p>
+
+                            <button class="card-body custom-color d-block mx-auto"
+                                style="width: 200px; height: 70px; border-radius: 100px;"><a href='/cadastro'>Comprar Plano</a></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <div class="col-12 col-lg-12" style="margin-top: 100px; text-align: center;">
+            <div class="card p-3 d-block mx-auto card-body custom-color">
+                <h5 class="card-title ">Comentários</h5>
+                <p class="card-text">
+
+                </p>
+            </div>
+        </div>
+
+        <section class="container my-4 ">
+            <div class="row g-12" style="margin-top: 10px; margin-bottom: 10px;">
+
+                <div class="col-12 col-md-5" style="margin-right: 200px; margin-bottom: 10px;">
+                    <div class="card h-100 card-body custom-color text-center">
+
+                        <img src="imagens/foto_comentario.jpg" class="card-img-top img-fluid mx-auto d-block"
+                            style="height: 70%; width: 70%; border-radius: 50%;"
+                            alt="É o retrato de uma mulher sorridente, fotografada ao ar livre.
+                            Ela tem cabelos longos e ondulados, em tom castanho-avermelhado, e usa um blazer escuro sobre uma blusa clara. A expressão é amigável e confiante.
+                            O fundo desfocado com tons de verde sugere um parque ou jardim, destacando o rosto e transmitindo uma sensação natural e tranquila.">
+                        <div class="card-body">
+                            <h5 class="card-title">Ana Ribeiro</h5>
+                            <h5>28 anos</h5>
+                            <p class="card-text">Adorei as combinações sugeridas! Finalmente encontrei
+                                um site
+                                que entende meu estilo e me inspira com looks que eu nunca teria
+                                imaginado
+                                sozinha. Estou amando acompanhar vocês!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-5" style="margin-bottom: 10px;">
+                    <div class="card h-100 card-body custom-color text-center ">
+
+                        <img src="imagens/foto_comentario3.jpg" class="card-img-top img-fluid mx-auto d-block"
+                            style="height: 70%; width: 70%; border-radius: 50%;"
+                            alt="É o retrato de um homem em ambiente externo urbano.
+                            Ele tem cabelo curto e escuro, barba por fazer, e usa uma camisa verde de manga comprida. A expressão é calma e confiante, olhando diretamente para a câmera.
+                            O fundo desfocado, com estruturas metálicas, sugere uma área industrial ou ponte, destacando a pessoa em primeiro plano.">
+                        <div class="card-body">
+                            <h5 class="card-title">Lucas Martins</h5>
+                            <h5 class="card-title">32 anos</h5>
+                            <p class="card-text">Conteúdo muito bem elaborado. As recomendações me
+                                ajudaram a
+                                montar looks práticos e modernos para o dia a dia. Excelente trabalho, o
+                                site já
+                                está nos meus favoritos!</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1035 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consultoria Personalizada | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        body {
+            background-color: #fdfdfd;
+            
+            color: #333;
+        }
+
+        .custom-color-bg {
+            background-color: #6E5F5D !important;
+        }
+
+        .text-white {
+            color: white !important;
+        }
+
+        /* Estilos do Menu e Tipografia herdados */
+        .editorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6E5F5D;
+            border-bottom: 3px solid #6E5F5D;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Estilização dos Seletores Estilo "Tag/Chip" */
+        .btn-check:checked+.btn-outline-monta {
+            background-color: #6E5F5D;
+            color: white;
+            border-color: #6E5F5D;
+        }
+
+        .btn-outline-monta {
+            border: 1px solid #6E5F5D;
+            color: #6E5F5D;
+            border-radius: 20px;
+            margin: 5px;
+            transition: 0.3s;
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+
+        .btn-outline-monta:hover {
+            background-color: #f4f1ee;
+            color: #6E5F5D;
+        }
+
+        .form-section {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            margin-bottom: 25px;
+            border: 1px solid #eee;
+        }
+
+        .section-label {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #6E5F5D;
+            margin-bottom: 15px;
+        }
+
+        /* Cards de Resultado */
+        .result-col {
+            background: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            border-top: 5px solid #6E5F5D;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: #eee;
+        }
+
+        .btn-montalook {
+            background-color: #6E5F5D;
+            color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 15px 40px;
+            font-family: 'Playfair Display', serif;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-montalook:hover {
+            background-color: #4a3f3d;
+            transform: scale(1.02);
+        }
+
+        /* Estilo para os cards de planos do footer original */
+        .custom-color {
+            background-color: #6E5F5D !important;
+            color: white;
+            border: none;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="Logo montalook" class="rounded-circle"
+            style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container my-5">
+        <header class="text-center mb-5">
+            
+            <h1 class="editorial-title">Consultoria MontaLook</h1>
+            <p class="lead">Personalize sua experiência e descubra a combinação que exalta sua identidade.</p>
+        </header>
+
+        <section class="p-4 shadow-lg rounded bg-white border border-2 mb-5">
+            <form id="formLook">
+
+
+            <div class="form-section mb-4">
+                <h5 class="section-label" style="color: #6E5F5D; font-family: 'Playfair Display', serif; font-weight: bold;">Selecione sua preferência de estilo:</h5>
+                <div class="d-flex flex-wrap gap-2 mt-2">
+        <input type="radio" class="btn-check" name="genero" id="Feminino" value="Feminino" checked>
+        <label class="btn btn-outline-monta" for="Feminino">Estilo Feminino</label>
+
+        <input type="radio" class="btn-check" name="genero" id="Masculino" value="Masculino">
+        <label class="btn btn-outline-monta" for="Masculino">Estilo Masculino</label>
+    </div>
+        </div>
+
+                <div class="form-section">
+                    <h5 class="section-label">Onde você vai?</h5>
+                    <div class="d-flex flex-wrap">
+                        <input type="radio" class="btn-check" name="ocasiao" id="Cotidiano" value="Cotidiano" checked>
+                        <label class="btn btn-outline-monta" for="Cotidiano">Cotidiano</label>
+
+                        <input type="radio" class="btn-check" name="ocasiao" id="trabalho" value="Trabalho">
+                        <label class="btn btn-outline-monta" for="trabalho">Trabalho</label>
+
+                        <input type="radio" class="btn-check" name="ocasiao" id="encontro" value="Encontro">
+                        <label class="btn btn-outline-monta" for="encontro">Encontro</label>
+
+                        <input type="radio" class="btn-check" name="ocasiao" id="festa" value="Festa">
+                        <label class="btn btn-outline-monta" for="festa">Festa / Balada</label>
+
+                      
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5 class="section-label">Em qual período?</h5>
+                    <div class="d-flex flex-wrap">
+                        <input type="radio" class="btn-check" name="periodo" id="p_manha" value="Manhã" checked>
+                        <label class="btn btn-outline-monta" for="p_manha">Manhã</label>
+                        <input type="radio" class="btn-check" name="periodo" id="p_tarde" value="Tarde">
+                        <label class="btn btn-outline-monta" for="p_tarde">Tarde</label>
+                        <input type="radio" class="btn-check" name="periodo" id="p_noite" value="Noite">
+                        <label class="btn btn-outline-monta" for="p_noite">Noite</label>
+                        
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h5 class="section-label">O que deseja transmitir? </h5>
+                    <div class="d-flex flex-wrap">
+                        <input type="checkbox" class="btn-check" id="t_elegante">
+                        <label class="btn btn-outline-monta" for="t_elegante">Elegante</label>
+                        <input type="checkbox" class="btn-check" id="t_ousada">
+                        <label class="btn btn-outline-monta" for="t_ousada">Moderno</label>
+                        <input type="checkbox" class="btn-check" id="t_sexy">
+                        <label class="btn btn-outline-monta" for="t_sexy">Despojado</label>
+                        <input type="checkbox" class="btn-check" id="t_fashion">
+                        <label class="btn btn-outline-monta" for="t_fashion">clean</label>
+                        
+                    </div>
+                </div>
+
+                <button type="button" onclick="gerarSugestao()" class="btn-montalook d-block mx-auto mt-4">Descobrir
+                    Look Completo</button>
+            </form>
+        </section>
+
+        <div id="secaoResultados" style="display: none;">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-col text-center">
+                        <h4 style="font-family: 'Playfair Display'; color: #6E5F5D;">O Look</h4>
+                        <img id="res-img-look" src="imagens/1.png"
+                            alt="Mulher em pé em um ateliê, vestindo uma blusa de tricô verde esmeralda de um ombro só, calça de alfaiataria bege de cintura alta e botas pretas."
+                            class="img-placeholder">
+                        <p id="res-txt-look" class="small"></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="result-col text-center">
+                        <h4 style="font-family: 'Playfair Display'; color: #6E5F5D;">A Make</h4>
+                        <img id="res-img-make" src="imagens/1.2.png"
+                            alt="Retrato de rosto de uma mulher negra com cabelo chanel preto e liso. Ela veste um blazer branco estruturado e usa um batom rosa vibrante, com um fundo de ateliê de moda levemente desfocado."
+                            class="img-placeholder">
+                        <p id="res-txt-make" class="small"></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="result-col text-center">
+                        <h4 style="font-family: 'Playfair Display'; color: #6E5F5D;">Acessórios</h4>
+                        <img id="res-img-ace" src="imagens/1.3.png"
+                            alt="Close-up das mãos e tronco de uma mulher negra usando joias douradas: diversas correntes de ouro, anéis grandes com pedras escuras, braceletes e um relógio dourado de design geométrico. Ela veste um blazer branco sobre uma blusa preta."
+                            class="img-placeholder">
+                        <p id="res-txt-ace" class="small"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-secondary px-5 py-3" style="border-radius: 30px;"
+                    onclick="gerarSugestao()">
+                    Gerar nova opção com as mesmas escolhas
+                </button>
+            </div>
+
+            
+        </div>
+
+ <div class="text-center mt-4">
+
+<button
+    type="button"
+    id="btnSalvarLooks"
+    class="btn"
+    style="
+        background-color: #6E5F5D;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 30px;
+        margin: 5px;
+    ">
+
+    Salvar meus looks
+
+</button>
+
+
+<a
+    href="meus-looks.html"
+    class="btn"
+    style="
+        background-color: #6E5F5D;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 30px;
+        margin: 5px;
+    ">
+
+    Meus Looks Salvos
+
+</a>
+
+</div>
+
+<div id="mensagemSalvar" class="text-center mt-3"></div>
+
+    </main>
+
+<div class="modal fade" id="modalPlanoInativo" tabindex="-1" aria-labelledby="modalPlanoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header text-white" style="background-color: #6E5F5D;">
+                <h5 class="modal-title" id="modalPlanoLabel" style="font-family: 'Playfair Display', serif;">Acesso Restrito</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center p-4">
+                <p class="fs-5 text-secondary">Para gerar combinações personalizadas e testar a Consultoria MontaLook, você precisa ter uma **conta com plano ativo**.</p>
+                <p class="small text-muted">Escolha o plano ideal para você e libere seu acesso agora mesmo!</p>
+            </div>
+            <div class="modal-footer justify-content-center border-0 mb-3">
+                <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Agora não</button>
+                <a href="/planos" class="btn text-white rounded-pill px-4" style="background-color: #6E5F5D;">Conhecer Planos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+        <!-- <script>
+            function gerarSugestao() {
+                const ocasiao = document.querySelector('input[name="ocasiao"]:checked').value;
+                const periodo = document.querySelector('input[name="periodo"]:checked').value;
+
+                // Exibir resultados
+                document.getElementById('secaoResultados').style.display = 'block';
+
+                // Simulação de Textos
+                document.getElementById('res-txt-look').innerText = `Para seu ${ocasiao} à ${periodo}, pensamos em uma silhueta fluida que valoriza sua presença com calça em tom neutro e blusa em um tom mais forte e corte diferenciado.`;
+                document.getElementById('res-txt-make').innerText = `Uma make que destaca sua beleza natural com um toque de elegância para da ${periodo}, um delineado com linha fina e um batom mate de cor suave para trazer cor a maquiagem.`;
+                document.getElementById('res-txt-ace').innerText = `Acessórios em dourado e detalhes finos para selar sua identidade e dar um ar sofisticado completando o looks.`;
+
+                // Scroll suave para os resultados
+                document.getElementById('secaoResultados').scrollIntoView({ behavior: 'smooth' });
+            }
+        </script> -->
+
+   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    async function gerarSugestao() {
+        
+        // 1. MAPAS DE CONVERSÃO (Chaves batem exatamente com o ID do HTML e retornam o ID do Banco)
+        const mapaGenero = {
+            "Feminino": 1,
+            "Masculino": 2
+        };
+
+        const mapaOcasiao = {
+            "Cotidiano": 1,
+            "trabalho": 2,
+            "encontro": 3,
+            "festa": 4
+        };
+
+        const mapaPeriodo = {
+            "p_manha": 1,
+            "p_tarde": 2,
+            "p_noite": 3
+        };
+
+        const mapaTransmitir = {
+            "t_elegante": 1, 
+            "t_ousada": 2,   
+            "t_sexy": 3,     
+            "t_fashion": 4   
+        };
+
+        // 2. CAPTURA DOS ELEMENTOS SELECIONADOS
+        const inputGenero = document.querySelector('input[name="genero"]:checked'); // <-- Captura o estilo/gênero
+        const inputOcasiao = document.querySelector('input[name="ocasiao"]:checked');
+        const inputPeriodo = document.querySelector('input[name="periodo"]:checked');
+        const checkboxMarcado = document.querySelector('#formLook input[type="checkbox"]:checked');
+
+        // 3. VALIDAÇÃO: Garante que todos os 4 campos obrigatórios foram escolhidos
+        if (!inputGenero || !inputOcasiao || !inputPeriodo || !checkboxMarcado) {
+            alert("Por favor, selecione seu estilo e pelo menos uma opção em cada uma das seções!");
+            return;
+        }
+
+        // 4. ATRIBUIÇÃO DOS IDS NUMÉRICOS
+        const g = mapaGenero[inputGenero.id]; // <-- Converte o ID HTML para o ID correspondente do banco (1 ou 2)
+        const f1 = mapaOcasiao[inputOcasiao.id];
+        const f2 = mapaPeriodo[inputPeriodo.id];
+        const f3 = mapaTransmitir[checkboxMarcado.id];
+
+        if (g === undefined || f1 === undefined || f2 === undefined || f3 === undefined) {
+            alert("Erro interno: Mapeamento de filtros inválido para o banco de dados.");
+            return;
+        }
+
+        try {
+            const URL_SERVIDOR = "http://localhost:3001";
+            
+            // 5. URL DO BACKEND ATUALIZADA: Agora inclui a variável 'g' na URL (?g=...)
+            const urlBackend = `${URL_SERVIDOR}/looks/recomendar?g=${g}&f1=${f1}&f2=${f2}&f3=${f3}`;
+            
+            const response = await fetch(urlBackend);
+
+            if (!response.ok) {
+                throw new Error("Nenhum look ou combinação encontrada para esses filtros no banco.");
+            }
+
+            const dados = await response.json();
+            console.log("Imagens e descrições recebidas do banco:", dados);
+
+            // ==========================================
+            // ALIMENTAÇÃO DINÂMICA DA TELA DO USUÁRIO:
+            // ==========================================
+            
+            // Exibir a seção de resultados
+            document.getElementById('secaoResultados').style.display = 'block';
+
+            // Alimenta o CARD 1 (Look) com imagem e descrição do Banco (dados[0])
+            if (dados[0]) {
+                document.getElementById('res-img-look').src = URL_SERVIDOR + dados[0].caminho_imagem;
+                document.getElementById('res-txt-look').innerText = dados[0].descricao_imagem || "Look selecionado especialmente para o seu estilo.";
+            }
+            
+            // Alimenta o CARD 2 (Make) com imagem e descrição do Banco (dados[1])
+            if (dados[1]) {
+                document.getElementById('res-img-make').src = URL_SERVIDOR + dados[1].caminho_imagem;
+                document.getElementById('res-txt-make').innerText = dados[1].descricao_imagem || "Maquiagem idealizada para harmonizar com a sua combinação.";
+            }
+            
+            // Alimenta o CARD 3 (Acessórios) com imagem e descrição do Banco (dados[2])
+            if (dados[2]) {
+                document.getElementById('res-img-ace').src = URL_SERVIDOR + dados[2].caminho_imagem;
+                document.getElementById('res-txt-ace').innerText = dados[2].descricao_imagem || "Acessórios selecionados para dar o toque final de sofisticação.";
+            }
+
+            // Scroll suave até a seção de resultados
+            document.getElementById('secaoResultados').scrollIntoView({ behavior: 'smooth' });
+
+        } catch (error) {
+            alert(error.message);
+            console.error("Erro na requisição:", error);
+        }
+    }
+</script>
+</body>
+
+</html> -->
+
+<script>
+
+// let looksEncontrados = [];
+
+// document.addEventListener("DOMContentLoaded", () => {
+
+//     // Aqui entra o restante do código do formulário
+
+// });
+
+// </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- <script>
+    async function gerarSugestao() {
+        // 1. VERIFICAÇÃO DE LOGIN / CONTA
+        const idUsuario = localStorage.getItem("id_usuario");
+
+        // Se o usuário NÃO tiver conta ou não estiver logado, dispara o Modal direto
+        if (!idUsuario || idUsuario === "null" || idUsuario === "undefined") {
+            const modal = new bootstrap.Modal(document.getElementById('modalPlanoInativo'));
+            modal.show();
+            return;
+        }
+
+        // 2. MAPAS DE CONVERSÃO
+        const mapaGenero = { "Feminino": 1, "Masculino": 2 };
+        const mapaOcasiao = { "Cotidiano": 1, "trabalho": 2, "encontro": 3, "festa": 4 };
+        const mapaPeriodo = { "p_manha": 1, "p_tarde": 2, "p_noite": 3 };
+        const mapaTransmitir = { "t_elegante": 1, "t_ousada": 2, "t_sexy": 3, "t_fashion": 4 };
+
+        // 3. CAPTURA DOS ELEMENTOS
+        const inputGenero = document.querySelector('input[name="genero"]:checked');
+        const inputOcasiao = document.querySelector('input[name="ocasiao"]:checked');
+        const inputPeriodo = document.querySelector('input[name="periodo"]:checked');
+        const checkboxMarcado = document.querySelector('#formLook input[type="checkbox"]:checked');
+
+        // 4. VALIDAÇÃO DOS FILTROS
+        if (!inputGenero || !inputOcasiao || !inputPeriodo || !checkboxMarcado) {
+            alert("Por favor, selecione seu estilo e pelo menos uma opção em cada uma das seções!");
+            return;
+        }
+
+        const g = mapaGenero[inputGenero.id];
+        const f1 = mapaOcasiao[inputOcasiao.id];
+        const f2 = mapaPeriodo[inputPeriodo.id];
+        const f3 = mapaTransmitir[checkboxMarcado.id];
+
+        try {
+            const URL_SERVIDOR = "http://localhost:3001";
+            const urlBackend = `${URL_SERVIDOR}/looks/recomendar?id_usuario=${idUsuario}&g=${g}&f1=${f1}&f2=${f2}&f3=${f3}`;
+            
+            const response = await fetch(urlBackend);
+
+            // Se o backend retornar 403 (Usuário logado mas sem plano ativo)
+            if (response.status === 403) {
+                const modal = new bootstrap.Modal(document.getElementById('modalPlanoInativo'));
+                modal.show();
+                return;
+            }
+
+            if (!response.ok) {
+                throw new Error("Nenhum look ou combinação encontrada para esses filtros no banco.");
+            }
+
+            const dados = await response.json();
+
+            // 5. EXIBIÇÃO DOS RESULTADOS
+            document.getElementById('secaoResultados').style.display = 'block';
+
+            if (dados[0]) {
+                document.getElementById('res-img-look').src = URL_SERVIDOR + dados[0].caminho_imagem;
+                document.getElementById('res-txt-look').innerText = dados[0].descricao_imagem || "Look selecionado para o seu estilo.";
+            }
+            if (dados[1]) {
+                document.getElementById('res-img-make').src = URL_SERVIDOR + dados[1].caminho_imagem;
+                document.getElementById('res-txt-make').innerText = dados[1].descricao_imagem || "Maquiagem em harmonia com a combinação.";
+            }
+            if (dados[2]) {
+                document.getElementById('res-img-ace').src = URL_SERVIDOR + dados[2].caminho_imagem;
+                document.getElementById('res-txt-ace').innerText = dados[2].descricao_imagem || "Acessórios selecionados para o toque final.";
+            }
+
+            document.getElementById('secaoResultados').scrollIntoView({ behavior: 'smooth' });
+
+        } catch (error) {
+            alert(error.message);
+            console.error("Erro na requisição:", error);
+        }
+    }
+</script> -->
+
+<script>
+
+    // let looksEncontrados = [];
+
+    // async function gerarSugestao() {
+
+    //     // código da sua função gerarSugestao
+    //     // que eu te passei anteriormente
+
+    // }
+
+
+    // document
+    //     .getElementById("btnSalvarLooks")
+    //     .addEventListener("click", async function () {
+
+    //         // código para salvar os 3 looks
+    //         // que eu te passei anteriormente
+        
+
+    //     });
+
+         // Guarda os 3 looks que foram encontrados
+    let looksEncontrados = [];
+
+
+    // ==========================================================
+    // FUNÇÃO PARA GERAR OS LOOKS
+    // ==========================================================
+
+    async function gerarSugestao() {
+
+        // 1. Verifica se o usuário está logado
+        const idUsuario = localStorage.getItem("id_usuario");
+
+        if (!idUsuario || idUsuario === "null" || idUsuario === "undefined") {
+
+            const modal = new bootstrap.Modal(
+                document.getElementById("modalPlanoInativo")
+            );
+
+            modal.show();
+
+            return;
+        }
+
+
+        // 2. Mapas dos filtros
+        const mapaGenero = {
+            "Feminino": 1,
+            "Masculino": 2
+        };
+
+        const mapaOcasiao = {
+            "Cotidiano": 1,
+            "trabalho": 2,
+            "encontro": 3,
+            "festa": 4
+        };
+
+        const mapaPeriodo = {
+            "p_manha": 1,
+            "p_tarde": 2,
+            "p_noite": 3
+        };
+
+        const mapaTransmitir = {
+            "t_elegante": 1,
+            "t_ousada": 2,
+            "t_sexy": 3,
+            "t_fashion": 4
+        };
+
+
+        // 3. Captura os filtros selecionados
+        const inputGenero =
+            document.querySelector('input[name="genero"]:checked');
+
+        const inputOcasiao =
+            document.querySelector('input[name="ocasiao"]:checked');
+
+        const inputPeriodo =
+            document.querySelector('input[name="periodo"]:checked');
+
+        const checkboxMarcado =
+            document.querySelector(
+                '#formLook input[type="checkbox"]:checked'
+            );
+
+
+        // 4. Validação
+        if (
+            !inputGenero ||
+            !inputOcasiao ||
+            !inputPeriodo ||
+            !checkboxMarcado
+        ) {
+
+            alert(
+                "Por favor, selecione seu estilo e pelo menos uma opção em cada uma das seções!"
+            );
+
+            return;
+        }
+
+
+        // 5. Converte para os IDs do banco
+        const g = mapaGenero[inputGenero.id];
+
+        const f1 = mapaOcasiao[inputOcasiao.id];
+
+        const f2 = mapaPeriodo[inputPeriodo.id];
+
+        const f3 = mapaTransmitir[checkboxMarcado.id];
+
+
+        try {
+
+            const URL_SERVIDOR = "http://localhost:3001";
+
+
+            // 6. Monta a URL do backend
+            const urlBackend =
+                `${URL_SERVIDOR}/looks/recomendar?id_usuario=${idUsuario}&g=${g}&f1=${f1}&f2=${f2}&f3=${f3}`;
+
+
+            // 7. Faz a requisição
+            const response = await fetch(urlBackend);
+
+
+            // 8. Verifica plano
+            if (response.status === 403) {
+
+                const modal = new bootstrap.Modal(
+                    document.getElementById("modalPlanoInativo")
+                );
+
+                modal.show();
+
+                return;
+            }
+
+
+            // 9. Verifica erro
+            if (!response.ok) {
+
+                throw new Error(
+                    "Nenhum look ou combinação encontrada para esses filtros no banco."
+                );
+            }
+
+
+            // 10. Recebe os dados do banco
+            const dados = await response.json();
+
+
+            console.log("Looks recebidos:", dados);
+
+
+            // ==================================================
+            // IMPORTANTE
+            // Guarda os 3 resultados para o botão SALVAR
+            // ==================================================
+
+            looksEncontrados = dados;
+
+
+            console.log(
+                "Looks armazenados:",
+                looksEncontrados
+            );
+
+
+            // 11. Mostra a área dos resultados
+            document.getElementById(
+                "secaoResultados"
+            ).style.display = "block";
+
+
+            // 12. Primeiro resultado
+            if (dados[0]) {
+
+                document.getElementById(
+                    "res-img-look"
+                ).src =
+                    URL_SERVIDOR +
+                    dados[0].caminho_imagem;
+
+                document.getElementById(
+                    "res-txt-look"
+                ).innerText =
+                    dados[0].descricao_imagem ||
+                    "Look selecionado para o seu estilo.";
+            }
+
+
+            // 13. Segundo resultado
+            if (dados[1]) {
+
+                document.getElementById(
+                    "res-img-make"
+                ).src =
+                    URL_SERVIDOR +
+                    dados[1].caminho_imagem;
+
+                document.getElementById(
+                    "res-txt-make"
+                ).innerText =
+                    dados[1].descricao_imagem ||
+                    "Maquiagem em harmonia com a combinação.";
+            }
+
+
+            // 14. Terceiro resultado
+            if (dados[2]) {
+
+                document.getElementById(
+                    "res-img-ace"
+                ).src =
+                    URL_SERVIDOR +
+                    dados[2].caminho_imagem;
+
+                document.getElementById(
+                    "res-txt-ace"
+                ).innerText =
+                    dados[2].descricao_imagem ||
+                    "Acessórios selecionados para o toque final.";
+            }
+
+
+            // 15. Desce até os resultados
+            document.getElementById(
+                "secaoResultados"
+            ).scrollIntoView({
+                behavior: "smooth"
+            });
+
+
+        } catch (error) {
+
+            console.error(
+                "Erro na requisição:",
+                error
+            );
+
+            alert(error.message);
+        }
+    }
+
+
+
+    // ==========================================================
+    // BOTÃO SALVAR MEUS LOOKS
+    // ==========================================================
+
+    document
+        .getElementById("btnSalvarLooks")
+        .addEventListener("click", async function () {
+
+            try {
+
+                // Pega o usuário logado
+                const idUsuario =
+                    localStorage.getItem("id_usuario");
+
+
+                // Verifica usuário
+                if (
+                    !idUsuario ||
+                    idUsuario === "null" ||
+                    idUsuario === "undefined"
+                ) {
+
+                    alert(
+                        "Usuário não identificado. Faça login novamente."
+                    );
+
+                    return;
+                }
+
+
+                // Verifica se os 3 looks foram encontrados
+                if (
+                    !looksEncontrados ||
+                    looksEncontrados.length !== 3
+                ) {
+
+                    alert(
+                        "Primeiro clique em 'Descobrir Look Completo' para gerar os 3 looks."
+                    );
+
+                    return;
+                }
+
+
+                // Pega somente os IDs das imagens
+                const imagens =
+                    looksEncontrados.map(
+                        look => look.id_imagem
+                    );
+
+
+                console.log(
+                    "ID do usuário:",
+                    idUsuario
+                );
+
+                console.log(
+                    "IDs das imagens:",
+                    imagens
+                );
+
+
+                // Envia para o backend
+                const response = await fetch(
+                    "http://localhost:3001/looks/salvar",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+
+                            id_usuario: Number(idUsuario),
+
+                            imagens: imagens
+
+                        })
+                    }
+                );
+
+
+                // Recebe resposta
+                const dados =
+                    await response.json();
+
+
+                console.log(
+                    "Resposta do servidor:",
+                    dados
+                );
+
+
+                // Verifica erro
+                if (!response.ok) {
+
+                    throw new Error(
+                        dados.error ||
+                        dados.message ||
+                        "Erro ao salvar os looks."
+                    );
+                }
+
+
+                // Mensagem de sucesso
+                document.getElementById(
+                    "mensagemSalvar"
+                ).innerHTML = `
+                    <div class="alert alert-success">
+                        ${dados.message || "Looks salvos com sucesso!"}
+                    </div>
+                `;
+
+
+            } catch (error) {
+
+                console.error(
+                    "Erro ao salvar os looks:",
+                    error
+                );
+
+
+                document.getElementById(
+                    "mensagemSalvar"
+                ).innerHTML = `
+                    <div class="alert alert-danger">
+                        ${error.message}
+                    </div>
+                `;
+            }
+
+        });
+
+</script>
+
+</body>
+</html>
+
+<!-- </script>
+</body>
+</html> -->
+
+

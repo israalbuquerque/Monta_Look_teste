@@ -1,0 +1,1111 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maquiagem | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        /* Remove margens fixas quebradas */
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        .card-body.custom-color {
+            background-color: #6E5F5D;
+            /* cor de fundo/ aqui esta onde teremos a edicao em corpos diversos */
+            color: white;
+            /* cor do texto */
+        }
+
+        /* Padrão: celular */
+        .carousel-wrapper {
+            margin: 0 20px;
+
+        }
+
+        /* Para telas maiores (PCs) */
+        @media (min-width: 992px) {
+            .carousel-wrapper {
+                margin: 0 100px;
+            }
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 9999 !important;
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 10000 !important;
+        }
+
+        @media (max-width: 576px) {
+            .img-mobile-reduzida {
+                height: 65% !important;
+                /* diminui a altura */
+                width: 95% !important;
+                /* deixa ocupar todo o container */
+                object-fit: cover !important;
+                margin-top: 10px;
+
+            }
+        }
+
+
+
+        .carousel-vertical .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-vertical .carousel-item {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .carousel-vertical .carousel-item-next,
+        .carousel-vertical .carousel-item-prev,
+        .carousel-vertical .carousel-item.active {
+            display: block;
+        }
+
+        .carousel-vertical .carousel-item-next {
+            transform: translateY(100%);
+        }
+
+        .carousel-vertical .carousel-item-prev {
+            transform: translateY(-100%);
+        }
+
+        .carousel-vertical .carousel-item.active.carousel-item-start {
+            transform: translateY(-100%);
+        }
+
+        .carousel-vertical .carousel-item-next.carousel-item-start {
+            transform: translateY(0);
+        }
+
+        .carousel-vertical .carousel-item-prev.carousel-item-end {
+            transform: translateY(0);
+        }
+
+        .carousel-vertical .carousel-item.active.carousel-item-end {
+            transform: translateY(100%);
+        }
+
+        .btn {
+            background-color: white;
+            color: #6E5F5D;
+            margin-top: 30px;
+        }
+
+        /* Ajuste para reduzir o espaço superior do vídeo em telas pequenas */
+        @media (max-width: 576px) {
+            .container.my-4 {
+                margin-top: 0.5rem !important;
+                /* Diminui a margem do container pai */
+            }
+
+            #carouselVertical {
+                padding-top: 0 !important;
+                /* Remove o padding que estava no HTML */
+            }
+
+            .carousel-item video {
+                height: 350px !important;
+                /* Altura menor para celulares para evitar buracos brancos */
+                object-fit: cover !important;
+                /* Preenche melhor a área */
+            }
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="Logo Montalook" class="rounded-circle"
+            style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <main>
+
+
+        <!-- carrossel--------- -->
+        <section class="container my-4">
+
+            <div class="col-12 col-lg-12" style="margin-top: 10px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Maquiagem</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div id="carouselVertical" class="carousel slide carousel-vertical" data-bs-ride="carousel">
+
+
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <video autoplay muted loop playsinline preload="auto"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+
+                            <source src="videos/video_maquiagem_3.mp4" type="video/mp4">
+
+                            <div class="carousel-caption d-none d-md-block">
+
+                            </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+        </section>
+
+
+
+        <!-- PRIMEIRO BLOCO DE FOTOS -->
+        <section class="container my-4">
+
+            <div class="col-12 col-lg-12" style="margin-top: 100px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Tipos de Maquiagem</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="container">
+                <div class="row">
+
+                    <!-- Card esquerdo -->
+                    <div class="col-md-6">
+                        <div class="card mb-3 mt-4">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="imagens/noite.png" class="img-fluid rounded-start"
+                                        alt="Retrato frontal de uma mulher com maquiagem impecável em tons bronze, destacando um delineado gatinho preto, cílios volumosos e batom nude mate. Ela tem cabelos escuros presos e veste uma blusa de tela preta sobre fundo neutro.">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title custom-color card-body custom-color">
+                                            Maquiagem glam com foco nos olhos
+                                        </h5>
+
+                                        <strong>Essa maquiagem é ideal para:</strong><br>
+                                        ✨ Festas noturnas <br>
+                                        💍 Casamentos e formaturas <br>
+                                        🍸 Jantares elegantes <br>
+
+                                        📸 Ensaios fotográficos <br>
+
+
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary card-body custom-color"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Veja o passo a passo
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5 card-body custom-color"
+                                                            id="exampleModalLabel">
+                                                            Maquiagem glam com foco nos olhos</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="card-text"><strong>1. Prepare a pele </strong> <br>
+                                                            Comece limpando e hidratando bem o rosto. Aplique um primer
+                                                            para ajudar
+                                                            a maquiagem a
+                                                            durar mais e ficar com acabamento uniforme. <br>
+
+                                                            <strong>2. Base e correção </strong><br>
+                                                            Use uma base de cobertura média a alta, espalhando bem para
+                                                            deixar a
+                                                            pele uniforme.
+                                                            Aplique corretivo nas olheiras e pequenas imperfeições. <br>
+
+                                                            <strong>3. Contorno e iluminação </strong> <br>
+                                                            Faça um contorno leve nas laterais do rosto e abaixo das
+                                                            maçãs para dar
+                                                            definição. Em
+                                                            seguida, aplique iluminador suave no alto das maçãs do rosto
+                                                            para um
+                                                            efeito luminoso.
+                                                            <br>
+
+                                                            <strong>4. Sobrancelhas </strong> <br>
+                                                            Preencha levemente as sobrancelhas, respeitando o formato
+                                                            natural, e
+                                                            penteie os fios
+                                                            para um acabamento alinhado. <br>
+
+                                                            <strong>5. Sombra </strong> <br>
+                                                            Aplique sombra marrom clara no côncavo e esfume bem. Depois,
+                                                            coloque uma
+                                                            sombra dourada
+                                                            cintilante na pálpebra móvel para destacar os olhos. <br>
+
+                                                            <strong>6. Delineado </strong><br>
+                                                            Faça um delineado fino e alongado rente aos cílios
+                                                            superiores, deixando
+                                                            o olhar mais
+                                                            marcado sem pesar. <br>
+
+                                                            <strong>7. Máscara de cílios</strong> <br>
+                                                            Aplique máscara alongadora e deixe os cílios bem definidos,
+                                                            focando
+                                                            principalmente nos
+                                                            cílios superiores. <br>
+
+                                                            <strong>8. Blush </strong> <br>
+                                                            Passe um blush em tom suave nas maçãs do rosto para dar um
+                                                            ar de saúde.
+                                                            <br>
+
+                                                            <strong>9. Lábios </strong><br>
+                                                            Finalize com um batom nude rosado ou gloss com leve brilho,
+                                                            equilibrando
+                                                            o destaque dos
+                                                            olhos. <br> <br>
+                                                    </div>
+                                                    <div class="modal-footer card-body custom-color">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Fechar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card direito -->
+                    <div class="col-md-6">
+                        <div class="card mb-3 mt-4">
+                            <div class="row g-0 align-items-stretch">
+
+                                <!-- Texto primeiro -->
+                                <div class="col-md-8 order-md-1">
+                                    <div class="card-body">
+                                        <h5 class="card-title custom-color card-body custom-color">
+                                            Maquiagem com acabamento natural
+                                        </h5>
+
+                                        <strong>Essa maquiagem é ideal para:</strong><br>
+                                        📸 Ensaios fotográficos <br>
+
+
+
+
+                                        🎉 Eventos sociais elegantes <br>
+
+                                        💼 Eventos profissionais ou corporativos <br>
+
+
+                                        🌞 Eventos diurnos <br>
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary card-body custom-color"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                            Veja o passo a passo
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal2" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5 card-body custom-color"
+                                                            id="exampleModalLabel">
+                                                            Maquiagem com acabamento natural</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="card-text"> <strong>1. Limpeza e hidratação da pele
+                                                            </strong> <br>
+                                                            Comece lavando o rosto com um sabonete facial adequado. Em
+                                                            seguida, aplique um hidratante para deixar a pele macia e
+                                                            preparada para a maquiagem. <br>
+
+                                                            <strong>2. Primer (opcional)</strong> <br>
+                                                            Se a pele for oleosa ou se a maquiagem precisar durar mais,
+                                                            aplique um primer leve para controlar o brilho e uniformizar
+                                                            a textura da pele. <br>
+
+                                                            <strong>3. Base ou BB cream </strong> <br>
+                                                            Use uma base leve, BB cream ou CC cream, espalhando bem para
+                                                            um efeito natural. O objetivo é uniformizar o tom da pele
+                                                            sem parecer que está maquiado. <br>
+
+                                                            <strong>4. Corretivo </strong> <br>
+                                                            Aplique corretivo nas olheiras, manchas ou pequenas
+                                                            imperfeições. Dê leves batidinhas para não marcar. <br>
+
+                                                            <strong>5. Selagem da pele </strong> <br>
+                                                            Passe um pó translúcido apenas nas áreas que costumam
+                                                            brilhar, como testa, nariz e queixo, mantendo o viço natural
+                                                            do rosto. <br>
+
+                                                            <strong>6. Sobrancelhas </strong> <br>
+                                                            Preencha suavemente as sobrancelhas com lápis ou sombra
+                                                            própria, respeitando o formato natural. Penteie os fios para
+                                                            um acabamento discreto. <br>
+
+                                                            <strong>7. Olhos (opcional) </strong> <br>
+                                                            Caso necessário, aplique uma sombra marrom bem clara ou
+                                                            apenas corrija a região dos olhos para dar mais profundidade
+                                                            ao olhar, sem pesar. <br>
+
+                                                            <strong>8. Barba e bigode </strong> <br>
+                                                            Alinhe e defina a barba e o bigode. Se desejar, utilize
+                                                            lápis ou sombra específica para barba para preencher falhas
+                                                            de forma natural. <br>
+
+                                                            <strong>9. Iluminação leve </strong> <br>
+                                                            Aplique um iluminador discreto nas áreas altas do rosto
+                                                            (como topo das maçãs) para um efeito saudável e sofisticado.
+                                                            <br>
+
+                                                            <strong>10. Lábios </strong> <br>
+                                                            Finalize com um balm ou gloss transparente para hidratar e
+                                                            dar leve brilho, mantendo o aspecto natural. <br> <br>
+                                                    </div>
+                                                    <div class="modal-footer card-body custom-color">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Fechar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Imagem à direita -->
+                                <div class="col-md-4 order-md-2">
+                                    <img src="imagens/glow.jpg" class="img-fluid rounded-end h-100"
+                                        alt="Retrato de meio corpo de um homem jovem com cabelo raspado e brincos de argola, vestindo uma camisa de seda roxa com estampa geométrica quadrada em bege e marrom, contra um fundo verde menta.">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card esquerdo -->
+                    <div class="col-md-6">
+                        <div class="card mb-3 mt-4">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="imagens/moreno.jpg" class="img-fluid rounded-start"
+                                        alt="Retrato frontal de um homem jovem com olhos claros e cabelos castanhos ondulados e levemente úmidos, vestindo uma regata preta e uma corrente fina de prata contra um fundo cinza claro.">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title custom-color card-body custom-color">
+                                            Maquiagem fresh glow
+                                        </h5>
+
+                                        <strong>Essa maquiagem é ideal para:</strong><br>
+                                        🎉 Eventos sociais diurnos <br>
+
+                                        💼 Eventos profissionais criativos <br>
+
+                                        💍 Casamentos e celebrações <br>
+
+                                        🌿 Eventos ao ar livre <br>
+
+
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary card-body custom-color"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                                            Veja o passo a passo
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal3" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5 card-body custom-color"
+                                                            id="exampleModalLabel">
+                                                            Maquiagem fresh glow</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="card-text"><strong>1. Prepare a pele </strong> <br>
+                                                            Limpe bem o rosto e aplique um hidratante leve. Essa
+                                                            maquiagem pede uma pele saudável e viçosa, não pesada. <br>
+
+                                                            <strong>2. Base ou BB cream leve</strong><br>
+                                                            Use uma base de cobertura leve ou BB cream apenas para
+                                                            uniformizar o tom da pele. Espalhe bem para não marcar e
+                                                            manter o aspecto natural. <br>
+
+                                                            <strong>3. Corretivo pontual </strong> <br>
+                                                            Aplique corretivo somente onde for necessário (olheiras,
+                                                            pequenas manchas). Dê leves batidinhas para um acabamento
+                                                            invisível.
+                                                            <br>
+
+                                                            <strong>4. Selagem suave </strong> <br>
+                                                            Use pó translúcido apenas na zona T (testa, nariz e queixo)
+                                                            para controlar o brilho, sem tirar o glow natural da pele.
+                                                            <br>
+
+                                                            <strong>5. Sobrancelhas naturais </strong> <br>
+                                                            Preencha levemente as sobrancelhas com lápis ou sombra
+                                                            marrom, respeitando o formato natural. Penteie os fios para
+                                                            um efeito limpo e elegante. <br>
+
+                                                            <strong>6. Olhos discretos </strong><br>
+                                                            Aplique uma sombra marrom ou bege muito suave no côncavo
+                                                            apenas para dar profundidade. Nada de cores marcadas — o
+                                                            foco é naturalidade. <br>
+
+                                                            <strong>7. Blush efeito saúde</strong> <br>
+                                                            Use um blush em tom pêssego ou rosado suave nas maçãs do
+                                                            rosto, espalhando bem para um acabamento fresco.<br>
+
+                                                            <strong>8. Iluminador leve </strong> <br>
+                                                            Aplique um iluminador discreto no topo das maçãs do rosto e
+                                                            no arco do nariz para criar um glow elegante.
+                                                            <br>
+
+                                                            <strong>9. Lábios hidratados </strong><br>
+                                                            Finalize com balm labial ou gloss transparente para deixar
+                                                            os lábios hidratados e com volume natural. <br>
+
+                                                            <strong>10. Acabamento final (opcional) </strong><br>
+                                                            Use um spray fixador leve para unir todos os produtos e
+                                                            garantir um visual natural e duradouro. <br>
+                                                    </div>
+                                                    <div class="modal-footer card-body custom-color">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Fechar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Card direito -->
+                    <div class="col-md-6">
+                        <div class="card mb-3 mt-4">
+                            <div class="row g-0 align-items-stretch">
+
+                                <!-- Texto primeiro -->
+                                <div class="col-md-8 order-md-1">
+                                    <div class="card-body">
+                                        <h5 class="card-title custom-color card-body custom-color">
+                                            Maquiagem Lábios de Rubi
+                                        </h5>
+
+                                        <strong>Essa maquiagem é ideal para:</strong><br>
+                                        🌙 1. Eventos Noturnos e Sociais <br>
+
+
+
+
+                                        ✨ 2. Festas Formais <br>
+
+                                        🎄 4. Datas Comemorativas <br>
+
+
+                                        📸 3. Sessões de Foto <br>
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-primary card-body custom-color"
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                                            Veja o passo a passo
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal4" tabindex="-1"
+                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5 card-body custom-color"
+                                                            id="exampleModalLabel">
+                                                            Maquiagem: Lábios de Rubi</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <p class="card-text"> <strong>1. Preparação da Pele (Skin Prep)
+                                                            </strong> <br>
+                                                            Limpeza e Hidratação: Use um hidratante luminoso ou um óleo
+                                                            facial leve para dar viço. <br>
+
+                                                            Primer: Aplique um primer iluminador nas áreas altas do
+                                                            rosto (maçãs e nariz) para brilhar por baixo da base <br>
+
+                                                            <strong>2. Base e Corretivo</strong> <br>
+                                                            Base: Escolha uma base de cobertura média a alta, mas com
+                                                            acabamento acetinado ou hidratante. Espalhe bem com uma
+                                                            esponja úmida para não marcar. <br>
+
+                                                            Corretivo: Aplique um corretivo um tom mais claro que a pele
+                                                            nas olheiras, centro da testa e ponte do nariz para
+                                                            iluminar. <br>
+
+                                                            <strong>3. Olhos (Tons Quentes) </strong> <br>
+                                                            Transição: Esfume uma sombra terracota ou laranja queimado
+                                                            em todo o côncavo, levando levemente para fora (em direção
+                                                            às têmporas). <br>
+
+                                                            Pálpebra Móvel: Aplique uma sombra cintilante dourada ou
+                                                            champagne no centro da pálpebra e no canto interno para
+                                                            abrir o olhar. <br>
+
+                                                            Definição: Use uma sombra marrom escura rente aos cílios
+                                                            superiores para dar volume, sem fazer um delineado marcado.
+                                                            <br>
+
+                                                            Cílios: Aplique várias camadas de máscara de cílios nos fios
+                                                            superiores e inferiores. Se preferir, use cílios postiços do
+                                                            tipo "cantoneira" (apenas no final do olho) para um efeito
+                                                            foxy eyes.<br>
+
+                                                            <strong>4. Sobrancelhas </strong> <br>
+                                                            Mantenha-as com aspecto natural, mas preenchidas. Use um gel
+                                                            com cor ou lápis para definir o arco e penteie os fios para
+                                                            cima (efeito brow lamination leve). <br>
+
+                                                            <strong>5. Contorno, Blush e Iluminador </strong> <br>
+                                                            Contorno: Use um bronzer quente abaixo das maçãs do rosto e
+                                                            na testa. <br>
+
+                                                            Blush: O segredo aqui é o blush pêssego ou bronze aplicado
+                                                            alto nas maçãs, esfumando em direção às têmporas para se
+                                                            encontrar com a sombra. <br>
+
+                                                            Iluminador: Aplique um iluminador dourado intenso no topo
+                                                            das maçãs, ponta do nariz e no arco do cupido (acima dos
+                                                            lábios). <br>
+
+                                                            <strong>6. Lábios (O Grande Destaque) </strong> <br>
+                                                            Contorno: Desenhe o contorno dos lábios com um lápis
+                                                            vermelho fechado para garantir precisão. <br>
+
+                                                            Batom: Aplique um batom vermelho vibrante (tom de cereja ou
+                                                            rubi). <br>
+
+                                                            Gloss: O toque final é um gloss incolor de alto brilho ou um
+                                                            verniz labial por cima, criando esse efeito espelhado e
+                                                            volumoso. <br>
+
+                                                            <br>
+                                                    </div>
+                                                    <div class="modal-footer card-body custom-color">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Fechar</button>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Imagem à direita -->
+                                <div class="col-md-4 order-md-2">
+                                    <img src="imagens/ruby.jpg" class="img-fluid rounded-end h-100"
+                                        alt="Retrato frontal de uma mulher negra com cabelo afro volumoso, vestindo uma camiseta vermelha vibrante contra um fundo azul claro. Ela usa maquiagem marcante com batom vinho.">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+            <div class="col-12 col-lg-12" style="margin-top: 50px; text-align: center;">
+                <div class="card p-3 d-block mx-auto card-body custom-color">
+                    <h5 class="card-title ">Você também pode gostar</h5>
+                    <p class="card-text">
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="card-group mt-4">
+
+
+                <div class="card" style="margin-right: 10px;">
+                    <div class="card" style="margin-right: 10px;">
+                        <div class="ratio ratio-16x9">
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/FC5fZF01gIU?autoplay=1&mute=1&loop=1&playlist=FC5fZF01gIU"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">MAQUIAGEM MASCULINA</h5>
+                        <p class="card-text">
+                            Neste vídeo, o influenciador Andrew do canal Ei Andrew ensina uma rotina de maquiagem
+                            masculina focada em um resultado natural, ideal para esconder imperfeições e melhorar a
+                            aparência em vídeos ou eventos.
+                        </p>
+                    </div>
+                    <div class="card-footer card-body custom-color" style="color: white; text-align: center;">
+                        <a href="https://youtu.be/FC5fZF01gIU?si=j8JgRaFagYQ0I86d"
+                            style="color: white; text-decoration: none;">
+                            <small>Assistir</small>
+                        </a>
+                    </div>
+                </div>
+
+
+
+                <div class="card" style="margin-right: 10px;">
+                    <div class="ratio ratio-16x9">
+                        <iframe width="560" height="315"
+                            src="https://www.youtube.com/embed/P0pvphMAeUY?autoplay=1&mute=1&loop=1&playlist=P0pvphMAeUY"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+
+
+                    <div class="card-body">
+                        <h5 class="card-title">COMO FAZER UMA MAKE PROFISSIONAL EM CASA </h5>
+                        <p class="card-text">
+
+                            Neste vídeo, a maquiadora Fernanda Petrizi ensina como fazer uma maquiagem profissional em
+                            casa com dicas práticas para garantir durabilidade e acabamento impecável.
+                        </p>
+                    </div>
+                    <div class="card-footer card-body custom-color" style="color: white; text-align: center;">
+                        <a href="https://www.youtube.com/watch?v=P0pvphMAeUY&list=TLGG-meqF_Ws06AyNjEyMjAyNQ&t=11s"
+                            style="color: white; text-decoration: none;">
+                            <small>Assistir</small>
+                        </a>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- SEGUNDO BLOCO DE CARDS -->
+        <section class="container my-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" style="margin-top: 10px; text-align: center; ">
+
+                <div class="col-12 col-lg-12" style="margin-top: 20px; text-align: center;">
+                    <div class="card p-3 d-block mx-auto card-body custom-color">
+                        <h5 class="card-title ">✨ Essentials: O Kit de Maquiagem Indispensável para Todas as Horas ✨
+                        </h5>
+                        <p class="card-text">
+
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px;">
+                    <div class="card h-100 border-0">
+                        <img src="imagens/pinceis.png"
+                            alt="Conjunto de cinco pincéis de maquiagem com cabos marrom-claro e cerdas brancas com pontas lilases, organizados em torno de um bloco de suporte bege em um fundo branco"
+                            class="card-img-top img-fluid" style="height: 70%;">
+                        <div class="">
+                            <h5 class="card-title"></h5>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal6" style="margin-top: 10px;  border-color:#6E5F5D">
+                                Como usar
+                            </button>
+
+                            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Para espalhar a base com o pincel de forma perfeita</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text"> <strong> A técnica certa:</strong> <br>Pincel Kabuki
+                                                (reto/denso): Use movimentos circulares para polir a pele e dar alta
+                                                cobertura com a base. <br>
+
+                                                Pincel Língua de Gato (chato): Use movimentos de "pintura" e finalize
+                                                com batidinhas para não deixar riscos.</p>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px;">
+                    <div class="card h-100 border-0">
+
+                        <div class="">
+                            <h5 class="card-title"></h5>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal7" style="margin-top: 100px;  border-color:#6E5F5D">
+                                Como usar
+                            </button>
+                            <img src="imagens/base.png"
+                                alt="Frasco de base líquida de vidro com tampa preta posicionado diagonalmente sobre três amostras de tons de base (claro, médio e escuro) espalhadas em um fundo branco."
+                                class="card-img-top img-fluid" style="height: 70%;">
+
+                            <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Escolha a base ideal</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text"><strong>O Passo a Passo Prático: </strong> <br>
+                                                Deposite o produto: Coloque um pouco de base no dorso da mão ou direto
+                                                em pontos do rosto (testa, bochechas, nariz e queixo). <br>
+
+                                                Espalhe: Comece pelo centro e leve para as extremidades. <br>
+
+                                                Esfume as bordas: Atenção redobrada na raiz do cabelo, orelhas e
+                                                maxilar. Leve um pouco de produto para o pescoço para igualar os tons.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col" style="height: 600px;">
+                    <div class="card h-100 border-0">
+
+                        <div class="">
+                            <h5 class="card-title"></h5>
+
+                            <img src="imagens/po_3.png"
+                                alt="Vista superior de um pote circular branco contendo pó mineral de maquiagem em tom bege médio, com textura granulada e fina."
+                                class="card-img-top img-fluid" style="height: 70%;">
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal8" style="margin-top: 100px;  border-color:#6E5F5D">
+                                Como usar
+                            </button>
+
+
+                            <div class=" modal fade" id="exampleModal8" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                Ele serve para selar a base, controlar a oleosidade</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text"><strong>Passo a passo para aplicação:</strong> <br>
+                                                Espere a base "assentar": Antes de passar o pó, espere
+                                                uns 30 segundos para a base secar um pouco. Se a base estiver muito
+                                                molhada, o pó pode manchar. <br>
+
+                                                Foco na Zona T: Comece pelas áreas que brilham mais: testa, nariz e
+                                                queixo. <br>
+
+                                                Pressione, não arraste:
+
+                                                Se usar a esponja, dê leves batidinhas pressionando o pó sobre a pele.
+                                                Nunca arraste, pois isso remove a base que está por baixo. <br>
+
+                                                Se usar o pincel, faça movimentos circulares suaves ou leves batidinhas
+                                                para depositar o produto. <br>
+
+                                                Esfume para as bordas: Depois de selar o centro do rosto, use o que
+                                                sobrou na ferramenta para passar no restante das bochechas e maxilar.
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="col" style="height: 600px;">
+                    <div class="card h-100 border-0">
+
+                        <div class="">
+                            <h5 class="card-title"></h5>
+
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal9" style="margin-top: 100px; border-color:#6E5F5D">
+                                Como usar
+                            </button>
+                            <img src="imagens/blush_2.png"
+                                alt="Embalagem redonda de maquiagem preta aberta, revelando um blush ou sombra em pó compacto de cor rosa vibrante com acabamento levemente cintilante."
+                                class="card-img-top img-fluid" style="height: 70%;">
+
+                            <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h1 class="modal-title fs-5 card-body custom-color" id="exampleModalLabel">
+                                                O blush é o toque final que traz saúde e dimensão ao rosto</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="card-text"><strong>Passo a Passo para não errar</strong> <br>
+                                                Retire o excesso: Se for pó, bata o pincel no dorso da mão. Se for
+                                                líquido, coloque uma gota na mão antes de levar ao rosto. <br>
+
+                                                Comece suave: É muito mais fácil construir camadas do que tirar o
+                                                excesso. <br>
+
+                                                Esfume sempre: Não deixe uma "bolinha" marcada. O blush deve sumir
+                                                gradualmente na pele ou se fundir com o seu contorno/iluminador. <br>
+
+                                                Dica de Ouro: Se exagerou na cor, use o pincel que você usou para a base
+                                                (mesmo "sujo") para dar batidinhas por cima. Isso vai apagar o excesso e
+                                                deixar o blush parecendo que vem "de dentro da pele".</p>
+                                        </div>
+                                        <div class="modal-footer border-0">
+                                            <button type="button" class="btn btn-secondary card-body custom-color"
+                                                data-bs-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

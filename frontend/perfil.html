@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        .offset-desktop {
+            margin-left: 0;
+        }
+
+        @media (min-width: 992px) {
+            .offset-desktop {
+                margin-left: 0px;
+            }
+        }
+
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="Logo" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+    <!-- MENU -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle" style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle" style="width: 30px; height: 30px;" alt="Cadastre-se">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container my-5">
+            <div class="d-flex justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                    <div class="card p-4 text-center">
+
+                        <!-- FOTO DO USUÁRIO -->
+                        <div class="mx-auto mb-3" style="width: 150px; height: 150px;">
+                            <img id="fotoPerfil" src="imagens/foto_usuario.jpg" class="img-fluid rounded-circle w-100 h-100 object-fit-cover" alt="Foto Perfil">
+                        </div>
+
+                        <!-- DADOS RENDERIZADOS DINAMICAMENTE -->
+                        <h5 class="card-title mb-2" id="displayNome">Carregando...</h5>
+                        <p class="mb-4">Bem-vindo(a)</p>
+
+                        <div class="px-2 px-md-4">
+                            <p><strong>Plano:</strong> <span id="displayPlano">Carregando...</span></p>
+                            <p><strong>Username:</strong> <span id="displayUsername">@carregando</span></p>
+                            <p><strong>Bio:</strong> <span id="displayBio">Carregando...</span></p>
+
+                            <!-- BOTÕES -->
+                            <button class="btn btn-primary my-2" style="background-color:#6E5F5D; width: 150px; color: white;" type="button" data-bs-toggle="modal" data-bs-target="#modalEditarDados">
+                                Mudar dados
+                            </button>
+
+                            <button type="button" class="btn my-2" style="background-color: #6E5F5D; color: white;" onclick="fazerLogout()">
+                                Sair
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL EDITAR DADOS -->
+        <div class="modal fade" id="modalEditarDados" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content rounded-4 shadow">
+
+                    <div class="modal-header" style="background-color: #6E5F5D;">
+                        <h5 class="modal-title text-white">Editar dados</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <form id="formEditarPerfil">
+                        <div class="modal-body px-4 py-4">
+                            <h6 class="mb-3 text-uppercase text-muted">Dados do perfil</h6>
+
+                            <!-- Campo URL da Foto -->
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">URL da Foto</label>
+                                <div class="col-8 col-md-9">
+                                    <input type="text" id="inputFoto" class="form-control" placeholder="https://exemplo.com/minha-foto.jpg">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">Nome</label>
+                                <div class="col-8 col-md-9">
+                                    <input type="text" id="inputNome" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">Username</label>
+                                <div class="col-8 col-md-9">
+                                    <input type="text" id="inputUsername" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">E-mail</label>
+                                <div class="col-8 col-md-9">
+                                    <input type="email" id="inputEmail" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">Plano</label>
+                                <div class="col-8 col-md-9">
+                                    <select id="selectPlano" class="form-select">
+                                        <option value="Essencial">Essencial</option>
+                                        <option value="Estilo Plus">Estilo Plus</option>
+                                        <option value="Premium Closet">Premium Closet</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-3 form-label mb-0">Bio</label>
+                                <div class="col-8 col-md-9">
+                                    <textarea id="textareaBio" class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <h6 class="mb-3 text-uppercase text-muted text-center">Segurança</h6>
+
+                            <div class="row mb-3 align-items-center">
+                                <label class="col-4 col-md-4 form-label mb-0">Nova senha</label>
+                                <div class="col-8 col-md-8">
+                                    <input type="password" id="inputNovaSenha" class="form-control" placeholder="Deixe em branco para não alterar">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer px-4">
+                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success px-4">Salvar alterações</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1">
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small">
+                        <a href="https://www.instagram.com/monta_look/">Instagram</a> / 
+                        <a href="https://www.tiktok.com/@monta__look">TikTok</a> / 
+                        <a href="https://x.com/Monta_Look">X</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT DE AUTENTICAÇÃO E PERFIL -->
+    <script>
+        // 1. REQUISIÇÃO GET PARA CARREGAR OS DADOS DO PERFIL
+        document.addEventListener("DOMContentLoaded", async function () {
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                window.location.replace("login.html");
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:3001/perfil", {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
+
+                if (response.status === 401 || response.status === 403) {
+                    fazerLogout();
+                    return;
+                }
+
+                const dados = await response.json();
+
+                // Extrai a propriedade correta do objeto de resposta
+                const usuario = dados.usuario || dados;
+
+                if (usuario) {
+                    // Renderiza na tela inicial
+                    document.getElementById("displayNome").textContent = usuario.nome || "Usuário";
+                    document.getElementById("displayUsername").textContent = usuario.username ? `@${usuario.username.replace('@', '')}` : "@usuario";
+                    document.getElementById("displayPlano").textContent = usuario.plano || "Essencial";
+                    document.getElementById("displayBio").textContent = usuario.bio || "Sem biografia cadastrada.";
+
+                    if (usuario.foto) {
+                        document.getElementById("fotoPerfil").src = usuario.foto;
+                    }
+
+                    // Preenche os campos do Modal
+                    document.getElementById("inputNome").value = usuario.nome || "";
+                    document.getElementById("inputUsername").value = usuario.username || "";
+                    document.getElementById("inputEmail").value = usuario.email || "";
+                    document.getElementById("inputFoto").value = usuario.foto || "";
+                    document.getElementById("textareaBio").value = usuario.bio || "";
+                    document.getElementById("selectPlano").value = usuario.plano || "Essencial";
+                }
+
+            } catch (error) {
+                console.error("Erro ao carregar dados do perfil:", error);
+            }
+        });
+
+        // 2. REQUISIÇÃO PUT PARA SALVAR ALTERAÇÕES DO MODAL
+        document.getElementById("formEditarPerfil").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const token = localStorage.getItem("token");
+
+            const dadosAtualizados = {
+                nome: document.getElementById("inputNome").value,
+                username: document.getElementById("inputUsername").value,
+                email: document.getElementById("inputEmail").value,
+                foto: document.getElementById("inputFoto").value,
+                bio: document.getElementById("textareaBio").value,
+                plano: document.getElementById("selectPlano").value,
+                novaSenha: document.getElementById("inputNovaSenha").value || null
+            };
+
+            try {
+                const response = await fetch("http://localhost:3001/perfil", {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dadosAtualizados)
+                });
+
+                const resultado = await response.json();
+
+                if (response.ok) {
+                    alert("Perfil atualizado com sucesso!");
+                    
+                    // Oculta o modal
+                    const modalElement = document.getElementById('modalEditarDados');
+                    const modalBootstrap = bootstrap.Modal.getInstance(modalElement);
+                    if (modalBootstrap) modalBootstrap.hide();
+
+                    location.reload();
+                } else {
+                    alert(resultado.error || "Erro ao atualizar perfil.");
+                }
+
+            } catch (error) {
+                console.error("Erro ao salvar perfil:", error);
+                alert("Erro de conexão com o servidor.");
+            }
+        });
+
+        // 3. FUNÇÃO DE LOGOUT
+        function fazerLogout() {
+            localStorage.removeItem("token");
+            document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            window.location.replace("login.html");
+        }
+    </script>
+</body>
+
+</html>

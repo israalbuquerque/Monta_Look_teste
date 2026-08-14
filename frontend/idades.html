@@ -1,0 +1,294 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Idades| MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+
+    <style>
+        .dropdown-menu .dropdown-item {
+            color: white !important;
+        }
+
+        body {
+            background-color: var(--cor-bg);
+            
+            color: #333;
+        }
+
+        .editorial-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #6E5F5D;
+            border-bottom: 3px solid #6E5F5D;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Imagens grandes de destaque */
+.img-destaque {
+    width: 100%;
+    max-width: 1150px;
+    height: auto;
+}
+
+/* Imagens médias */
+.img-media {
+    width: 100%;
+    height: auto;
+}
+
+/* Galeria com imagens do mesmo tamanho */
+.galeria img {
+    width: 100%;
+    max-width: 300px;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Ajustes no mobile */
+@media (max-width: 768px) {
+    .galeria img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+}
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color:white
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                        <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <br>
+
+    <main>
+
+        <div class="col-12 col-lg-12">
+            <div class="imagem 1">
+                <div class="col-12 col-lg-12" style="text-align: center;">
+                    <img src="imagens/medium-shot-smiley-people-laying-grass.jpg"
+                        alt="Uma família multigeracional de seis pessoas deitada na grama, formando um círculo com as cabeças voltadas para o centro. Eles sorriem uns para os outros sob a luz quente do pôr do sol, transmitindo uma sensação de união e alegria ao ar livre."
+                        class="img-fluid img-destaque">
+                </div>
+            </div>
+        </div>
+
+        <section class="container my-5">
+            <div class="row align-items-center g-4" style="margin-top: 100px;">
+
+
+
+                <header class="text-center mb-5">
+                    <h1 class="editorial-title">Moda sem Fronteiras</h1>
+                    <p class="lead">A moda é uma poderosa ferramenta de expressão pessoal, transcendendo idade, gênero e
+                        rótulos.
+                        Em 2026, a tendência é a inclusão e a versatilidade, onde cada indivíduo encontra seu estilo
+                        autêntico,
+                        celebrando quem realmente é. A chave é a fluidez, permitindo que peças e conceitos sejam
+                        adaptados
+                        e remixados para atender a todas as corporalidades e preferências.</p>
+                </header>
+
+            </div>
+        </section>
+
+        <section class="container my-5">
+            <!-- BLOCO 1 — Imagem + texto -->
+            <section class="container my-5">
+                <div class="row g-4 align-items-start">
+
+                    <div class="col-12 col-lg-6">
+                        <img src="imagens/portrait-diverse-women-different-ages.jpg"
+                            alt="Retrato de três mulheres de diferentes gerações vestindo sobretudos e blazers em tons de marrom e bege. À esquerda, uma mulher sênior de cabelos curtos e grisalhos; ao centro e à direita, duas mulheres jovens com cabelos presos, transmitindo uma estética sofisticada e minimalista."
+                            class="img-fluid img-media rounded shadow">
+                    </div>
+
+                    <div class="col-12 col-lg-6 offset-desktop">
+                        <div class="card p-3 " style="box-sizing: 50px;">
+                            <h5 class="card-title text-center card-body custom-color"
+                                style="font-size: 1.8rem; color: #6E5F5D;">Cores e Estampas: Expressão Individual Sem
+                                Limites</h5>
+                            <br>
+                            <p class="card-text" style="font-size: 1.4rem; text-align: center;">
+                                Mix de tons vivos como coral, turquesa e amarelo solar se encontra com neutros
+                                sofisticados como bege,
+                                cáqui e cinza claro, criando uma paleta versátil e cheia de personalidade. Essa
+                                combinação amplia
+                                as possibilidades de criação, permitindo desde looks monocromáticos impactantes, cheios
+                                de presença e energia,
+                                até composições mais sutis, equilibradas e elegantes, que exploram contrastes suaves e
+                                harmonia visual sem perder identidade.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </section>
+        <section class="container my-5">
+            <div class="row align-items-center g-4" style="margin-top: 100px;">
+
+
+
+                <header class="text-center mb-5">
+                    <h3 class="editorial-title">Estilo em Todas as Fases da Vida</h3>
+                    <p class="lead">O estilo acompanha a trajetória de cada pessoa, evoluindo com o tempo sem perder sua
+                        essência.
+                        Em cada fase da vida, a moda se transforma em uma forma única de expressão, refletindo
+                        experiências, descobertas e identidade.
+                        Não há idade certa para ousar, reinventar ou reafirmar quem se é — há apenas liberdade para
+                        adaptar, misturar e ressignificar.
+                        A moda atravessa gerações como um elo de conexão, mostrando que autenticidade e elegância não
+                        têm prazo de validade,
+                        apenas novas formas de se manifestar.</p>
+                </header>
+                <br>
+                <div class="galeria" style="text-align: center;">
+                    <img src="imagens/Mulher trança.png"
+                        alt="Mulher madura com cabelos grisalhos em tranças, vestindo um vestido chemise listrado de azul e branco com cinto marrom. Ela caminha ao ar livre em uma praça ensolarada com arquitetura moderna ao fundo."
+                        >
+                    <img src="imagens/Criançashorizonte.png"
+                        alt="Duas crianças, um menino e uma menina, em um gramado à beira-mar. Eles olham para o horizonte protegendo os olhos do sol com as mãos. O menino veste casaco bege e calça de veludo cotelê marrom; a menina usa blusa floral e calça de veludo rosa."
+                        >
+                    <img src="imagens/Fase.png"
+                        alt="Retrato frontal de uma mulher idosa sorridente com cabelos grisalhos curtos e ondulados, usando um blazer xadrez marrom sobre uma blusa amarela e lenço estampado, contra um fundo amarelo vibrante."
+                        >
+                </div>
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>

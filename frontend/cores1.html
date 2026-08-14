@@ -1,0 +1,646 @@
+
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cores | MontaLook</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="imagens/logo_3.1.jpeg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,900&family=Lora:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-base: #6E5F5D;
+            --cor-bg: #fdfdfd;
+            --menta: #88c4ac;
+            --terroso: #bda27e;
+        }
+
+        body {
+            background-color: var(--cor-bg);
+            
+            color: #333;
+        }
+
+        /* Estilo Revista Editorial */
+        .editorial-header {
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--cor-base);
+            margin-top: 10px;
+        }
+
+        .dropcap {
+            float: left;
+            font-family: 'Playfair Display', serif;
+            font-size: 80px;
+            line-height: 60px;
+            padding-top: 4px;
+            padding-right: 12px;
+            color: var(--cor-base);
+        }
+
+
+
+        /* Seção Cores 2026 */
+        .palette-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .palette-circle:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-editorial {
+            background-color: var(--cor-base);
+            color: white;
+            border-radius: 0;
+            padding: 15px 40px;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 2px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-editorial:hover {
+            background-color: #534745;
+            color: white;
+        }
+
+        .image-caption {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 8px;
+            border-left: 3px solid var(--cor-base);
+            padding-left: 10px;
+        }
+
+        .custom-card {
+            border: none;
+            border-radius: 0;
+            background-color: #f8f8f8;
+            transition: 0.3s;
+        }
+
+        .resultado-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* =======================
+   AJUSTES APENAS MOBILE
+   ======================= */
+@media (max-width: 768px) {
+
+    /* Imagens grandes/editoriais */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    /* Corrige imagens que estavam com 120% */
+    img[style*="width: 120%"] {
+        width: 100% !important;
+    }
+
+    /* Remove estouro lateral */
+    body {
+        overflow-x: hidden;
+    }
+}
+
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Logo centralizada -->
+    <div class="d-flex justify-content-center my-3">
+        <img src="imagens/logo_3.1.jpeg" alt="" class="rounded-circle" style="width: 150px; height:150px;">
+    </div>
+
+
+
+    <!-- MENU -->
+    <!-- MENU CORRIGIDO -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6E5F5D;">
+        <div class="container">
+
+            <a class="navbar-brand text-white" href="#"></a>
+
+            <!-- Botão mobile -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Itens do menu -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <!-- LINKS CENTRAIS -->
+                <ul class="navbar-nav me-auto ms-auto gap-lg-4 text-center">
+
+                    <li class="nav-item">
+                       <a class='nav-link active text-white' href='index.html'>Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/quem_somos'>Quem somos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link text-white' href='/planos'>Planos</a>
+                    </li>
+
+                    <!-- DROPDOWN -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                            Conteúdos
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-dark text-center" style="background-color: #6E5F5D;">
+
+                            <li><a class='dropdown-item' href='/celebridades'>Celebridades</a></li>
+
+                            <li><a class='dropdown-item' href='/maquiagem'>Maquiagem</a></li>
+                            <li><a class='dropdown-item' href='/cores1'>Cores</a></li>
+                            <li><a class='dropdown-item' href='/looks'>Looks em alta</a></li>
+                            <li><a class='dropdown-item' href='/corpos'>Corpos diversos</a></li>
+                            <li><a class='dropdown-item' href='/unisex'>Unissex</a></li>
+                            <li><a class='dropdown-item' href='/idades'>Idades</a></li>
+                            <li><a class='dropdown-item' href='/brecho1'>Brechó</a></li>
+                            <li><a class='dropdown-item' href='/modabrasileira1'>Moda brasileira</a></li>
+                            <li><a class='dropdown-item' href='/formulario'>Formulário Inteligente</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- ÍCONES (À DIREITA) -->
+                <ul class="navbar-nav ms-lg-3 flex-row gap-3 justify-content-center">
+                    <li class="nav-item">
+                        <a class='nav-link' href='/login'>
+                            <img src="imagens/icons8-usuário-de-gênero-neutro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;">
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class='nav-link' href='/cadastro'>
+                            <img src="imagens/icons8-cadastro-50.png" class="rounded-circle"
+                                style="width: 30px; height: 30px;" alt="Cadastra-se">
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+    <main class="container my-5">
+
+        <header class="editorial-header text-center">
+            <h1 class="main-title">Cores: O Guia 2026</h1>
+        </header>
+
+        <section class="mb-5">
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <img src="imagens/moda_cores.jpg" class="img-fluid shadow-lg"
+                        alt="Três modelos com cabelos curtos e coloridos (laranja, branco e rosa) vestindo casacos de vinil em tons de amarelo, pêssego e rosa claro."
+                        style="max-height: 700px; width: 100%; object-fit: cover;">
+                    <p class="image-caption">A predominância de tons cítricos fortes, associado a suavidade de tons
+                        rosados e o branco pérola para dos modelos.</p>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">Alquimia Moderna: A Revolução Cromática</h2>
+                    <div class="magazine-column">
+                        <p>
+                            <span class="dropcap">A</span> moda em 2026 resgata a liberdade criativa sob o conceito da
+                            <strong>"Alquimia Moderna"</strong>, uma celebração da simbiose entre pigmentos vibrantes e
+                            a riqueza dos subtons de pele. Esta tendência marca a transição definitiva dos neutros
+                            estáticos para o que os especialistas definem como "Cores de Energia Vital", unindo o vigor
+                            tropical ao refinamento do minimalismo europeu.
+                        </p>
+
+                        <p>
+                            Nesta temporada, a paleta é liderada por três pilares fundamentais que ditam o ritmo das
+                            passarelas:
+                        </p>
+
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <strong style="color: var(--cor-base);">1. Efervescência Cítrica:</strong>
+                                O <em>Amarelo Canário</em> e o <em>Laranja Tangerina</em> personificam o otimismo solar,
+                                conectando-se ao conceito de Terracota Solar para aquecer o semblante e elevar a
+                                vibração visual.
+                            </li>
+                            <li class="mb-3">
+                                <strong style="color: var(--cor-base);">2. Suavidade Futurista:</strong>
+                                O <em>Rosa Pastel</em> e o <em>Coral Pêssego</em> surgem como escolhas estratégicas para
+                                harmonizar peles retintas e subtons quentes, equilibrando intensidade com uma delicadeza
+                                contemporânea.
+                            </li>
+                            <li class="mb-3">
+                                <strong style="color: var(--cor-base);">3. Pontos de Luz:</strong>
+                                O <em>Branco Pérola</em> e o <em>Platinado</em> atuam como neutros iluminados,
+                                essenciais para ancorar as composições e evitar a saturação cromática.
+                            </li>
+                        </ul>
+
+                        <p>
+                            O destaque absoluto, contudo, permanece com o <strong>Menta Tropical</strong>. Diferente de
+                            anos anteriores, estas cores agora dominam looks monocromáticos em couro ecológico e linho
+                            rústico, celebrando a diversidade de corpos e texturas em uma tela de pura expressão
+                            artística.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="text-center py-5 my-5 bg-light">
+            <h4 class="text-uppercase mb-4" style="letter-spacing: 3px;">Paleta de Tendência 2026</h4>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="palette-circle" style="background-color: #88c4ac;"></div>
+                <div class="palette-circle" style="background-color: #bda27e;"></div>
+                <div class="palette-circle" style="background-color: #bee5d3;"></div>
+                <div class="palette-circle" style="background-color: #a3c1ad;"></div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="palette-circle" style="background-color: #0d0d15;"></div>
+                <div class="palette-circle" style="background-color: #c4beb3;"></div>
+                <div class="palette-circle" style="background-color: #e5d1b3;"></div>
+                <div class="palette-circle" style="background-color: #b9c92d;"></div>
+            </div>
+            <div class="d-flex flex-wrap justify-content-center">
+                <div class="palette-circle" style="background-color: #c41e5e;"></div>
+                <div class="palette-circle" style="background-color: #f7945d;"></div>
+                <div class="palette-circle" style="background-color: #cc4e16;"></div>
+                <div class="palette-circle" style="background-color: #e85d22;"></div>
+            </div>
+        </section>
+
+        <section class="row g-4 align-items-center mb-5">
+            <div class="col-md-5 order-md-2">
+                <img src="imagens//maquiagem cromática em 3 rostos.png" class="img-fluid rounded shadow"
+                    alt="Retrato em close de três faces frontais com maquiagem artística em pó vibrante nas cores azul e laranja. A iluminação destaca a textura da pele e o brilho nos olhos e lábios."
+                    style="max-height: 500px; width: 120%; object-fit: cover;">
+                <p class="image-caption">Maquiagem cromática com tons quentes e frios em harmonia</p>
+            </div>
+            </div>
+            <div class="col-md-7 order-md-1">
+                <h3 class="fw-bold border-bottom pb-2">O Poder da Maquiagem Cromática</h3>
+                <p>Em 2026, a maquiagem se torna uma extensão da colorimetria pessoal. A harmonia entre tons e subtons
+                    de pele ganha destaque, revelando a beleza natural de cada pessoa. O foco está nos <strong>Subtons
+                        de Pele</strong>, que orientam desde a base até o acabamento final.</p>
+                <ul class="list-unstyled">
+                    <li><strong>Peles Quentes:</strong> Tons dourados, pêssego e terracota criam o efeito <em>“Dorado
+                            Sun-kissed”</em>. Iluminadores champagne e blush coral realçam o brilho natural.</li>
+                    <li><strong>Peles Frias:</strong> Sombras lavanda, iluminadores perolados e batons framboesa trazem
+                        frescor e elegância.</li>
+                    <li><strong>Peles Neutras:</strong> Combinações suaves de rosado e dourado equilibram o visual com
+                        naturalidade.</li>
+                    <li><strong>A Técnica:</strong> O uso do <strong>círculo cromático</strong> para neutralizar
+                        olheiras e vermelhidões garante um acabamento uniforme e luminoso.</li>
+                    <li><strong>Tendência:</strong> O <em>“Color Blending”</em> mistura tons complementares nas
+                        pálpebras e bochechas, criando um visual moderno e artístico.</li>
+                </ul>
+                <p><strong>Dica Final:</strong> A maquiagem cromática não esconde — revela. Conhecer sua paleta é o
+                    primeiro passo para expressar autenticidade.</p>
+                <div class="text-center mt-4">
+                </div>
+        </section>
+
+        <section class="row g-4 align-items-center mb-5">
+            <div class="col-md-5">
+                <img src="imagens/exibicao-de-corrente-de-ouro-brilhante-e-elegante.jpg"
+                    class="img-fluid rounded shadow"
+                    alt="Fotografia de joias douradas dispostas sobre blocos geométricos brancos: um colar de elos finos, brincos de argolas entrelaçadas e um bracelete com pingente circular."
+                    style="max-height: 600px; width: 120%; object-fit: cover;">
+                <p class="image-caption">Ouro fosco e metais polidos como ponto de contraste para a paleta</p>
+            </div>
+            <div class="col-md-7">
+                <h3 class="fw-bold border-bottom pb-2">Acessórios: O Ponto de Contraste</h3>
+                <p class="introducao">
+                    Se as roupas são a base da nossa narrativa, os acessórios são a pontuação. Eles têm o poder de
+                    transformar uma silhueta básica em uma declaração de intenção, servindo como o ponto focal que atrai
+                    o olhar e organiza a estética do conjunto.
+                </p>
+
+                <h3 class="subtitulo">A Força do Ouro Polido</h3>
+                <p class="descricao">
+                    Para a paleta contemporânea de 2026, a recomendação editorial foca na <strong>geometria fluida e nos
+                        metais de alto brilho</strong>. Enquanto o ouro fosco traz sobriedade, o acabamento polido —
+                    como visto nas correntes de elos robustos e nos pingentes circulares — injeta uma dose imediata de
+                    luxo e dinamismo ao look.
+                </p>
+
+                <div class="como-harmonizar">
+                    <h4 class="titulo-lista">Como Harmonizar:</h4>
+                    <ul class="lista-dicas">
+                        <li><strong>Contraste de Texturas:</strong> Combine as correntes de malha fina (snake chains)
+                            com elos mais pesados para criar profundidade visual.</li>
+                        <li><strong>Equilíbrio Geométrico:</strong> Utilize formas orgânicas e circulares para suavizar
+                            cortes de alfaiataria mais rígidos ou tecidos estruturados.</li>
+                        <li><strong>O Tom da Pele:</strong> O dourado vibrante funciona como um iluminador natural,
+                            aquecendo a fisionomia e elevando tons neutros como o off-white, cinza chumbo e o preto
+                            absoluto.</li>
+                    </ul>
+                </div>
+                <blockquote class="blockquote my-4"
+                    style="font-size: 1.2rem; font-style: italic; color: var(--cor-base);">
+                    "O acessório não apenas complementa, ele dita a temperatura da sua comunicação visual."
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="card custom-card p-5 shadow-lg my-5 border-top border-5"
+            style="border-color: var(--cor-base) !important;">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Qual sua paleta para 2026?</h2>
+                <p>Responda ao teste editorial e receba seu resultado visual.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="quizForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Suas veias são mais:</label>
+                                <select class="form-select" id="q1">
+                                    <option value="quente">Verdes/Oliva</option>
+                                    <option value="frio">Azuis/Roxas</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Sua joia favorita é:</label>
+                                <select class="form-select" id="q2">
+                                    <option value="quente">Ouro/Dourado</option>
+                                    <option value="frio">Prata/Ródio</option>
+                                </select>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="button" onclick="gerarResultado()" class="btn-editorial">REVELAR MINHA
+                                    PALETA</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div id="resultado" class="mt-5 text-center" style="display:none;">
+                        <h3 id="res-titulo" class="fw-bold"></h3>
+                        <div id="res-img" class="my-3"></div>
+                        <p id="res-texto" class="magazine-column"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <div class="col-12 col-lg-12" style="margin-top: 100px; text-align: center;">
+        <div class="card p-3 d-block mx-auto card-body custom-color">
+            <h5 class="card-title ">Planos da MontaLook</h5>
+            <p class="card-text">
+
+            </p>
+        </div>
+    </div>
+
+    <!-- Valores -->
+    <section class="container my-3 ">
+        <div class="row g-12" style="margin-top: 10px;"  >
+
+            <div class="col-12 col-md-4"  style="margin-bottom: 10px;">
+                <div class="card h-100 card-body">
+
+                    <img src="imagens/cabide (2).png" class="card-img-top img-fluid mx-auto d-block"
+                        style="height: 30%; width: 30%; border-radius: 30%;">
+                    <div class="card-body">
+                        <h5 class="card-title text-center " style="margin-bottom: 100px;">Plano
+                            Essencial
+                        </h5>
+
+                        <p class="card-text text-center" style="margin-bottom: 50px;">Para quem quer
+                            começar
+                            com estilo, utilize
+                            sugestões
+                            automáticas de looks por ocasião.
+                        </p>
+
+                        <p class="card-text text-center"> Looks em alta semanalmente <br><br>
+
+
+
+                            Cancelamento a qualquer momento <br><br>
+
+
+
+                            Armazenamento de looks por 15 dias</p>
+                    </div>
+
+                    <button class="d-block mx-auto card-body custom-color"
+                        style="width: 200px; height: 70px; border-radius: 100px; background-color: #6E5F5D;"><a href='/planos' style='color: white; background-color: #6E5F5D;'>Conheça
+                            Mais</a></button>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4"  style="margin-bottom: 10px;">
+                <div class="card h-100 card-body ">
+
+                    <img src="imagens/sacola-de-compras.png" class="card-img-top img-fluid mx-auto d-block"
+                        style="height: 30%; width: 30%; border-radius: 30%;">
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center" style="margin-bottom: 100px;">Plano
+                            Estilo Plus
+                        </h5>
+
+                        <p class="card-text text-center" style="margin-bottom: 50px;">Para quem quer
+                            começar
+                            com estilo, utilize sugestões automáticas de looks por ocasião.
+
+                        </p>
+
+                        <p class="card-text text-center"> Tudo do plano essencial
+                            <br><br>
+
+
+
+                            Upload de itens para sugestão personalizada
+                            <br><br>
+
+
+
+                            Armazenamento de looks por 30 dias
+                        </p>
+                    </div>
+                    <button class="d-block mx-auto card-body custom-color"
+                        style="width: 200px; height: 70px; border-radius: 100px; background-color: #6E5F5D;"><a href='/planos' style='color: white; background-color: #6E5F5D;'>Conheça
+                            Mais</a></button>
+
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4" style="margin-bottom: 10px;">
+                <div class="card h-100 card-body ">
+
+                    <img src="imagens/sueter.png" class="card-img-top img-fluid mx-auto d-block"
+                        style="height: 30%; width: 30%; border-radius: 30%;">
+                    <div class="card-body">
+
+                        <h5 class="card-title text-center" style="margin-bottom: 100px;"> Plano
+                            Premium
+                            Closet
+
+                        </h5>
+
+                        <p class="card-text text-center" style="margin-bottom: 50px;"> Para quem
+                            quer
+                            começar com estilo, utilize sugestões automáticas de looks por ocasião.
+
+
+
+                        </p>
+
+                        <p class="card-text text-center"> Recomendações de novas peças e
+                            acessórios
+
+                            <br><br>
+
+
+
+                            Recomendações de novas peças e
+                            acessórios
+                            <br><br>
+
+
+
+                            Armazenamento de looks por 60 dias
+                        </p>
+                    </div>
+                    <button class="d-block mx-auto card-body custom-color"
+                        style="width: 200px; height: 70px; border-radius: 100px; background-color: #6E5F5D;"><a href='/planos' style='color: white; background-color: #6E5F5D;'>Conheça
+                            Mais</a></button>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer style="background-color: #6E5F5D; color: white;" class="text-center p-4 mt-5">
+        <section class="container my-4">
+            <div class="row g-1" style="margin-top: 10px;">
+
+
+                <div class="col-md-4">
+                    <h5>MontaLook</h5>
+                    <p class="small">A moda que respeita sua história e valoriza suas raízes.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Fale Conosco</h5>
+                    <p class="small">montalooks@gmail.com
+                        
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Siga a Identidade</h5>
+                    <p class="small"><a href="https://www.instagram.com/monta_look/">Instagram</a> / <a
+                            href="https://www.tiktok.com/@monta__look">TikTok</a> / <a
+                            href="https://x.com/Monta_Look">X</a> <br>@monta_look / @monta__look</p>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    </footer>
+
+    <script>
+        function gerarResultado() {
+            // Captura os valores das duas perguntas
+            const veias = document.getElementById('q1').value; // quente (oliva) ou frio (azul)
+            const joias = document.getElementById('q2').value; // quente (ouro) ou frio (prata)
+            const resDiv = document.getElementById('resultado');
+
+            // Elementos de exibição
+            const titulo = document.getElementById('res-titulo');
+            const imagemContainer = document.getElementById('res-img');
+            const texto = document.getElementById('res-texto');
+
+            resDiv.style.display = 'block';
+
+            // LÓGICA DE COMBINAÇÃO EDITORIAL 2026
+
+            // 1. Brasil Tropical Quente (Quente + Quente)
+            if (veias === 'quente' && joias === 'quente') {
+                titulo.innerText = "Sua Paleta: Brasil Tropical Quente";
+                imagemContainer.innerHTML = '<img src="imagens/Brasil Tropical Quente.jpg" alt="Colagem de moda em tons terrosos apresentando uma mulher negra com cabelos loiros cacheados, vestindo roupas de luxo texturizadas, incluindo um casaco mostarda e gola alta bordada. À direita, uma paleta de cores detalha as nuances de marrom, bronze e dourado da composição."style="height:400px; width:100%; object-fit:cover;" class="rounded shadow">';
+                texto.innerText = "Você brilha em tons terrosos, laranjas vibrantes e dourados. O editorial de 2026 sugere que você explore o Terracota Solar em peças de linho para um visual luxuoso e acolhedor.";
+            }
+
+            // 2. Orvalho da Mata (Quente + Frio)
+            else if (veias === 'quente' && joias === 'frio') {
+                titulo.innerText = "Sua Paleta: Orvalho da Mata";
+                imagemContainer.innerHTML = '<img src="imagens/Orvalho da Mata.jpg" alt= "Mulher sentada no chão em um fundo verde oliva, vestindo uma camisa de cetim verde escuro, calças de alfaiataria combinando e botas marrons. Ela usa uma maquiagem marcante com batom vinho." style="height:400px; width:100%; object-fit:cover;" class="rounded shadow">';
+                texto.innerText = "O 'Orvalho' remete ao brilho cristalino e frio da prata logo cedo, enquanto a 'Mata' traz o calor e o verde das veias oliva. Uma estética equilibrada e orgânica.";
+            }
+
+            // 3. Eclipse Dourado (Frio + Quente)
+            else if (veias === 'frio' && joias === 'quente') {
+                titulo.innerText = "Sua Paleta: Eclipse Dourado";
+                imagemContainer.innerHTML = '<img src="imagens/Eclipse dourado.jpg" alt="Modelo vestindo um traje de alta costura em tons de bronze e cobre. Ela usa um colete acetinado sobre uma blusa de gola alta cintilante, acompanhado de uma bolsa transversal pequena e brincos de argola grandes."style="height:400px; width:100%; object-fit:cover;" class="rounded shadow">';
+                texto.innerText = "Remete ao céu escuro/frio do eclipse (roxos e azuis profundos) sendo cortado pela luz vibrante da coroa solar (ouro). É dramático, sofisticado e imponente.";
+            }
+
+            // 4. Brisa Nórdica Fria (Frio + Frio)
+            else {
+                titulo.innerText = "Sua Paleta: Brisa Nórdica Fria";
+                imagemContainer.innerHTML = '<img src="imagens/Tons de azul glacia.jpeg" alt= "Composição de moda futurista com duas modelos vestindo conjuntos estruturados e brilhantes em tons de azul glacial e prata. À direita, uma paleta de cores exibe nove variações de tons de azul, verde-água e cinza."style="height:400px; width:100%; object-fit:cover;" class="rounded shadow">';
+                texto.innerText = "Tons de azul glacial, menta frio e prata são sua assinatura. Para 2026, aposte no contraste entre o preto absoluto e o menta claríssimo para um look futurista e elegante.";
+            }
+            setTimeout(() => {
+                resDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
