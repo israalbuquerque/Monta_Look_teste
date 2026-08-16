@@ -239,118 +239,113 @@
         </section>
     </footer>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- SCRIPT DE AUTENTICAÇÃO E PERFIL -->
-    <script>
-        // 1. REQUISIÇÃO GET PARA CARREGAR OS DADOS DO PERFIL
-        document.addEventListener("DOMContentLoaded", async function () {
-            const token = localStorage.getItem("token");
+<!-- SCRIPT DE AUTENTICAÇÃO E PERFIL -->
+<script>
+    // 1. CARREGAR DADOS DO PERFIL
+    document.addEventListener("DOMContentLoaded", async function () {
+        const token = localStorage.getItem("token");
 
-            if (!token) {
-                window.location.replace("login.html");
+        if (!token) {
+            window.location.replace("login.html");
+            return;
+        }
+
+        try {
+            const response = await fetch("http://localhost:3001/perfil", {
+                method: "GET",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (response.status === 401 || response.status === 403) {
+                fazerLogout();
                 return;
             }
 
-            try {
-                const response = await fetch("http://localhost:3001/perfil", {
-                    method: "GET",
-                    headers: {
-                        "Authorization": `Bearer ${token}`,
-                        "Content-Type": "application/json"
-                    }
-                });
+            const dados = await response.json();
+            const usuario = dados.usuario || dados;
 
-                if (response.status === 401 || response.status === 403) {
-                    fazerLogout();
-                    return;
+            if (usuario) {
+                document.getElementById("displayNome").textContent = usuario.nome || "Usuário";
+                document.getElementById("displayUsername").textContent = usuario.username ? `@${usuario.username.replace('@', '')}` : "@usuario";
+                document.getElementById("displayPlano").textContent = usuario.plano || "Essencial";
+                document.getElementById("displayBio").textContent = usuario.bio || "Sem biografia cadastrada.";
+
+                if (usuario.foto) {
+                    document.getElementById("fotoPerfil").src = usuario.foto;
                 }
 
-                const dados = await response.json();
-
-                // Extrai a propriedade correta do objeto de resposta
-                const usuario = dados.usuario || dados;
-
-                if (usuario) {
-                    // Renderiza na tela inicial
-                    document.getElementById("displayNome").textContent = usuario.nome || "Usuário";
-                    document.getElementById("displayUsername").textContent = usuario.username ? `@${usuario.username.replace('@', '')}` : "@usuario";
-                    document.getElementById("displayPlano").textContent = usuario.plano || "Essencial";
-                    document.getElementById("displayBio").textContent = usuario.bio || "Sem biografia cadastrada.";
-
-                    if (usuario.foto) {
-                        document.getElementById("fotoPerfil").src = usuario.foto;
-                    }
-
-                    // Preenche os campos do Modal
-                    document.getElementById("inputNome").value = usuario.nome || "";
-                    document.getElementById("inputUsername").value = usuario.username || "";
-                    document.getElementById("inputEmail").value = usuario.email || "";
-                    document.getElementById("inputFoto").value = usuario.foto || "";
-                    document.getElementById("textareaBio").value = usuario.bio || "";
-                    document.getElementById("selectPlano").value = usuario.plano || "Essencial";
-                }
-
-            } catch (error) {
-                console.error("Erro ao carregar dados do perfil:", error);
+                // Preenche o modal
+                document.getElementById("inputNome").value = usuario.nome || "";
+                document.getElementById("inputUsername").value = usuario.username || "";
+                document.getElementById("inputEmail").value = usuario.email || "";
+                document.getElementById("inputFoto").value = usuario.foto || "";
+                document.getElementById("textareaBio").value = usuario.bio || "";
+                document.getElementById("selectPlano").value = usuario.plano || "Essencial";
             }
-        });
 
-        // 2. REQUISIÇÃO PUT PARA SALVAR ALTERAÇÕES DO MODAL
-        document.getElementById("formEditarPerfil").addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            const token = localStorage.getItem("token");
-
-            const dadosAtualizados = {
-                nome: document.getElementById("inputNome").value,
-                username: document.getElementById("inputUsername").value,
-                email: document.getElementById("inputEmail").value,
-                foto: document.getElementById("inputFoto").value,
-                bio: document.getElementById("textareaBio").value,
-                plano: document.getElementById("selectPlano").value,
-                novaSenha: document.getElementById("inputNovaSenha").value || null
-            };
-
-            try {
-                const response = await fetch("http://localhost:3001/perfil", {
-                    method: "PUT",
-                    headers: {
-                        "Authorization": `Bearer ${token}`,
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(dadosAtualizados)
-                });
-
-                const resultado = await response.json();
-
-                if (response.ok) {
-                    alert("Perfil atualizado com sucesso!");
-                    
-                    // Oculta o modal
-                    const modalElement = document.getElementById('modalEditarDados');
-                    const modalBootstrap = bootstrap.Modal.getInstance(modalElement);
-                    if (modalBootstrap) modalBootstrap.hide();
-
-                    location.reload();
-                } else {
-                    alert(resultado.error || "Erro ao atualizar perfil.");
-                }
-
-            } catch (error) {
-                console.error("Erro ao salvar perfil:", error);
-                alert("Erro de conexão com o servidor.");
-            }
-        });
-
-        // 3. FUNÇÃO DE LOGOUT
-        function fazerLogout() {
-            localStorage.removeItem("token");
-            document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-            window.location.replace("login.html");
+        } catch (error) {
+            console.error("Erro ao carregar dados do perfil:", error);
         }
-    </script>
-</body>
+    });
 
+    // 2. SALVAR ALTERAÇÕES (PUT)
+    document.getElementById("formEditarPerfil").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const token = localStorage.getItem("token");
+
+        const dadosAtualizados = {
+            nome: document.getElementById("inputNome").value,
+            username: document.getElementById("inputUsername").value,
+            email: document.getElementById("inputEmail").value,
+            foto: document.getElementById("inputFoto").value,
+            bio: document.getElementById("textareaBio").value,
+            plano: document.getElementById("selectPlano").value,
+            novaSenha: document.getElementById("inputNovaSenha").value || null
+        };
+
+        try {
+            const response = await fetch("http://localhost:3001/perfil", {
+                method: "PUT",
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dadosAtualizados)
+            });
+
+            const resultado = await response.json();
+
+            if (response.ok) {
+                alert("Perfil atualizado com sucesso!");
+                
+                const modalElement = document.getElementById('modalEditarDados');
+                const modalBootstrap = bootstrap.Modal.getInstance(modalElement);
+                if (modalBootstrap) modalBootstrap.hide();
+
+                location.reload();
+            } else {
+                alert(resultado.error || "Erro ao atualizar perfil.");
+            }
+
+        } catch (error) {
+            console.error("Erro ao salvar perfil:", error);
+            alert("Erro de conexão com o servidor.");
+        }
+    });
+
+    // 3. LOGOUT
+    function fazerLogout() {
+        localStorage.removeItem("token");
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.replace("login.html");
+    }
+</script>
+</body>
 </html>

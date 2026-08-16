@@ -350,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
             // 2. Endereço da API backend
             // Se a rota registrada no Express for /auth/login, use "/auth/login". Se for /login, use "/login".
-            const URL_SERVIDOR = "http://localhost:3001/auth/login"; 
+            const URL_SERVIDOR = "http://localhost:3001/login"; 
             
             const response = await fetch(URL_SERVIDOR, {
                 method: "POST",

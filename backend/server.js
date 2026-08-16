@@ -160,163 +160,77 @@
 
 
 
+
+
+
+
+
+
 import express from "express";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import loginController from "../backend/src/controllers/loginController.js";
-import pool from "../backend/src/database/database.js";
+import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const router = express.Router();
+dotenv.config();
 
-// ROTA DE LOGIN
-router.post("/login", loginController.login);
+// Importação das rotas ativas do MontaLook
+import routeLooks from "./src/routes/routeLooks.js";
+import rotaCliente from "./src/routes/clienteRoute.js";
+import loginRoute from "./src/routes/loginRoute.js";
 
-// ROTA DE CADASTRO
-router.post("/cadastro", async (req, res) => {
-  try {
-    const { nome, email, cpf, telefone, senha } = req.body;
+const app = express();
 
-    if (!nome || !email || !cpf || !senha) {
-      return res.status(400).json({ error: "É necessário informar nome, e-mail, CPF e senha." });
-    }
+// --- 1. MIDDLEWARES GLOBAIS ---
+app.use(express.json());
+app.use(cors());
 
-    const [usuarioExistente] = await pool.query(
-      "SELECT id_usuario FROM Usuarios WHERE email = ? OR cpf = ? LIMIT 1",
-      [email, cpf]
-    );
-
-    if (usuarioExistente.length > 0) {
-      return res.status(400).json({ error: "E-mail ou CPF já cadastrados no sistema." });
-    }
-
-    const saltRounds = 10;
-    const senhaHash = await bcrypt.hash(senha, saltRounds);
-
-    const [resultado] = await pool.query(
-      `INSERT INTO Usuarios (nome, email, cpf, telefone, senha, status, data_criacao) 
-       VALUES (?, ?, ?, ?, ?, 'ativo', NOW())`,
-      [nome, email, cpf, telefone || null, senhaHash]
-    );
-
-    const novoIdUsuario = resultado.insertId;
-
-    const [planoGratuito] = await pool.query(
-      "SELECT id_plano FROM Planos WHERE nome_plano LIKE '%Degustação%' LIMIT 1"
-    );
-
-    if (planoGratuito.length > 0) {
-      await pool.query(
-        `INSERT INTO Assinaturas (id_usuario, id_plano, status, data_inicio) 
-         VALUES (?, ?, 'Trial', NOW())`,
-        [novoIdUsuario, planoGratuito[0].id_plano]
-      );
-    }
-
-    return res.status(201).json({
-      message: "Usuário cadastrado com sucesso!",
-      id_usuario: novoIdUsuario
-    });
-
-  } catch (error) {
-    console.error("Erro no cadastro de usuário:", error);
-    return res.status(500).json({ error: "Erro interno no servidor ao realizar cadastro." });
-  }
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  res.set('Pragma', 'no-cache');
+  res.set('Expires', '0');
+  next();
 });
 
-// ROTA GET /perfil (VALIDAÇÃO DIRETA DO TOKEN)
-router.get("/perfil", async (req, res) => {
-    try {
-        const authHeader = req.headers["authorization"];
-        const token = authHeader && authHeader.split(" ")[1];
+// --- 2. CONFIGURAÇÃO DE DIRETÓRIOS E ESTÁTICOS (ESM) ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-        if (!token) {
-            return res.status(401).json({ error: "Acesso negado. Token não fornecido." });
-        }
+app.use('/frontend', express.static(path.join(__dirname, '../frontend')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-        const SECRET_KEY = process.env.JWT_SECRET || "sua_chave_secreta_aqui";
-        
-        let usuarioDecodificado;
-        try {
-            usuarioDecodificado = jwt.verify(token, SECRET_KEY);
-        } catch (err) {
-            return res.status(403).json({ error: "Token inválido ou expirado." });
-        }
+// --- 3. ATIVAÇÃO DOS ENDPOINTS / ROTAS ---
+// Mapeia as rotas de auth/login/perfil tanto sob /auth quanto na raiz para evitar divergência com o frontend
+app.use("/auth", loginRoute);
+app.use("/", loginRoute);
 
-        const idUsuario = usuarioDecodificado.id || usuarioDecodificado.id_usuario;
+app.use("/looks", routeLooks);
+app.use("/clientes", rotaCliente);
 
-        const [rows] = await pool.query(
-            `SELECT u.nome, u.email, u.username, u.foto, u.bio, p.nome_plano AS plano
-             FROM Usuarios u
-             LEFT JOIN Assinaturas a ON u.id_usuario = a.id_usuario
-             LEFT JOIN Planos p ON a.id_plano = p.id_plano
-             WHERE u.id_usuario = ? 
-             LIMIT 1`,
-            [idUsuario]
-        );
 
-        if (rows.length === 0) {
-            return res.status(404).json({ error: "Usuário não encontrado." });
-        }
-
-        const usuario = rows[0];
-
-        return res.status(200).json({
-            usuario: {
-                nome: usuario.nome,
-                username: usuario.username || "",
-                email: usuario.email,
-                foto: usuario.foto || null,
-                bio: usuario.bio || "",
-                plano: usuario.plano || "Essencial"
-            }
-        });
-    } catch (error) {
-        console.error("Erro na rota GET /perfil:", error);
-        return res.status(500).json({ error: "Erro interno no servidor ao buscar perfil." });
-    }
+// --- 4. TRATAMENTO DE ERROS E ROTAS NÃO ENCONTRADAS ---
+// Captura requisições para rotas inexistentes
+app.use((req, res) => {
+  console.warn(`⚠️ Rota não encontrada: ${req.method} ${req.originalUrl}`);
+  res.status(404).json({ error: `Rota ${req.originalUrl} não encontrada no servidor.` });
 });
 
-// ROTA PUT /perfil (VALIDAÇÃO DIRETA DO TOKEN)
-router.put("/perfil", async (req, res) => {
-    try {
-        const authHeader = req.headers["authorization"];
-        const token = authHeader && authHeader.split(" ")[1];
-
-        if (!token) {
-            return res.status(401).json({ error: "Acesso negado. Token não fornecido." });
-        }
-
-        const SECRET_KEY = process.env.JWT_SECRET || "sua_chave_secreta_aqui";
-        
-        let usuarioDecodificado;
-        try {
-            usuarioDecodificado = jwt.verify(token, SECRET_KEY);
-        } catch (err) {
-            return res.status(403).json({ error: "Token inválido ou expirado." });
-        }
-
-        const idUsuario = usuarioDecodificado.id || usuarioDecodificado.id_usuario;
-        const { nome, username, email, foto, bio, novaSenha } = req.body;
-
-        let query = `UPDATE Usuarios SET nome = ?, username = ?, email = ?, foto = ?, bio = ?`;
-        let params = [nome, username, email, foto, bio];
-
-        if (novaSenha && novaSenha.trim() !== "") {
-            const senhaHash = await bcrypt.hash(novaSenha, 10);
-            query += `, senha = ?`;
-            params.push(senhaHash);
-        }
-
-        query += ` WHERE id_usuario = ?`;
-        params.push(idUsuario);
-
-        await pool.query(query, params);
-
-        return res.status(200).json({ message: "Perfil atualizado com sucesso!" });
-    } catch (error) {
-        console.error("Erro na rota PUT /perfil:", error);
-        return res.status(500).json({ error: "Erro ao atualizar dados do perfil." });
-    }
+// Middleware global de tratamento de exceções
+app.use((err, req, res, next) => {
+  console.error("🔥 Erro não tratado no servidor:", err);
+  res.status(500).json({ error: "Erro interno no servidor." });
 });
 
-export default router;
+// --- 5. INICIALIZAÇÃO DO SERVIDOR ---
+const PORT = process.env.PORT_SERVER || 3001;
+
+app.listen(PORT, () => {
+  console.log(`🚀 Servidor MontaLook rodando na porta ${PORT}`);
+});
+
+
+
+
+
+
+
