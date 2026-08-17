@@ -174,13 +174,14 @@
                                 </div>
                             </div>
 
+                            <!-- Select de Planos no Perfil -->
                             <div class="row mb-3 align-items-center">
-                                <label class="col-4 col-md-3 form-label mb-0">Plano</label>
+                                <label for="selectPlano" class="col-4 col-md-3 form-label mb-0">Plano de Assinatura</label>
                                 <div class="col-8 col-md-9">
                                     <select id="selectPlano" class="form-select">
-                                        <option value="Essencial">Essencial</option>
-                                        <option value="Estilo Plus">Estilo Plus</option>
-                                        <option value="Premium Closet">Premium Closet</option>
+                                        <option value="1">Degustação (Gratuito) - R$ 0,00</option>
+                                        <option value="2">Plano Essencial Mensal - R$ 29,90/mês</option>
+                                        <option value="3">Plano VIP Anual - R$ 199,90/ano</option>
                                     </select>
                                 </div>
                             </div>
@@ -213,6 +214,25 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal de Aviso de Mudança de Plano (Posicionado fora de qualquer outro modal) -->
+        <div class="modal fade" id="modalAvisoPlano" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Plano Atualizado</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        Seu plano foi alterado. O valor proporcional aos dias utilizados será ajustado no seu próximo ciclo de cobrança.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- RODAPÉ -->
@@ -239,113 +259,170 @@
         </section>
     </footer>
 
-   <!-- BOOTSTRAP JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- SCRIPT DE AUTENTICAÇÃO E PERFIL -->
-<script>
-    // 1. CARREGAR DADOS DO PERFIL
-    document.addEventListener("DOMContentLoaded", async function () {
-        const token = localStorage.getItem("token");
+    <!-- SCRIPT DE AUTENTICAÇÃO E PERFIL -->
+    <script>
+        let planoAtualId = "1"; // Default para 1 (Degustação)
 
-        if (!token) {
-            window.location.replace("login.html");
-            return;
-        }
+        const mapaPlanosBackendParaId = {
+            "Degustação (Gratuito)": "1",
+            "Plano Essencial Mensal": "2",
+            "Essencial": "2",
+            "Plano VIP Anual": "3",
+            "Estilo Plus": "3"
+        };
 
-        try {
-            const response = await fetch("http://localhost:3001/perfil", {
-                method: "GET",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "application/json"
-                }
-            });
+        const nomesPlanos = {
+            "1": "Degustação (Gratuito) - R$ 0,00",
+            "2": "Plano Essencial Mensal - R$ 29,90/mês",
+            "3": "Plano VIP Anual - R$ 199,90/ano"
+        };
 
-            if (response.status === 401 || response.status === 403) {
-                fazerLogout();
+        document.addEventListener("DOMContentLoaded", async function () {
+            const token = localStorage.getItem("token");
+
+            if (!token) {
+                window.location.replace("login.html");
                 return;
             }
 
-            const dados = await response.json();
-            const usuario = dados.usuario || dados;
+            try {
+                const response = await fetch("http://localhost:3001/perfil", {
+                    method: "GET",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    }
+                });
 
-            if (usuario) {
-                document.getElementById("displayNome").textContent = usuario.nome || "Usuário";
-                document.getElementById("displayUsername").textContent = usuario.username ? `@${usuario.username.replace('@', '')}` : "@usuario";
-                document.getElementById("displayPlano").textContent = usuario.plano || "Essencial";
-                document.getElementById("displayBio").textContent = usuario.bio || "Sem biografia cadastrada.";
-
-                if (usuario.foto) {
-                    document.getElementById("fotoPerfil").src = usuario.foto;
+                if (response.status === 401 || response.status === 403) {
+                    fazerLogout();
+                    return;
                 }
 
-                // Preenche o modal
-                document.getElementById("inputNome").value = usuario.nome || "";
-                document.getElementById("inputUsername").value = usuario.username || "";
-                document.getElementById("inputEmail").value = usuario.email || "";
-                document.getElementById("inputFoto").value = usuario.foto || "";
-                document.getElementById("textareaBio").value = usuario.bio || "";
-                document.getElementById("selectPlano").value = usuario.plano || "Essencial";
+                const dados = await response.json();
+                const usuario = dados.usuario;
+
+                if (usuario) {
+                    if (usuario.id_plano) {
+                        planoAtualId = String(usuario.id_plano);
+                    } else if (usuario.plano) {
+                        planoAtualId = mapaPlanosBackendParaId[usuario.plano] || "1";
+                    }
+
+                    document.getElementById("displayNome").textContent = usuario.nome || "Usuário";
+                    document.getElementById("displayUsername").textContent = usuario.username ? `@${usuario.username.replace('@', '')}` : "@usuario";
+                    document.getElementById("displayPlano").textContent = nomesPlanos[planoAtualId] || usuario.plano || "Degustação (Gratuito)";
+                    document.getElementById("displayBio").textContent = usuario.bio || "Sem biografia cadastrada.";
+
+                    if (usuario.foto) {
+                        document.getElementById("fotoPerfil").src = usuario.foto;
+                    }
+
+                    document.getElementById("inputNome").value = usuario.nome || "";
+                    document.getElementById("inputUsername").value = usuario.username || "";
+                    document.getElementById("inputEmail").value = usuario.email || "";
+                    document.getElementById("inputFoto").value = usuario.foto || "";
+                    document.getElementById("textareaBio").value = usuario.bio || "";
+                    
+                    const selectPlanoEl = document.getElementById("selectPlano");
+                    if (selectPlanoEl) {
+                        selectPlanoEl.value = planoAtualId;
+                    }
+                }
+
+            } catch (error) {
+                console.error("Erro ao carregar dados do perfil:", error);
+            }
+        });
+
+        document.getElementById("formEditarPerfil").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const token = localStorage.getItem("token");
+            const selectPlanoEl = document.getElementById("selectPlano");
+            
+            if (!selectPlanoEl) {
+                alert("Erro na interface. Não foi possível identificar o plano selecionado.");
+                return;
             }
 
-        } catch (error) {
-            console.error("Erro ao carregar dados do perfil:", error);
-        }
-    });
+            const novoPlanoId = String(selectPlanoEl.value);
 
-    // 2. SALVAR ALTERAÇÕES (PUT)
-    document.getElementById("formEditarPerfil").addEventListener("submit", async function (e) {
-        e.preventDefault();
+            const dadosAtualizados = {
+                nome: document.getElementById("inputNome").value,
+                username: document.getElementById("inputUsername").value,
+                email: document.getElementById("inputEmail").value,
+                foto: document.getElementById("inputFoto").value,
+                bio: document.getElementById("textareaBio").value,
+                plano: novoPlanoId,
+                novaSenha: document.getElementById("inputNovaSenha").value || null
+            };
 
-        const token = localStorage.getItem("token");
+            try {
+                const response = await fetch("http://localhost:3001/perfil", {
+                    method: "PUT",
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dadosAtualizados)
+                });
 
-        const dadosAtualizados = {
-            nome: document.getElementById("inputNome").value,
-            username: document.getElementById("inputUsername").value,
-            email: document.getElementById("inputEmail").value,
-            foto: document.getElementById("inputFoto").value,
-            bio: document.getElementById("textareaBio").value,
-            plano: document.getElementById("selectPlano").value,
-            novaSenha: document.getElementById("inputNovaSenha").value || null
-        };
+                const resultado = await response.json();
 
-        try {
-            const response = await fetch("http://localhost:3001/perfil", {
-                method: "PUT",
-                headers: {
-                    "Authorization": `Bearer ${token}`,
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dadosAtualizados)
-            });
+                if (response.ok) {
+                    const modalElement = document.getElementById('modalEditarDados');
+                    const modalEditar = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
 
-            const resultado = await response.json();
+                    // Se HOUVE MUDANÇA no plano
+                    if (planoAtualId !== novoPlanoId) {
+                        
+                        // Espera o modal de edição fechar completamente para abrir o aviso
+                        modalElement.addEventListener('hidden.bs.modal', function handler() {
+                            modalElement.removeEventListener('hidden.bs.modal', handler);
 
-            if (response.ok) {
-                alert("Perfil atualizado com sucesso!");
-                
-                const modalElement = document.getElementById('modalEditarDados');
-                const modalBootstrap = bootstrap.Modal.getInstance(modalElement);
-                if (modalBootstrap) modalBootstrap.hide();
+                            const modalAvisoEl = document.getElementById('modalAvisoPlano');
+                            if (modalAvisoEl) {
+                                const modalAviso = new bootstrap.Modal(modalAvisoEl);
+                                
+                                modalAvisoEl.addEventListener('hidden.bs.modal', function () {
+                                    location.reload();
+                                }, { once: true });
 
-                location.reload();
-            } else {
-                alert(resultado.error || "Erro ao atualizar perfil.");
+                                modalAviso.show();
+                            } else {
+                                alert("Plano alterado com sucesso!");
+                                location.reload();
+                            }
+                        });
+
+                        modalEditar.hide();
+
+                    } else {
+                        // Se NÃO mudou o plano
+                        modalEditar.hide();
+                        alert("Perfil atualizado com sucesso!");
+                        location.reload();
+                    }
+                } else {
+                    alert(resultado.error || "Erro ao atualizar perfil.");
+                }
+
+            } catch (error) {
+                console.error("Erro ao salvar perfil:", error);
+                alert("Erro de conexão com o servidor.");
             }
+        });
 
-        } catch (error) {
-            console.error("Erro ao salvar perfil:", error);
-            alert("Erro de conexão com o servidor.");
+        function fazerLogout() {
+            localStorage.removeItem("token");
+            document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            window.location.replace("login.html");
         }
-    });
-
-    // 3. LOGOUT
-    function fazerLogout() {
-        localStorage.removeItem("token");
-        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        window.location.replace("login.html");
-    }
-</script>
+    </script>
 </body>
+
 </html>

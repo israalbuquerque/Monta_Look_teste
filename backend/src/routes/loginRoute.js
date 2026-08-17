@@ -774,6 +774,223 @@
 
 
 
+// import express from "express";
+// import bcrypt from "bcrypt";
+// import jwt from "jsonwebtoken";
+// import loginController from "../controllers/loginController.js";
+// import pool from "../database/database.js";
+
+// const router = express.Router();
+
+// // Middleware centralizado de autenticação JWT
+// const autenticarToken = (req, res, next) => {
+//     const authHeader = req.headers["authorization"];
+//     const token = authHeader && authHeader.split(" ")[1];
+
+//     if (!token) {
+//         return res.status(401).json({ error: "Acesso negado. Token não fornecido." });
+//     }
+
+//     const SECRET_KEY = process.env.JWT_SECRET || "sua_chave_secreta_aqui";
+
+//     try {
+//         req.usuario = jwt.verify(token, SECRET_KEY);
+//         next();
+//     } catch (err) {
+//         return res.status(403).json({ error: "Token inválido ou expirado." });
+//     }
+// };
+
+// // ROTA DE LOGIN
+// router.post("/login", loginController.login);
+
+// // ROTA DE CADASTRO
+// router.post("/cadastro", async (req, res) => {
+//     try {
+//         const { nome, email, cpf, telefone, senha, plano } = req.body;
+
+//         if (!nome || !email || !cpf || !senha) {
+//             return res.status(400).json({ error: "É necessário informar nome, e-mail, CPF e senha." });
+//         }
+
+//         const [usuarioExistente] = await pool.query(
+//             "SELECT id_usuario FROM Usuarios WHERE email = ? OR cpf = ? LIMIT 1",
+//             [email, cpf]
+//         );
+
+//         if (usuarioExistente.length > 0) {
+//             return res.status(400).json({ error: "E-mail ou CPF já cadastrados no sistema." });
+//         }
+
+//         const saltRounds = 10;
+//         const senhaHash = await bcrypt.hash(senha, saltRounds);
+
+//         const [resultado] = await pool.query(
+//             `INSERT INTO Usuarios (nome, email, cpf, telefone, senha, status, data_criacao) 
+//              VALUES (?, ?, ?, ?, ?, 'ativo', NOW())`,
+//             [nome, email, cpf, telefone || null, senhaHash]
+//         );
+
+//         const novoIdUsuario = resultado.insertId;
+
+//         // Busca o ID do plano informado ou aplica o plano padrão (Degustação)
+//         let idPlanoFinal = null;
+//         if (plano) {
+//             const [planoEncontrado] = await pool.query(
+//                 "SELECT id_plano FROM Planos WHERE nome_plano LIKE ? LIMIT 1",
+//                 [`%${plano}%`]
+//             );
+//             if (planoEncontrado.length > 0) idPlanoFinal = planoEncontrado[0].id_plano;
+//         }
+
+//         if (!idPlanoFinal) {
+//             const [planoGratuito] = await pool.query(
+//                 "SELECT id_plano FROM Planos WHERE nome_plano LIKE '%Degustação%' LIMIT 1"
+//             );
+//             if (planoGratuito.length > 0) idPlanoFinal = planoGratuito[0].id_plano;
+//         }
+
+//         if (idPlanoFinal) {
+//             await pool.query(
+//                 `INSERT INTO Assinaturas (id_usuario, id_plano, status, data_inicio) 
+//                  VALUES (?, ?, 'Trial', NOW())`,
+//                 [novoIdUsuario, idPlanoFinal]
+//             );
+//         }
+
+//         return res.status(201).json({
+//             message: "Usuário cadastrado com sucesso!",
+//             id_usuario: novoIdUsuario
+//         });
+
+//     } catch (error) {
+//         console.error("Erro no cadastro de usuário:", error);
+//         return res.status(500).json({ error: "Erro interno no servidor ao realizar cadastro." });
+//     }
+// });
+
+// // ROTA GET /perfil
+// router.get("/perfil", autenticarToken, async (req, res) => {
+//     try {
+//         const idUsuario = req.usuario.id || req.usuario.id_usuario;
+
+//         const [rows] = await pool.query(
+//             `SELECT u.nome, u.email, p.nome_plano AS plano
+//              FROM Usuarios u
+//              LEFT JOIN Assinaturas a ON u.id_usuario = a.id_usuario
+//              LEFT JOIN Planos p ON a.id_plano = p.id_plano
+//              WHERE u.id_usuario = ? 
+//              LIMIT 1`,
+//             [idUsuario]
+//         );
+
+//         if (rows.length === 0) {
+//             return res.status(404).json({ error: "Usuário não encontrado." });
+//         }
+
+//         const usuario = rows[0];
+
+//         return res.status(200).json({
+//             usuario: {
+//                 nome: usuario.nome,
+//                 username: "",
+//                 email: usuario.email,
+//                 foto: null,
+//                 bio: "",
+//                 plano: usuario.plano || "Essencial"
+//             }
+//         });
+//     } catch (error) {
+//         console.error("Erro na rota GET /perfil:", error);
+//         return res.status(500).json({ error: "Erro interno no servidor ao buscar perfil." });
+//     }
+// });
+
+// // ROTA PUT /perfil - Atualiza os dados do perfil e o plano do usuário
+// router.put("/perfil", autenticarToken, async (req, res) => {
+//     try {
+//         const idUsuario = req.usuario.id || req.usuario.id_usuario;
+//         const { foto, nome, username, email, bio, plano, novaSenha } = req.body;
+
+//         // 1. Busca o id_plano correspondente ao nome do plano selecionado
+//         let idPlano = null;
+//         if (plano) {
+//             const [planoRows] = await pool.query(
+//                 "SELECT id_plano FROM Planos WHERE nome_plano LIKE ? LIMIT 1",
+//                 [`%${plano}%`]
+//             );
+//             if (planoRows.length > 0) {
+//                 idPlano = planoRows[0].id_plano;
+//             }
+//         }
+
+//         // 2. Atualiza a assinatura na tabela Assinaturas
+//         if (idPlano) {
+//             await pool.query(
+//                 `INSERT INTO Assinaturas (id_usuario, id_plano, status, data_inicio)
+//                  VALUES (?, ?, 'Ativo', NOW())
+//                  ON DUPLICATE KEY UPDATE id_plano = VALUES(id_plano)`,
+//                 [idUsuario, idPlano]
+//             );
+//         }
+
+//         // 3. Monta a query de atualização da tabela Usuarios
+//         let campos = [
+//             "foto = ?",
+//             "nome = ?",
+//             "username = ?",
+//             "email = ?",
+//             "bio = ?"
+//         ];
+//         let valores = [
+//             foto || null,
+//             nome,
+//             username || null,
+//             email,
+//             bio || null
+//         ];
+
+//         if (novaSenha && novaSenha.trim() !== "") {
+//             const senhaHash = await bcrypt.hash(novaSenha, 10);
+//             campos.push("senha = ?");
+//             valores.push(senhaHash);
+//         }
+
+//         valores.push(idUsuario);
+
+//         const querySql = `UPDATE Usuarios SET ${campos.join(", ")} WHERE id_usuario = ?`;
+//         await pool.query(querySql, valores);
+
+//         return res.status(200).json({ message: "Perfil e plano atualizados com sucesso!" });
+
+//     } catch (error) {
+//         console.error("Erro na rota PUT /perfil:", error);
+
+//         if (error.code === 'ER_DUP_ENTRY') {
+//             return res.status(400).json({ error: "O username ou e-mail informado já está em uso." });
+//         }
+
+//         return res.status(500).json({ error: "Erro interno ao atualizar os dados do perfil." });
+//     }
+// });
+
+// export default router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import express from "express";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
@@ -833,7 +1050,6 @@ router.post("/cadastro", async (req, res) => {
 
         const novoIdUsuario = resultado.insertId;
 
-        // Busca o ID do plano informado ou aplica o plano padrão (Degustação)
         let idPlanoFinal = null;
         if (plano) {
             const [planoEncontrado] = await pool.query(
@@ -869,17 +1085,18 @@ router.post("/cadastro", async (req, res) => {
     }
 });
 
-// ROTA GET /perfil
+// ROTA GET /perfil - Busca todos os dados da tabela Usuarios e a assinatura
 router.get("/perfil", autenticarToken, async (req, res) => {
     try {
         const idUsuario = req.usuario.id || req.usuario.id_usuario;
 
         const [rows] = await pool.query(
-            `SELECT u.nome, u.email, p.nome_plano AS plano
+            `SELECT u.nome, u.username, u.email, u.foto, u.bio, p.nome_plano AS plano
              FROM Usuarios u
              LEFT JOIN Assinaturas a ON u.id_usuario = a.id_usuario
              LEFT JOIN Planos p ON a.id_plano = p.id_plano
              WHERE u.id_usuario = ? 
+             ORDER BY a.data_inicio DESC
              LIMIT 1`,
             [idUsuario]
         );
@@ -892,11 +1109,11 @@ router.get("/perfil", autenticarToken, async (req, res) => {
 
         return res.status(200).json({
             usuario: {
-                nome: usuario.nome,
-                username: "",
-                email: usuario.email,
-                foto: null,
-                bio: "",
+                nome: usuario.nome || "",
+                username: usuario.username || "",
+                email: usuario.email || "",
+                foto: usuario.foto || null,
+                bio: usuario.bio || "",
                 plano: usuario.plano || "Essencial"
             }
         });
@@ -906,35 +1123,13 @@ router.get("/perfil", autenticarToken, async (req, res) => {
     }
 });
 
-// ROTA PUT /perfil - Atualiza os dados do perfil e o plano do usuário
+// ROTA PUT /perfil
 router.put("/perfil", autenticarToken, async (req, res) => {
     try {
         const idUsuario = req.usuario.id || req.usuario.id_usuario;
         const { foto, nome, username, email, bio, plano, novaSenha } = req.body;
 
-        // 1. Busca o id_plano correspondente ao nome do plano selecionado
-        let idPlano = null;
-        if (plano) {
-            const [planoRows] = await pool.query(
-                "SELECT id_plano FROM Planos WHERE nome_plano LIKE ? LIMIT 1",
-                [`%${plano}%`]
-            );
-            if (planoRows.length > 0) {
-                idPlano = planoRows[0].id_plano;
-            }
-        }
-
-        // 2. Atualiza a assinatura na tabela Assinaturas
-        if (idPlano) {
-            await pool.query(
-                `INSERT INTO Assinaturas (id_usuario, id_plano, status, data_inicio)
-                 VALUES (?, ?, 'Ativo', NOW())
-                 ON DUPLICATE KEY UPDATE id_plano = VALUES(id_plano)`,
-                [idUsuario, idPlano]
-            );
-        }
-
-        // 3. Monta a query de atualização da tabela Usuarios
+        // 1. Atualiza dados da tabela Usuarios
         let campos = [
             "foto = ?",
             "nome = ?",
@@ -961,132 +1156,47 @@ router.put("/perfil", autenticarToken, async (req, res) => {
         const querySql = `UPDATE Usuarios SET ${campos.join(", ")} WHERE id_usuario = ?`;
         await pool.query(querySql, valores);
 
+        // 2. Atualiza ou insere o plano na tabela Assinaturas usando o ID
+        if (plano) {
+            const idPlano = parseInt(plano, 10);
+
+            // Confirma se o id_plano realmente existe na tabela Planos
+            const [planoExiste] = await pool.query(
+                "SELECT id_plano FROM Planos WHERE id_plano = ?",
+                [idPlano]
+            );
+
+            if (planoExiste.length > 0) {
+                // Verifica se o usuário já tem assinatura registrada
+                const [assinaturaExiste] = await pool.query(
+                    "SELECT id_assinatura FROM Assinaturas WHERE id_usuario = ? ORDER BY id_assinatura DESC LIMIT 1",
+                    [idUsuario]
+                );
+
+                if (assinaturaExiste.length > 0) {
+                    await pool.query(
+                        `UPDATE Assinaturas SET id_plano = ?, status = 'Ativo' WHERE id_assinatura = ?`,
+                        [idPlano, assinaturaExiste[0].id_assinatura]
+                    );
+                } else {
+                    await pool.query(
+                        `INSERT INTO Assinaturas (id_usuario, id_plano, status, data_inicio) VALUES (?, ?, 'Ativo', NOW())`,
+                        [idUsuario, idPlano]
+                    );
+                }
+            }
+        }
+
         return res.status(200).json({ message: "Perfil e plano atualizados com sucesso!" });
 
     } catch (error) {
         console.error("Erro na rota PUT /perfil:", error);
 
-        if (error.code === 'ER_DUP_ENTRY') {
+        if (error.code === "ER_DUP_ENTRY") {
             return res.status(400).json({ error: "O username ou e-mail informado já está em uso." });
         }
 
         return res.status(500).json({ error: "Erro interno ao atualizar os dados do perfil." });
     }
 });
-
 export default router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import express from 'express';
-// import jwt from 'jsonwebtoken';
-// import bcrypt from 'bcrypt';
-// import pool from '../database/database.js';
-
-
-// const router = express.Router();
-
-// // Middleware para validar o Token JWT
-// function autenticarToken(req, res, next) {
-//     const authHeader = req.headers['authorization'];
-//     const token = authHeader && authHeader.split(' ')[1];
-
-//     if (!token) {
-//         return res.status(401).json({ error: 'Acesso negado. Token não fornecido.' });
-//     }
-
-//     jwt.verify(token, process.env.JWT_SECRET || 'sua_chave_secreta', (err, usuario) => {
-//         if (err) {
-//             return res.status(403).json({ error: 'Token inválido ou expirado.' });
-//         }
-//         req.usuario = usuario;
-//         next();
-//     });
-// }
-
-// // ----------------------------------------------------
-// // ROTA GET /perfil - Retorna os dados do usuário
-// // ----------------------------------------------------
-// router.get('/perfil', autenticarToken, async (req, res) => {
-//     try {
-//         const idUsuario = req.usuario.id_usuario || req.usuario.id;
-
-//         const [rows] = await pool.query(
-//             `SELECT u.id_usuario, u.nome, u.username, u.email, u.foto, u.bio, p.nome_plano AS plano 
-//              FROM Usuarios u 
-//              LEFT JOIN Planos p ON u.id_plano = p.id_plano 
-//              WHERE u.id_usuario = ?`,
-//             [idUsuario]
-//         );
-
-//         if (rows.length === 0) {
-//             return res.status(404).json({ error: 'Usuário não encontrado.' });
-//         }
-
-//         return res.json({ usuario: rows[0] });
-//     } catch (error) {
-//         console.error('Erro ao buscar perfil:', error);
-//         return res.status(500).json({ error: 'Erro interno no servidor.' });
-//     }
-// });
-
-// // ----------------------------------------------------
-// // ROTA PUT /perfil - Atualiza as informações do perfil
-// // ----------------------------------------------------
-// router.put('/perfil', autenticarToken, async (req, res) => {
-//     try {
-//         const idUsuario = req.usuario.id_usuario || req.usuario.id;
-//         const { nome, username, email, foto, bio, plano, novaSenha } = req.body;
-
-//         // 1. Obter id_plano a partir do nome selecionado
-//         const [planoRows] = await pool.query(
-//             'SELECT id_plano FROM Planos WHERE nome_plano = ? LIMIT 1',
-//             [plano]
-//         );
-//         const idPlano = planoRows.length > 0 ? planoRows[0].id_plano : 1;
-
-//         // 2. Atualizar dados básicos
-//         let queryUpdate = `
-//             UPDATE Usuarios 
-//             SET nome = ?, username = ?, email = ?, foto = ?, bio = ?, id_plano = ?
-//         `;
-//         let parametros = [nome, username, email, foto, bio, idPlano];
-
-//         // 3. Caso tenha digitado nova senha, aplica o hash e inclui no UPDATE
-//         if (novaSenha && novaSenha.trim() !== '') {
-//             const senhaHash = await bcrypt.hash(novaSenha, 10);
-//             queryUpdate += `, senha = ?`;
-//             parametros.push(senhaHash);
-//         }
-
-//         queryUpdate += ` WHERE id_usuario = ?`;
-//         parametros.push(idUsuario);
-
-//         await pool.query(queryUpdate, parametros);
-
-//         return res.json({ message: 'Perfil atualizado com sucesso!' });
-//     } catch (error) {
-//         console.error('Erro ao atualizar perfil:', error);
-
-//         if (error.code === 'ER_DUP_ENTRY') {
-//             return res.status(400).json({ error: 'E-mail ou Username já cadastrado por outro usuário.' });
-//         }
-
-//         return res.status(500).json({ error: 'Erro interno ao salvar dados.' });
-//     }
-// });
-
-// export default router;
